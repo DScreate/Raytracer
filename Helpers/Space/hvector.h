@@ -6,7 +6,7 @@
 #define RAYTRACER_HVECTOR_H
 
 /*
- * 2D Vector for general purpose use
+ * H Vector for general purpose use
  * General design sourced from
  * "Fundamentals of Computer Graphics, 4th Edition" by Steve Marschner and Peter Shirley
  * pp. 9

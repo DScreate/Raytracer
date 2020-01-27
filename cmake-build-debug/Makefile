@@ -151,33 +151,6 @@ Helpers\Matrices\transform.cpp.s:
 	$(MAKE) -f CMakeFiles\Raytracer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Raytracer.dir\Helpers\Matrices\transform.cpp.s
 .PHONY : Helpers\Matrices\transform.cpp.s
 
-Helpers\Space\apoint.obj: Helpers\Space\apoint.cpp.obj
-
-.PHONY : Helpers\Space\apoint.obj
-
-# target to build an object file
-Helpers\Space\apoint.cpp.obj:
-	$(MAKE) -f CMakeFiles\Raytracer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Raytracer.dir\Helpers\Space\apoint.cpp.obj
-.PHONY : Helpers\Space\apoint.cpp.obj
-
-Helpers\Space\apoint.i: Helpers\Space\apoint.cpp.i
-
-.PHONY : Helpers\Space\apoint.i
-
-# target to preprocess a source file
-Helpers\Space\apoint.cpp.i:
-	$(MAKE) -f CMakeFiles\Raytracer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Raytracer.dir\Helpers\Space\apoint.cpp.i
-.PHONY : Helpers\Space\apoint.cpp.i
-
-Helpers\Space\apoint.s: Helpers\Space\apoint.cpp.s
-
-.PHONY : Helpers\Space\apoint.s
-
-# target to generate assembly for a file
-Helpers\Space\apoint.cpp.s:
-	$(MAKE) -f CMakeFiles\Raytracer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Raytracer.dir\Helpers\Space\apoint.cpp.s
-.PHONY : Helpers\Space\apoint.cpp.s
-
 Helpers\Space\hvector.obj: Helpers\Space\hvector.cpp.obj
 
 .PHONY : Helpers\Space\hvector.obj
@@ -367,32 +340,113 @@ Helpers\rgb.cpp.s:
 	$(MAKE) -f CMakeFiles\Raytracer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Raytracer.dir\Helpers\rgb.cpp.s
 .PHONY : Helpers\rgb.cpp.s
 
-Intersection.obj: Intersection.cpp.obj
+_Shapes\halfspace.obj: _Shapes\halfspace.cpp.obj
 
-.PHONY : Intersection.obj
+.PHONY : _Shapes\halfspace.obj
 
 # target to build an object file
-Intersection.cpp.obj:
-	$(MAKE) -f CMakeFiles\Raytracer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Raytracer.dir\Intersection.cpp.obj
-.PHONY : Intersection.cpp.obj
+_Shapes\halfspace.cpp.obj:
+	$(MAKE) -f CMakeFiles\Raytracer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Raytracer.dir\_Shapes\halfspace.cpp.obj
+.PHONY : _Shapes\halfspace.cpp.obj
 
-Intersection.i: Intersection.cpp.i
+_Shapes\halfspace.i: _Shapes\halfspace.cpp.i
 
-.PHONY : Intersection.i
+.PHONY : _Shapes\halfspace.i
 
 # target to preprocess a source file
-Intersection.cpp.i:
-	$(MAKE) -f CMakeFiles\Raytracer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Raytracer.dir\Intersection.cpp.i
-.PHONY : Intersection.cpp.i
+_Shapes\halfspace.cpp.i:
+	$(MAKE) -f CMakeFiles\Raytracer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Raytracer.dir\_Shapes\halfspace.cpp.i
+.PHONY : _Shapes\halfspace.cpp.i
 
-Intersection.s: Intersection.cpp.s
+_Shapes\halfspace.s: _Shapes\halfspace.cpp.s
 
-.PHONY : Intersection.s
+.PHONY : _Shapes\halfspace.s
 
 # target to generate assembly for a file
-Intersection.cpp.s:
-	$(MAKE) -f CMakeFiles\Raytracer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Raytracer.dir\Intersection.cpp.s
-.PHONY : Intersection.cpp.s
+_Shapes\halfspace.cpp.s:
+	$(MAKE) -f CMakeFiles\Raytracer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Raytracer.dir\_Shapes\halfspace.cpp.s
+.PHONY : _Shapes\halfspace.cpp.s
+
+_Shapes\plane.obj: _Shapes\plane.cpp.obj
+
+.PHONY : _Shapes\plane.obj
+
+# target to build an object file
+_Shapes\plane.cpp.obj:
+	$(MAKE) -f CMakeFiles\Raytracer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Raytracer.dir\_Shapes\plane.cpp.obj
+.PHONY : _Shapes\plane.cpp.obj
+
+_Shapes\plane.i: _Shapes\plane.cpp.i
+
+.PHONY : _Shapes\plane.i
+
+# target to preprocess a source file
+_Shapes\plane.cpp.i:
+	$(MAKE) -f CMakeFiles\Raytracer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Raytracer.dir\_Shapes\plane.cpp.i
+.PHONY : _Shapes\plane.cpp.i
+
+_Shapes\plane.s: _Shapes\plane.cpp.s
+
+.PHONY : _Shapes\plane.s
+
+# target to generate assembly for a file
+_Shapes\plane.cpp.s:
+	$(MAKE) -f CMakeFiles\Raytracer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Raytracer.dir\_Shapes\plane.cpp.s
+.PHONY : _Shapes\plane.cpp.s
+
+_Shapes\sphere.obj: _Shapes\sphere.cpp.obj
+
+.PHONY : _Shapes\sphere.obj
+
+# target to build an object file
+_Shapes\sphere.cpp.obj:
+	$(MAKE) -f CMakeFiles\Raytracer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Raytracer.dir\_Shapes\sphere.cpp.obj
+.PHONY : _Shapes\sphere.cpp.obj
+
+_Shapes\sphere.i: _Shapes\sphere.cpp.i
+
+.PHONY : _Shapes\sphere.i
+
+# target to preprocess a source file
+_Shapes\sphere.cpp.i:
+	$(MAKE) -f CMakeFiles\Raytracer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Raytracer.dir\_Shapes\sphere.cpp.i
+.PHONY : _Shapes\sphere.cpp.i
+
+_Shapes\sphere.s: _Shapes\sphere.cpp.s
+
+.PHONY : _Shapes\sphere.s
+
+# target to generate assembly for a file
+_Shapes\sphere.cpp.s:
+	$(MAKE) -f CMakeFiles\Raytracer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Raytracer.dir\_Shapes\sphere.cpp.s
+.PHONY : _Shapes\sphere.cpp.s
+
+_Shapes\triangle.obj: _Shapes\triangle.cpp.obj
+
+.PHONY : _Shapes\triangle.obj
+
+# target to build an object file
+_Shapes\triangle.cpp.obj:
+	$(MAKE) -f CMakeFiles\Raytracer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Raytracer.dir\_Shapes\triangle.cpp.obj
+.PHONY : _Shapes\triangle.cpp.obj
+
+_Shapes\triangle.i: _Shapes\triangle.cpp.i
+
+.PHONY : _Shapes\triangle.i
+
+# target to preprocess a source file
+_Shapes\triangle.cpp.i:
+	$(MAKE) -f CMakeFiles\Raytracer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Raytracer.dir\_Shapes\triangle.cpp.i
+.PHONY : _Shapes\triangle.cpp.i
+
+_Shapes\triangle.s: _Shapes\triangle.cpp.s
+
+.PHONY : _Shapes\triangle.s
+
+# target to generate assembly for a file
+_Shapes\triangle.cpp.s:
+	$(MAKE) -f CMakeFiles\Raytracer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Raytracer.dir\_Shapes\triangle.cpp.s
+.PHONY : _Shapes\triangle.cpp.s
 
 camera.obj: camera.cpp.obj
 
@@ -447,6 +501,60 @@ halfspace.s: halfspace.cpp.s
 halfspace.cpp.s:
 	$(MAKE) -f CMakeFiles\Raytracer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Raytracer.dir\halfspace.cpp.s
 .PHONY : halfspace.cpp.s
+
+hit.obj: hit.cpp.obj
+
+.PHONY : hit.obj
+
+# target to build an object file
+hit.cpp.obj:
+	$(MAKE) -f CMakeFiles\Raytracer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Raytracer.dir\hit.cpp.obj
+.PHONY : hit.cpp.obj
+
+hit.i: hit.cpp.i
+
+.PHONY : hit.i
+
+# target to preprocess a source file
+hit.cpp.i:
+	$(MAKE) -f CMakeFiles\Raytracer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Raytracer.dir\hit.cpp.i
+.PHONY : hit.cpp.i
+
+hit.s: hit.cpp.s
+
+.PHONY : hit.s
+
+# target to generate assembly for a file
+hit.cpp.s:
+	$(MAKE) -f CMakeFiles\Raytracer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Raytracer.dir\hit.cpp.s
+.PHONY : hit.cpp.s
+
+intersection.obj: intersection.cpp.obj
+
+.PHONY : intersection.obj
+
+# target to build an object file
+intersection.cpp.obj:
+	$(MAKE) -f CMakeFiles\Raytracer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Raytracer.dir\intersection.cpp.obj
+.PHONY : intersection.cpp.obj
+
+intersection.i: intersection.cpp.i
+
+.PHONY : intersection.i
+
+# target to preprocess a source file
+intersection.cpp.i:
+	$(MAKE) -f CMakeFiles\Raytracer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Raytracer.dir\intersection.cpp.i
+.PHONY : intersection.cpp.i
+
+intersection.s: intersection.cpp.s
+
+.PHONY : intersection.s
+
+# target to generate assembly for a file
+intersection.cpp.s:
+	$(MAKE) -f CMakeFiles\Raytracer.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Raytracer.dir\intersection.cpp.s
+.PHONY : intersection.cpp.s
 
 luminaire.obj: luminaire.cpp.obj
 
@@ -649,9 +757,6 @@ help:
 	@echo ... Helpers/Matrices/transform.obj
 	@echo ... Helpers/Matrices/transform.i
 	@echo ... Helpers/Matrices/transform.s
-	@echo ... Helpers/Space/apoint.obj
-	@echo ... Helpers/Space/apoint.i
-	@echo ... Helpers/Space/apoint.s
 	@echo ... Helpers/Space/hvector.obj
 	@echo ... Helpers/Space/hvector.i
 	@echo ... Helpers/Space/hvector.s
@@ -673,15 +778,30 @@ help:
 	@echo ... Helpers/rgb.obj
 	@echo ... Helpers/rgb.i
 	@echo ... Helpers/rgb.s
-	@echo ... Intersection.obj
-	@echo ... Intersection.i
-	@echo ... Intersection.s
+	@echo ... _Shapes/halfspace.obj
+	@echo ... _Shapes/halfspace.i
+	@echo ... _Shapes/halfspace.s
+	@echo ... _Shapes/plane.obj
+	@echo ... _Shapes/plane.i
+	@echo ... _Shapes/plane.s
+	@echo ... _Shapes/sphere.obj
+	@echo ... _Shapes/sphere.i
+	@echo ... _Shapes/sphere.s
+	@echo ... _Shapes/triangle.obj
+	@echo ... _Shapes/triangle.i
+	@echo ... _Shapes/triangle.s
 	@echo ... camera.obj
 	@echo ... camera.i
 	@echo ... camera.s
 	@echo ... halfspace.obj
 	@echo ... halfspace.i
 	@echo ... halfspace.s
+	@echo ... hit.obj
+	@echo ... hit.i
+	@echo ... hit.s
+	@echo ... intersection.obj
+	@echo ... intersection.i
+	@echo ... intersection.s
 	@echo ... luminaire.obj
 	@echo ... luminaire.i
 	@echo ... luminaire.s

@@ -26,6 +26,8 @@ public:
 
     Vector2(const T& _x, const T& _y) : x(_x), y(_y) {}
 
+    Vector2(Vector2<T>& vector2) : Vector2(vector2.x, vector2.y) {}
+
     Vector2& operator+=(const Vector2& that);
     Vector2& operator-=(const Vector2& that);
 

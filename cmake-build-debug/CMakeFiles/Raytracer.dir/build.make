@@ -229,47 +229,28 @@ CMakeFiles\Raytracer.dir\target.cpp.s: cmake_force
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\Raytracer.dir\target.cpp.s /c C:\Users\Derek\CLionProjects\Raytracer\target.cpp
 <<
 
-CMakeFiles\Raytracer.dir\Intersection.cpp.obj: CMakeFiles\Raytracer.dir\flags.make
-CMakeFiles\Raytracer.dir\Intersection.cpp.obj: ..\Intersection.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Raytracer.dir/Intersection.cpp.obj"
+CMakeFiles\Raytracer.dir\intersection.cpp.obj: CMakeFiles\Raytracer.dir\flags.make
+CMakeFiles\Raytracer.dir\intersection.cpp.obj: ..\intersection.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Raytracer.dir/intersection.cpp.obj"
 	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1422~1.279\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\Raytracer.dir\Intersection.cpp.obj /FdCMakeFiles\Raytracer.dir\ /FS -c C:\Users\Derek\CLionProjects\Raytracer\Intersection.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\Raytracer.dir\intersection.cpp.obj /FdCMakeFiles\Raytracer.dir\ /FS -c C:\Users\Derek\CLionProjects\Raytracer\intersection.cpp
 <<
 
-CMakeFiles\Raytracer.dir\Intersection.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Raytracer.dir/Intersection.cpp.i"
-	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1422~1.279\bin\Hostx86\x86\cl.exe > CMakeFiles\Raytracer.dir\Intersection.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Derek\CLionProjects\Raytracer\Intersection.cpp
+CMakeFiles\Raytracer.dir\intersection.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Raytracer.dir/intersection.cpp.i"
+	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1422~1.279\bin\Hostx86\x86\cl.exe > CMakeFiles\Raytracer.dir\intersection.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Derek\CLionProjects\Raytracer\intersection.cpp
 <<
 
-CMakeFiles\Raytracer.dir\Intersection.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Raytracer.dir/Intersection.cpp.s"
+CMakeFiles\Raytracer.dir\intersection.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Raytracer.dir/intersection.cpp.s"
 	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1422~1.279\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\Raytracer.dir\Intersection.cpp.s /c C:\Users\Derek\CLionProjects\Raytracer\Intersection.cpp
-<<
-
-CMakeFiles\Raytracer.dir\Helpers\Space\apoint.cpp.obj: CMakeFiles\Raytracer.dir\flags.make
-CMakeFiles\Raytracer.dir\Helpers\Space\apoint.cpp.obj: ..\Helpers\Space\apoint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Raytracer.dir/Helpers/Space/apoint.cpp.obj"
-	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1422~1.279\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\Raytracer.dir\Helpers\Space\apoint.cpp.obj /FdCMakeFiles\Raytracer.dir\ /FS -c C:\Users\Derek\CLionProjects\Raytracer\Helpers\Space\apoint.cpp
-<<
-
-CMakeFiles\Raytracer.dir\Helpers\Space\apoint.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Raytracer.dir/Helpers/Space/apoint.cpp.i"
-	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1422~1.279\bin\Hostx86\x86\cl.exe > CMakeFiles\Raytracer.dir\Helpers\Space\apoint.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Derek\CLionProjects\Raytracer\Helpers\Space\apoint.cpp
-<<
-
-CMakeFiles\Raytracer.dir\Helpers\Space\apoint.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Raytracer.dir/Helpers/Space/apoint.cpp.s"
-	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1422~1.279\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\Raytracer.dir\Helpers\Space\apoint.cpp.s /c C:\Users\Derek\CLionProjects\Raytracer\Helpers\Space\apoint.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\Raytracer.dir\intersection.cpp.s /c C:\Users\Derek\CLionProjects\Raytracer\intersection.cpp
 <<
 
 CMakeFiles\Raytracer.dir\Helpers\Space\point2.cpp.obj: CMakeFiles\Raytracer.dir\flags.make
 CMakeFiles\Raytracer.dir\Helpers\Space\point2.cpp.obj: ..\Helpers\Space\point2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Raytracer.dir/Helpers/Space/point2.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Raytracer.dir/Helpers/Space/point2.cpp.obj"
 	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1422~1.279\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\Raytracer.dir\Helpers\Space\point2.cpp.obj /FdCMakeFiles\Raytracer.dir\ /FS -c C:\Users\Derek\CLionProjects\Raytracer\Helpers\Space\point2.cpp
 <<
@@ -288,7 +269,7 @@ CMakeFiles\Raytracer.dir\Helpers\Space\point2.cpp.s: cmake_force
 
 CMakeFiles\Raytracer.dir\Helpers\Space\point3.cpp.obj: CMakeFiles\Raytracer.dir\flags.make
 CMakeFiles\Raytracer.dir\Helpers\Space\point3.cpp.obj: ..\Helpers\Space\point3.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Raytracer.dir/Helpers/Space/point3.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Raytracer.dir/Helpers/Space/point3.cpp.obj"
 	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1422~1.279\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\Raytracer.dir\Helpers\Space\point3.cpp.obj /FdCMakeFiles\Raytracer.dir\ /FS -c C:\Users\Derek\CLionProjects\Raytracer\Helpers\Space\point3.cpp
 <<
@@ -307,7 +288,7 @@ CMakeFiles\Raytracer.dir\Helpers\Space\point3.cpp.s: cmake_force
 
 CMakeFiles\Raytracer.dir\halfspace.cpp.obj: CMakeFiles\Raytracer.dir\flags.make
 CMakeFiles\Raytracer.dir\halfspace.cpp.obj: ..\halfspace.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Raytracer.dir/halfspace.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Raytracer.dir/halfspace.cpp.obj"
 	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1422~1.279\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\Raytracer.dir\halfspace.cpp.obj /FdCMakeFiles\Raytracer.dir\ /FS -c C:\Users\Derek\CLionProjects\Raytracer\halfspace.cpp
 <<
@@ -326,7 +307,7 @@ CMakeFiles\Raytracer.dir\halfspace.cpp.s: cmake_force
 
 CMakeFiles\Raytracer.dir\camera.cpp.obj: CMakeFiles\Raytracer.dir\flags.make
 CMakeFiles\Raytracer.dir\camera.cpp.obj: ..\camera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Raytracer.dir/camera.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Raytracer.dir/camera.cpp.obj"
 	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1422~1.279\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\Raytracer.dir\camera.cpp.obj /FdCMakeFiles\Raytracer.dir\ /FS -c C:\Users\Derek\CLionProjects\Raytracer\camera.cpp
 <<
@@ -345,7 +326,7 @@ CMakeFiles\Raytracer.dir\camera.cpp.s: cmake_force
 
 CMakeFiles\Raytracer.dir\scene.cpp.obj: CMakeFiles\Raytracer.dir\flags.make
 CMakeFiles\Raytracer.dir\scene.cpp.obj: ..\scene.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Raytracer.dir/scene.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Raytracer.dir/scene.cpp.obj"
 	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1422~1.279\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\Raytracer.dir\scene.cpp.obj /FdCMakeFiles\Raytracer.dir\ /FS -c C:\Users\Derek\CLionProjects\Raytracer\scene.cpp
 <<
@@ -364,7 +345,7 @@ CMakeFiles\Raytracer.dir\scene.cpp.s: cmake_force
 
 CMakeFiles\Raytracer.dir\radiance.cpp.obj: CMakeFiles\Raytracer.dir\flags.make
 CMakeFiles\Raytracer.dir\radiance.cpp.obj: ..\radiance.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Raytracer.dir/radiance.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Raytracer.dir/radiance.cpp.obj"
 	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1422~1.279\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\Raytracer.dir\radiance.cpp.obj /FdCMakeFiles\Raytracer.dir\ /FS -c C:\Users\Derek\CLionProjects\Raytracer\radiance.cpp
 <<
@@ -383,7 +364,7 @@ CMakeFiles\Raytracer.dir\radiance.cpp.s: cmake_force
 
 CMakeFiles\Raytracer.dir\shader.cpp.obj: CMakeFiles\Raytracer.dir\flags.make
 CMakeFiles\Raytracer.dir\shader.cpp.obj: ..\shader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Raytracer.dir/shader.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Raytracer.dir/shader.cpp.obj"
 	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1422~1.279\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\Raytracer.dir\shader.cpp.obj /FdCMakeFiles\Raytracer.dir\ /FS -c C:\Users\Derek\CLionProjects\Raytracer\shader.cpp
 <<
@@ -402,7 +383,7 @@ CMakeFiles\Raytracer.dir\shader.cpp.s: cmake_force
 
 CMakeFiles\Raytracer.dir\luminaire.cpp.obj: CMakeFiles\Raytracer.dir\flags.make
 CMakeFiles\Raytracer.dir\luminaire.cpp.obj: ..\luminaire.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Raytracer.dir/luminaire.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Raytracer.dir/luminaire.cpp.obj"
 	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1422~1.279\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\Raytracer.dir\luminaire.cpp.obj /FdCMakeFiles\Raytracer.dir\ /FS -c C:\Users\Derek\CLionProjects\Raytracer\luminaire.cpp
 <<
@@ -419,6 +400,101 @@ CMakeFiles\Raytracer.dir\luminaire.cpp.s: cmake_force
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\Raytracer.dir\luminaire.cpp.s /c C:\Users\Derek\CLionProjects\Raytracer\luminaire.cpp
 <<
 
+CMakeFiles\Raytracer.dir\_Shapes\plane.cpp.obj: CMakeFiles\Raytracer.dir\flags.make
+CMakeFiles\Raytracer.dir\_Shapes\plane.cpp.obj: "..\ Shapes\plane.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Raytracer.dir/_Shapes/plane.cpp.obj"
+	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1422~1.279\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\Raytracer.dir\_Shapes\plane.cpp.obj /FdCMakeFiles\Raytracer.dir\ /FS -c "C:\Users\Derek\CLionProjects\Raytracer\ Shapes\plane.cpp"
+<<
+
+CMakeFiles\Raytracer.dir\_Shapes\plane.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Raytracer.dir/_Shapes/plane.cpp.i"
+	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1422~1.279\bin\Hostx86\x86\cl.exe > CMakeFiles\Raytracer.dir\_Shapes\plane.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Derek\CLionProjects\Raytracer\ Shapes\plane.cpp"
+<<
+
+CMakeFiles\Raytracer.dir\_Shapes\plane.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Raytracer.dir/_Shapes/plane.cpp.s"
+	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1422~1.279\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\Raytracer.dir\_Shapes\plane.cpp.s /c "C:\Users\Derek\CLionProjects\Raytracer\ Shapes\plane.cpp"
+<<
+
+CMakeFiles\Raytracer.dir\_Shapes\sphere.cpp.obj: CMakeFiles\Raytracer.dir\flags.make
+CMakeFiles\Raytracer.dir\_Shapes\sphere.cpp.obj: "..\ Shapes\sphere.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/Raytracer.dir/_Shapes/sphere.cpp.obj"
+	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1422~1.279\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\Raytracer.dir\_Shapes\sphere.cpp.obj /FdCMakeFiles\Raytracer.dir\ /FS -c "C:\Users\Derek\CLionProjects\Raytracer\ Shapes\sphere.cpp"
+<<
+
+CMakeFiles\Raytracer.dir\_Shapes\sphere.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Raytracer.dir/_Shapes/sphere.cpp.i"
+	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1422~1.279\bin\Hostx86\x86\cl.exe > CMakeFiles\Raytracer.dir\_Shapes\sphere.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Derek\CLionProjects\Raytracer\ Shapes\sphere.cpp"
+<<
+
+CMakeFiles\Raytracer.dir\_Shapes\sphere.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Raytracer.dir/_Shapes/sphere.cpp.s"
+	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1422~1.279\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\Raytracer.dir\_Shapes\sphere.cpp.s /c "C:\Users\Derek\CLionProjects\Raytracer\ Shapes\sphere.cpp"
+<<
+
+CMakeFiles\Raytracer.dir\_Shapes\triangle.cpp.obj: CMakeFiles\Raytracer.dir\flags.make
+CMakeFiles\Raytracer.dir\_Shapes\triangle.cpp.obj: "..\ Shapes\triangle.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/Raytracer.dir/_Shapes/triangle.cpp.obj"
+	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1422~1.279\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\Raytracer.dir\_Shapes\triangle.cpp.obj /FdCMakeFiles\Raytracer.dir\ /FS -c "C:\Users\Derek\CLionProjects\Raytracer\ Shapes\triangle.cpp"
+<<
+
+CMakeFiles\Raytracer.dir\_Shapes\triangle.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Raytracer.dir/_Shapes/triangle.cpp.i"
+	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1422~1.279\bin\Hostx86\x86\cl.exe > CMakeFiles\Raytracer.dir\_Shapes\triangle.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Derek\CLionProjects\Raytracer\ Shapes\triangle.cpp"
+<<
+
+CMakeFiles\Raytracer.dir\_Shapes\triangle.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Raytracer.dir/_Shapes/triangle.cpp.s"
+	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1422~1.279\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\Raytracer.dir\_Shapes\triangle.cpp.s /c "C:\Users\Derek\CLionProjects\Raytracer\ Shapes\triangle.cpp"
+<<
+
+CMakeFiles\Raytracer.dir\_Shapes\halfspace.cpp.obj: CMakeFiles\Raytracer.dir\flags.make
+CMakeFiles\Raytracer.dir\_Shapes\halfspace.cpp.obj: "..\ Shapes\halfspace.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/Raytracer.dir/_Shapes/halfspace.cpp.obj"
+	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1422~1.279\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\Raytracer.dir\_Shapes\halfspace.cpp.obj /FdCMakeFiles\Raytracer.dir\ /FS -c "C:\Users\Derek\CLionProjects\Raytracer\ Shapes\halfspace.cpp"
+<<
+
+CMakeFiles\Raytracer.dir\_Shapes\halfspace.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Raytracer.dir/_Shapes/halfspace.cpp.i"
+	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1422~1.279\bin\Hostx86\x86\cl.exe > CMakeFiles\Raytracer.dir\_Shapes\halfspace.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Derek\CLionProjects\Raytracer\ Shapes\halfspace.cpp"
+<<
+
+CMakeFiles\Raytracer.dir\_Shapes\halfspace.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Raytracer.dir/_Shapes/halfspace.cpp.s"
+	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1422~1.279\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\Raytracer.dir\_Shapes\halfspace.cpp.s /c "C:\Users\Derek\CLionProjects\Raytracer\ Shapes\halfspace.cpp"
+<<
+
+CMakeFiles\Raytracer.dir\hit.cpp.obj: CMakeFiles\Raytracer.dir\flags.make
+CMakeFiles\Raytracer.dir\hit.cpp.obj: ..\hit.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/Raytracer.dir/hit.cpp.obj"
+	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1422~1.279\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\Raytracer.dir\hit.cpp.obj /FdCMakeFiles\Raytracer.dir\ /FS -c C:\Users\Derek\CLionProjects\Raytracer\hit.cpp
+<<
+
+CMakeFiles\Raytracer.dir\hit.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Raytracer.dir/hit.cpp.i"
+	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1422~1.279\bin\Hostx86\x86\cl.exe > CMakeFiles\Raytracer.dir\hit.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Derek\CLionProjects\Raytracer\hit.cpp
+<<
+
+CMakeFiles\Raytracer.dir\hit.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Raytracer.dir/hit.cpp.s"
+	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1422~1.279\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\Raytracer.dir\hit.cpp.s /c C:\Users\Derek\CLionProjects\Raytracer\hit.cpp
+<<
+
 # Object files for target Raytracer
 Raytracer_OBJECTS = \
 "CMakeFiles\Raytracer.dir\main.cpp.obj" \
@@ -430,8 +506,7 @@ Raytracer_OBJECTS = \
 "CMakeFiles\Raytracer.dir\Helpers\image.cpp.obj" \
 "CMakeFiles\Raytracer.dir\ray.cpp.obj" \
 "CMakeFiles\Raytracer.dir\target.cpp.obj" \
-"CMakeFiles\Raytracer.dir\Intersection.cpp.obj" \
-"CMakeFiles\Raytracer.dir\Helpers\Space\apoint.cpp.obj" \
+"CMakeFiles\Raytracer.dir\intersection.cpp.obj" \
 "CMakeFiles\Raytracer.dir\Helpers\Space\point2.cpp.obj" \
 "CMakeFiles\Raytracer.dir\Helpers\Space\point3.cpp.obj" \
 "CMakeFiles\Raytracer.dir\halfspace.cpp.obj" \
@@ -439,7 +514,12 @@ Raytracer_OBJECTS = \
 "CMakeFiles\Raytracer.dir\scene.cpp.obj" \
 "CMakeFiles\Raytracer.dir\radiance.cpp.obj" \
 "CMakeFiles\Raytracer.dir\shader.cpp.obj" \
-"CMakeFiles\Raytracer.dir\luminaire.cpp.obj"
+"CMakeFiles\Raytracer.dir\luminaire.cpp.obj" \
+"CMakeFiles\Raytracer.dir\_Shapes\plane.cpp.obj" \
+"CMakeFiles\Raytracer.dir\_Shapes\sphere.cpp.obj" \
+"CMakeFiles\Raytracer.dir\_Shapes\triangle.cpp.obj" \
+"CMakeFiles\Raytracer.dir\_Shapes\halfspace.cpp.obj" \
+"CMakeFiles\Raytracer.dir\hit.cpp.obj"
 
 # External object files for target Raytracer
 Raytracer_EXTERNAL_OBJECTS =
@@ -453,8 +533,7 @@ Raytracer.exe: CMakeFiles\Raytracer.dir\Helpers\rgb.cpp.obj
 Raytracer.exe: CMakeFiles\Raytracer.dir\Helpers\image.cpp.obj
 Raytracer.exe: CMakeFiles\Raytracer.dir\ray.cpp.obj
 Raytracer.exe: CMakeFiles\Raytracer.dir\target.cpp.obj
-Raytracer.exe: CMakeFiles\Raytracer.dir\Intersection.cpp.obj
-Raytracer.exe: CMakeFiles\Raytracer.dir\Helpers\Space\apoint.cpp.obj
+Raytracer.exe: CMakeFiles\Raytracer.dir\intersection.cpp.obj
 Raytracer.exe: CMakeFiles\Raytracer.dir\Helpers\Space\point2.cpp.obj
 Raytracer.exe: CMakeFiles\Raytracer.dir\Helpers\Space\point3.cpp.obj
 Raytracer.exe: CMakeFiles\Raytracer.dir\halfspace.cpp.obj
@@ -463,9 +542,14 @@ Raytracer.exe: CMakeFiles\Raytracer.dir\scene.cpp.obj
 Raytracer.exe: CMakeFiles\Raytracer.dir\radiance.cpp.obj
 Raytracer.exe: CMakeFiles\Raytracer.dir\shader.cpp.obj
 Raytracer.exe: CMakeFiles\Raytracer.dir\luminaire.cpp.obj
+Raytracer.exe: CMakeFiles\Raytracer.dir\_Shapes\plane.cpp.obj
+Raytracer.exe: CMakeFiles\Raytracer.dir\_Shapes\sphere.cpp.obj
+Raytracer.exe: CMakeFiles\Raytracer.dir\_Shapes\triangle.cpp.obj
+Raytracer.exe: CMakeFiles\Raytracer.dir\_Shapes\halfspace.cpp.obj
+Raytracer.exe: CMakeFiles\Raytracer.dir\hit.cpp.obj
 Raytracer.exe: CMakeFiles\Raytracer.dir\build.make
 Raytracer.exe: CMakeFiles\Raytracer.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable Raytracer.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Linking CXX executable Raytracer.exe"
 	Y:\Jetbrains\apps\CLion\ch-0\193.6015.37\bin\cmake\win\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\Raytracer.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x86\mt.exe --manifests  -- C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1422~1.279\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\Raytracer.dir\objects1.rsp @<<
  /out:Raytracer.exe /implib:Raytracer.lib /pdb:C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\Raytracer.pdb /version:0.0  /machine:X86 /debug /INCREMENTAL /subsystem:console kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<

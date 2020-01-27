@@ -84,16 +84,34 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/ Shapes/halfspace.cpp">
+			<Option target="Raytracer"/>
+		</Unit>
+		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/ Shapes/halfspace.h">
+			<Option target="Raytracer"/>
+		</Unit>
+		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/ Shapes/plane.cpp">
+			<Option target="Raytracer"/>
+		</Unit>
+		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/ Shapes/plane.h">
+			<Option target="Raytracer"/>
+		</Unit>
+		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/ Shapes/sphere.cpp">
+			<Option target="Raytracer"/>
+		</Unit>
+		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/ Shapes/sphere.h">
+			<Option target="Raytracer"/>
+		</Unit>
+		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/ Shapes/triangle.cpp">
+			<Option target="Raytracer"/>
+		</Unit>
+		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/ Shapes/triangle.h">
+			<Option target="Raytracer"/>
+		</Unit>
 		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/Helpers/Matrices/transform.cpp">
 			<Option target="Raytracer"/>
 		</Unit>
 		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/Helpers/Matrices/transform.h">
-			<Option target="Raytracer"/>
-		</Unit>
-		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/Helpers/Space/apoint.cpp">
-			<Option target="Raytracer"/>
-		</Unit>
-		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/Helpers/Space/apoint.h">
 			<Option target="Raytracer"/>
 		</Unit>
 		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/Helpers/Space/hvector.cpp">
@@ -138,22 +156,28 @@
 		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/Helpers/rgb.h">
 			<Option target="Raytracer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/Intersection.cpp">
-			<Option target="Raytracer"/>
-		</Unit>
-		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/Intersection.h">
-			<Option target="Raytracer"/>
-		</Unit>
 		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/camera.cpp">
 			<Option target="Raytracer"/>
 		</Unit>
 		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/camera.h">
 			<Option target="Raytracer"/>
 		</Unit>
+		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/constants.h">
+			<Option target="Raytracer"/>
+		</Unit>
 		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/halfspace.cpp">
 			<Option target="Raytracer"/>
 		</Unit>
 		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/halfspace.h">
+			<Option target="Raytracer"/>
+		</Unit>
+		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/hit.cpp">
+			<Option target="Raytracer"/>
+		</Unit>
+		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/intersection.cpp">
+			<Option target="Raytracer"/>
+		</Unit>
+		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/intersection.h">
 			<Option target="Raytracer"/>
 		</Unit>
 		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/luminaire.cpp">
