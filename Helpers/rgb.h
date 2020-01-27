@@ -5,18 +5,18 @@
 #ifndef RAYTRACER_RGB_H
 #define RAYTRACER_RGB_H
 
-
-class rgb {
+template<class T>
+class RGB {
 public:
-    float r;
-    float g;
-    float b;
+    T r;
+    T g;
+    T b;
 
-    rgb operator+=(rgb that);
-    rgb operator-=(rgb that);
-    rgb operator*=(rgb that);
-    rgb operator*=(float factor);
-    rgb operator/=(float factor);
+    RGB& operator+=(const RGB& that);
+    RGB& operator-=(const RGB& that);
+    RGB& operator*=(const RGB& that);
+    RGB& operator*=(const T& factor);
+    RGB& operator/=(const T& factor);
 };
 
 

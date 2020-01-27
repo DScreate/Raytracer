@@ -5,12 +5,18 @@
 #ifndef RAYTRACER_TRANSFORM_H
 #define RAYTRACER_TRANSFORM_H
 
-
-class transform {
+/*
+ * 4x4 Transform for general purpose use
+ * General design sourced from
+ * "Fundamentals of Computer Graphics, 4th Edition" by Steve Marschner and Peter Shirley
+ * pp. 9 & Ch. 6
+ */
+template<class T>
+class Transform {
     public:
 
-        float[][] components[4][4];
-        transform operator*=(transform that);
+        T components[4][4];
+        Transform operator*=(Transform that);
 };
 
 
