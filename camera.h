@@ -18,6 +18,12 @@ public:
      */
     Image<T> renderImage(Camera<T> camera, Scene<T> scene, int width, int height);
     Radiance<T> renderPixel(Camera<T> camera, Scene<T> scene, int width, int height);
+
+    /*
+     * u = (i + 0.5)/nx
+     * v = (j + 0.5)/ny
+     */
+    Ray<T> generateRay(T u, T v);
 };
 
 

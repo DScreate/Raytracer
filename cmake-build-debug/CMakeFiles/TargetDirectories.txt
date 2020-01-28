@@ -1,3 +1,3 @@
-C:/Users/Derek/CLionProjects/Raytracer/cmake-build-debug/CMakeFiles/Raytracer.dir
-C:/Users/Derek/CLionProjects/Raytracer/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Derek/CLionProjects/Raytracer/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/tessa/CLionProjects/Raytracer/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/tessa/CLionProjects/Raytracer/cmake-build-debug/CMakeFiles/Raytracer.dir
+/home/tessa/CLionProjects/Raytracer/cmake-build-debug/CMakeFiles/edit_cache.dir

@@ -12,6 +12,9 @@ public:
     T g;
     T b;
 
+    RGB() : r(255), g(255), b(255) {};
+    RGB(T _r, T _g, T _b) : r(_r), g(_g), b(_b) {};
+
     RGB& operator+=(const RGB& that);
     RGB& operator-=(const RGB& that);
     RGB& operator*=(const RGB& that);
