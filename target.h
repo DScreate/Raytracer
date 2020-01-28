@@ -6,7 +6,7 @@
 #define RAYTRACER_TARGET_H
 
 
-#include "Intersection.h"
+#include "intersection.h"
 #include "ray.h"
 #include "Helpers/Space/vector3.h"
 #include "Helpers/Space/point3.h"
@@ -14,8 +14,8 @@
 template<class T>
 class Target {
 public:
-    virtual Intersection firstIntersectionBetween(Ray<T> ray, float tMin, float tMax);
-    virtual Vector3<T> getNormal(Point3 point);
+    virtual Intersection<T>& firstIntersectionBetween(Ray<T>& ray, T& tMin, T& tMax);
+    virtual Vector3<T>& getNormal(Point3<T>& point);
 };
 
 

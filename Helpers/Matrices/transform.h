@@ -15,8 +15,8 @@ template<class T>
 class Transform {
     public:
 
-        T components[4][4];
-        Transform operator*=(Transform that);
+    T components[4][4];
+    Transform<T>& operator*=(Transform<T>& that);
 };
 
 

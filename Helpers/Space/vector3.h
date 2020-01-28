@@ -26,7 +26,9 @@ public:
 
     Vector3() : x(T(0)), y(T(0)), z(T(0)) {}
 
-    Vector3(const T& _x, const T& _y, const T& _z) : x(_x), y(_y), z(_z) {}
+    Vector3(const T& _x, const T& _y, const T& _z) : x(T(_x)), y(T(_y)), z(T(_z)) {}
+
+    Vector3(Vector3<T>& vector3) : Vector3(vector3.x, vector3.y, vector3.z) {}
 
     Vector3& operator+=(const Vector3& that);
     Vector3& operator-=(const Vector3& that);
@@ -36,6 +38,9 @@ public:
 
     T& Dot(Vector3& that);
     Vector3& Cross(Vector3& that);
+
+    T& Magnitude();
+    Vector3<T>& Orthonormal();
 
 };
 
@@ -51,6 +56,9 @@ template<class T>
 T& Dot(const Vector3<T>& Left, const Vector3<T>& Right) { return Vector3<T>(Left).Dot(Vector3<T>(Right)); }
 template<class T>
 Vector3<T>& Cross(const Vector3<T>& Left, const Vector3<T>& Right) { return Vector3<T>(Left).Cross(Vector3<T>(Right)); }
-
+template<class T>
+T& Magnitude(const Vector3<T>& vector3) { return vector3.Magnitude(); }
+template<class T>
+Vector3<T>& Normalize(const Vector3<T>& vector3) { return Vector3<T>}
 
 #endif //RAYTRACER_VECTOR3_H

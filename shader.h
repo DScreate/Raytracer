@@ -7,13 +7,13 @@
 
 
 #include "radiance.h"
-#include "Intersection.h"
+#include "intersection.h"
 #include "ray.h"
 #include "luminaire.h"
 
 template<class T>
 class Shader {
-    Radiance<T> directRadiance(Shader shader, Intersection intersection, Ray<T> incidentRay, Luminaire<T> luminaire);
+    Radiance<T>& directRadiance(Shader<T>& shader, Intersection<T>& intersection, Ray<T>& incidentRay, Luminaire<T>& luminaire);
 };
 
 

@@ -10,8 +10,8 @@
 
 template <class T>
 class Halfspace: Target<T> {
-    Intersection firstIntersectionBetween(Ray<T> ray, float tMin, float tMax) override;
-    Vector3<T> getNormal(Point3 point) override;
+    Intersection<T> firstIntersectionBetween(Ray<T> ray, float tMin, float tMax) override;
+    Vector3<T> getNormal(Point3<T> point) override;
 };
 
 

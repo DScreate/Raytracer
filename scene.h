@@ -8,12 +8,12 @@
 
 #include "ray.h"
 #include "radiance.h"
-#include "Intersection.h"
+#include "intersection.h"
 
 template<class T>
 class Scene {
-    Radiance<T> traceRay(Scene<T> scene, Ray<T> ray, float tMin);
-    Intersection firstIntersection(Scene<T> scene, Ray<T> ray, float tMin);
+    Radiance<T> traceRay(Scene<T> scene, Ray<T> ray, T& tMin);
+    Intersection<T> firstIntersection(Scene<T> scene, Ray<T> ray, T& tMin);
 };
 
 

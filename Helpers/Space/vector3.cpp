@@ -33,3 +33,13 @@ template<class T>
 Vector3<T>& Vector3<T>::Cross(Vector3 &that) {
     return Vector3<T>( this->y * that.z - this->z * that.y, this->z * that.x - this->x * that.z, this->x * that.y - this->y * that.x);
 }
+
+template<class T>
+T& Vector3<T>::Magnitude() {
+    return sqrt((this->x * this->x) + (this->y * this->y) + (this->z * this->z));
+}
+
+template<class T>
+Vector3<T>& Vector3<T>::Orthonormal() {
+    return this / (this->Magnitude());
+}
