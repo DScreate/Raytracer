@@ -82,79 +82,19 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/tessa/CLionProjects/Raytracer/Helpers/Matrices/transform.cpp">
-			<Option target="Raytracer"/>
-		</Unit>
-		<Unit filename="/home/tessa/CLionProjects/Raytracer/Helpers/Matrices/transform.h">
-			<Option target="Raytracer"/>
-		</Unit>
-		<Unit filename="/home/tessa/CLionProjects/Raytracer/Helpers/Space/apoint.cpp">
-			<Option target="Raytracer"/>
-		</Unit>
-		<Unit filename="/home/tessa/CLionProjects/Raytracer/Helpers/Space/apoint.h">
-			<Option target="Raytracer"/>
-		</Unit>
-		<Unit filename="/home/tessa/CLionProjects/Raytracer/Helpers/Space/hvector.cpp">
-			<Option target="Raytracer"/>
-		</Unit>
-		<Unit filename="/home/tessa/CLionProjects/Raytracer/Helpers/Space/hvector.h">
-			<Option target="Raytracer"/>
-		</Unit>
-		<Unit filename="/home/tessa/CLionProjects/Raytracer/Helpers/Space/point2.cpp">
-			<Option target="Raytracer"/>
-		</Unit>
-		<Unit filename="/home/tessa/CLionProjects/Raytracer/Helpers/Space/point2.h">
-			<Option target="Raytracer"/>
-		</Unit>
-		<Unit filename="/home/tessa/CLionProjects/Raytracer/Helpers/Space/point3.cpp">
-			<Option target="Raytracer"/>
-		</Unit>
-		<Unit filename="/home/tessa/CLionProjects/Raytracer/Helpers/Space/point3.h">
-			<Option target="Raytracer"/>
-		</Unit>
-		<Unit filename="/home/tessa/CLionProjects/Raytracer/Helpers/Space/vector2.cpp">
-			<Option target="Raytracer"/>
-		</Unit>
-		<Unit filename="/home/tessa/CLionProjects/Raytracer/Helpers/Space/vector2.h">
-			<Option target="Raytracer"/>
-		</Unit>
-		<Unit filename="/home/tessa/CLionProjects/Raytracer/Helpers/Space/vector3.cpp">
-			<Option target="Raytracer"/>
-		</Unit>
-		<Unit filename="/home/tessa/CLionProjects/Raytracer/Helpers/Space/vector3.h">
-			<Option target="Raytracer"/>
-		</Unit>
-		<Unit filename="/home/tessa/CLionProjects/Raytracer/Helpers/image.cpp">
-			<Option target="Raytracer"/>
-		</Unit>
-		<Unit filename="/home/tessa/CLionProjects/Raytracer/Helpers/image.h">
-			<Option target="Raytracer"/>
-		</Unit>
-		<Unit filename="/home/tessa/CLionProjects/Raytracer/Helpers/rgb.cpp">
-			<Option target="Raytracer"/>
-		</Unit>
-		<Unit filename="/home/tessa/CLionProjects/Raytracer/Helpers/rgb.h">
-			<Option target="Raytracer"/>
-		</Unit>
-		<Unit filename="/home/tessa/CLionProjects/Raytracer/Intersection.cpp">
-			<Option target="Raytracer"/>
-		</Unit>
-		<Unit filename="/home/tessa/CLionProjects/Raytracer/Intersection.h">
-			<Option target="Raytracer"/>
-		</Unit>
-		<Unit filename="/home/tessa/CLionProjects/Raytracer/camera.cpp">
-			<Option target="Raytracer"/>
-		</Unit>
 		<Unit filename="/home/tessa/CLionProjects/Raytracer/camera.h">
 			<Option target="Raytracer"/>
 		</Unit>
-		<Unit filename="/home/tessa/CLionProjects/Raytracer/halfspace.cpp">
+		<Unit filename="/home/tessa/CLionProjects/Raytracer/constants.h">
 			<Option target="Raytracer"/>
 		</Unit>
 		<Unit filename="/home/tessa/CLionProjects/Raytracer/halfspace.h">
 			<Option target="Raytracer"/>
 		</Unit>
-		<Unit filename="/home/tessa/CLionProjects/Raytracer/luminaire.cpp">
+		<Unit filename="/home/tessa/CLionProjects/Raytracer/hit.cpp">
+			<Option target="Raytracer"/>
+		</Unit>
+		<Unit filename="/home/tessa/CLionProjects/Raytracer/intersection.h">
 			<Option target="Raytracer"/>
 		</Unit>
 		<Unit filename="/home/tessa/CLionProjects/Raytracer/luminaire.h">
@@ -163,40 +103,19 @@
 		<Unit filename="/home/tessa/CLionProjects/Raytracer/main.cpp">
 			<Option target="Raytracer"/>
 		</Unit>
-		<Unit filename="/home/tessa/CLionProjects/Raytracer/radiance.cpp">
-			<Option target="Raytracer"/>
-		</Unit>
 		<Unit filename="/home/tessa/CLionProjects/Raytracer/radiance.h">
-			<Option target="Raytracer"/>
-		</Unit>
-		<Unit filename="/home/tessa/CLionProjects/Raytracer/ray.cpp">
 			<Option target="Raytracer"/>
 		</Unit>
 		<Unit filename="/home/tessa/CLionProjects/Raytracer/ray.h">
 			<Option target="Raytracer"/>
 		</Unit>
-		<Unit filename="/home/tessa/CLionProjects/Raytracer/scene.cpp">
-			<Option target="Raytracer"/>
-		</Unit>
 		<Unit filename="/home/tessa/CLionProjects/Raytracer/scene.h">
-			<Option target="Raytracer"/>
-		</Unit>
-		<Unit filename="/home/tessa/CLionProjects/Raytracer/shader.cpp">
 			<Option target="Raytracer"/>
 		</Unit>
 		<Unit filename="/home/tessa/CLionProjects/Raytracer/shader.h">
 			<Option target="Raytracer"/>
 		</Unit>
-		<Unit filename="/home/tessa/CLionProjects/Raytracer/target.cpp">
-			<Option target="Raytracer"/>
-		</Unit>
 		<Unit filename="/home/tessa/CLionProjects/Raytracer/target.h">
-			<Option target="Raytracer"/>
-		</Unit>
-		<Unit filename="/home/tessa/CLionProjects/Raytracer/triangle.cpp">
-			<Option target="Raytracer"/>
-		</Unit>
-		<Unit filename="/home/tessa/CLionProjects/Raytracer/triangle.h">
 			<Option target="Raytracer"/>
 		</Unit>
 		<Unit filename="/home/tessa/CLionProjects/Raytracer/CMakeLists.txt">

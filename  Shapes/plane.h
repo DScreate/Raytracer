@@ -9,10 +9,20 @@
 #include "../target.h"
 
 template<class T>
-class Plane: Target<T> {
-    Intersection<T>& firstIntersectionBetween(Ray<T>& ray, T& tMin, T& tMax) override;
-    Vector3<T>& getNormal(Point3<T>& point) override;
+class Plane: public Target<T> {
+    Intersection<T>& firstIntersectionBetween(const Ray<T> &ray, const T &tMin, const T &tMax) const override;
+    Vector3<T>& getNormal(const Vector3<T> &point) const override;
 };
+
+template<class T>
+Intersection<T> &Plane<T>::firstIntersectionBetween(const Ray<T> &ray, const T &tMin, const T &tMax) const {
+    return Intersection<T>();
+}
+
+template<class T>
+Vector3<T> &Plane<T>::getNormal(const Vector3<T> &point) const {
+    return Vector3<T>();
+}
 
 
 #endif //RAYTRACER_PLANE_H

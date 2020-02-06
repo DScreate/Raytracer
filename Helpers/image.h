@@ -27,18 +27,17 @@ public:
     std::vector<Color> pixels;
     Image(): width(256), height(256), pixels(256 * 256) {};
 
-    Image(int _width, int _height): width(_width), height(_height), pixels(_width * _height) {}
+    Image(const int _width, const int _height): width(_width), height(_height), pixels(_width * _height) {}
 
     //Image(): RGB<T>(RGB<T>() = {}) {};
 
     void initDummyData();
-    Color* getPixel(int x, int y);
+    [[nodiscard]] Color getPixel(int x, int y) const;
     void setPixel(int x, int y, const Color& rgb);
     void output();
+    void initDummyFast();
 };
 
-
-// TODO: Figure out why image is repeated/misshapen on non 256x256 images
 template<class T>
 void Image<T>::output() {
     std::ofstream imageFile;
@@ -50,10 +49,12 @@ void Image<T>::output() {
         imageFile << "P3" << std::endl;
         imageFile << width << " " << height << std::endl;
         imageFile << "255" << std::endl;
+
+        // TODO: write to output file as we compute pixel data!
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
-                Color* rgb = getPixel(x, y);
-                imageFile << rgb->r << " " << rgb->g << " " << rgb->b << std::endl;
+                Color rgb = getPixel(x, y);
+                imageFile << rgb.r << " " << rgb.g << " " << rgb.b << std::endl;
             }
         }
 
@@ -63,30 +64,62 @@ void Image<T>::output() {
 }
 
 template<class T>
-Color* Image<T>::getPixel(int x, int y) {
-    return &this->pixels[x + (y * width)];
+Color Image<T>::getPixel(const int x, const int y) const {
+    return this->pixels[x + (y * width)];
 }
 
 template<class T>
 void Image<T>::setPixel(int x, int y, const Color& rgb) {
-    *this->getPixel(x, y) = rgb;
+    this->pixels[x + (y * width)] = rgb;
 }
 
 template<class T>
 void Image<T>::initDummyData() {
-    for (int x = 0; x < width; ++x) {
-        for (int y = 0; y < height; ++y) {
-            int _x = x % 255;
-            int _y = y % 255;
-            this->setPixel(x, y, Color(_x % 255, _y % 255, 0));
-            /*
-            0   255   0 // green
-            0   0   255 // blue
-            255   255   0 //yellow
-            255   255   255 //white
-            0   0   0 //black
-             */
+    float xRatio = (float)width / 256;
+    float yRatio = (float)height / 256;
+    int _x = 0;
+    int _y = 0;
+    for (int y = 0; y < height; y++) {
+        for (int x = 0; x < width; x++) {
+            _x = x / xRatio;
+            _y = y / yRatio;
+            this->setPixel(width - x, y, Color(_x, _y, 0));
         }
+    }
+}
+
+template<class T>
+void Image<T>::initDummyFast() {
+
+
+    std::ofstream imageFile;
+    imageFile.open("image.ppm", std::ios::trunc);
+
+    if (imageFile.is_open()) {
+        std::cout << "File is open, now trying to print image" << std::endl;
+        // header of ppm file
+        imageFile << "P3" << std::endl;
+        imageFile << width << " " << height << std::endl;
+        imageFile << "255" << std::endl;
+
+
+        float xRatio = (float)width / 256;
+        float yRatio = (float)height / 256;
+        int _x = 0;
+        int _y = 0;
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+                _x = x / xRatio;
+                _y = y / yRatio;
+                int _z = (x + y) / (xRatio + yRatio);
+                this->setPixel(x, y, Color(_x, _y, _z));
+                Color rgb = getPixel(x, y);
+                imageFile << rgb.r << " " << rgb.g << " " << rgb.b << std::endl;
+            }
+        }
+
+        std::cout << "Printing complete, now closing file" << std::endl;
+        imageFile.close();
     }
 }
 

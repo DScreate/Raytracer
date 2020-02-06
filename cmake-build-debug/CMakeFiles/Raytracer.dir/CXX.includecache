@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/home/tessa/CLionProjects/Raytracer/ Shapes/sphere.h
+../target.h
+/home/tessa/CLionProjects/Raytracer/target.h
+
+/home/tessa/CLionProjects/Raytracer/Helpers/Space/vector3.h
+
 /home/tessa/CLionProjects/Raytracer/Helpers/image.h
 vector
 -
@@ -18,11 +24,45 @@ rgb.h
 
 /home/tessa/CLionProjects/Raytracer/Helpers/rgb.h
 
+/home/tessa/CLionProjects/Raytracer/intersection.h
+
 /home/tessa/CLionProjects/Raytracer/main.cpp
 iostream
 -
-fstream
--
 Helpers/image.h
 /home/tessa/CLionProjects/Raytracer/Helpers/image.h
+scene.h
+/home/tessa/CLionProjects/Raytracer/scene.h
+ Shapes/sphere.h
+/home/tessa/CLionProjects/Raytracer/ Shapes/sphere.h
+
+/home/tessa/CLionProjects/Raytracer/radiance.h
+
+/home/tessa/CLionProjects/Raytracer/ray.h
+Helpers/Space/vector3.h
+/home/tessa/CLionProjects/Raytracer/Helpers/Space/vector3.h
+Helpers/image.h
+/home/tessa/CLionProjects/Raytracer/Helpers/image.h
+
+/home/tessa/CLionProjects/Raytracer/scene.h
+vector
+-
+memory
+-
+ray.h
+/home/tessa/CLionProjects/Raytracer/ray.h
+radiance.h
+/home/tessa/CLionProjects/Raytracer/radiance.h
+intersection.h
+/home/tessa/CLionProjects/Raytracer/intersection.h
+target.h
+/home/tessa/CLionProjects/Raytracer/target.h
+
+/home/tessa/CLionProjects/Raytracer/target.h
+intersection.h
+/home/tessa/CLionProjects/Raytracer/intersection.h
+ray.h
+/home/tessa/CLionProjects/Raytracer/ray.h
+Helpers/Space/vector3.h
+/home/tessa/CLionProjects/Raytracer/Helpers/Space/vector3.h
 

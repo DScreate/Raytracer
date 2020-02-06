@@ -9,13 +9,12 @@
 #include "intersection.h"
 #include "ray.h"
 #include "Helpers/Space/vector3.h"
-#include "Helpers/Space/point3.h"
 
 template<class T>
 class Target {
 public:
-    virtual Intersection<T>& firstIntersectionBetween(Ray<T>& ray, T& tMin, T& tMax);
-    virtual Vector3<T>& getNormal(Point3<T>& point);
+    virtual Intersection<T> firstIntersectionBetween(const Ray<T> &ray, const T &tMin, const T &tMax) const = 0;
+    virtual Vector3<T> getNormal(const Vector3<T> &point) const = 0;
 };
 
 

@@ -12,7 +12,7 @@ public:
     T tMax;
     int numHits;
     Intersection<T>(): tMin(T(0)), tMax(T(0)), numHits(0) {}
-    Intersection<T>(const T& _tMin, const T& _tMax, const int& numHits) : tMin(_tMin), tMax(_tMax), numHits(_numHits) {}
+    Intersection<T>(const T &_tMin, const T &_tMax, const int &_numHits) : tMin(_tMin), tMax(_tMax), numHits(_numHits) {}
 };
 
 

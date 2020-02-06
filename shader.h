@@ -13,7 +13,7 @@
 
 template<class T>
 class Shader {
-    Radiance<T>& directRadiance(Shader<T>& shader, Intersection<T>& intersection, Ray<T>& incidentRay, Luminaire<T>& luminaire);
+    Radiance<T>& directRadiance(const Shader<T> &shader, const Intersection<T> &intersection, const Ray<T> &incidentRay, const Luminaire<T> &luminaire);
 };
 
 

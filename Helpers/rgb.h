@@ -8,18 +8,18 @@
 template<class T>
 class RGB {
 public:
-    T r;
-    T g;
-    T b;
+    int r;
+    int g;
+    int b;
 
     RGB() : r(255), g(255), b(255) {};
-    RGB(T _r, T _g, T _b) : r(_r), g(_g), b(_b) {};
+    RGB(const int &_r, const int &_g, const int &_b) : r(_r), g(_g), b(_b) {};
 
-    RGB& operator+=(const RGB& that);
-    RGB& operator-=(const RGB& that);
-    RGB& operator*=(const RGB& that);
-    RGB& operator*=(const T& factor);
-    RGB& operator/=(const T& factor);
+    RGB operator+=(const RGB &that) const;
+    RGB operator-=(const RGB &that) const;
+    RGB operator*=(const RGB &that) const;
+    RGB operator*=(const T &factor) const;
+    RGB operator/=(const T &factor) const;
 };
 
 

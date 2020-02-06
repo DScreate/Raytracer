@@ -57,9 +57,22 @@ include CMakeFiles/Raytracer.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Raytracer.dir/flags.make
 
+CMakeFiles/Raytracer.dir/hit.cpp.o: CMakeFiles/Raytracer.dir/flags.make
+CMakeFiles/Raytracer.dir/hit.cpp.o: ../hit.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tessa/CLionProjects/Raytracer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Raytracer.dir/hit.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Raytracer.dir/hit.cpp.o -c /home/tessa/CLionProjects/Raytracer/hit.cpp
+
+CMakeFiles/Raytracer.dir/hit.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Raytracer.dir/hit.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tessa/CLionProjects/Raytracer/hit.cpp > CMakeFiles/Raytracer.dir/hit.cpp.i
+
+CMakeFiles/Raytracer.dir/hit.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Raytracer.dir/hit.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tessa/CLionProjects/Raytracer/hit.cpp -o CMakeFiles/Raytracer.dir/hit.cpp.s
+
 CMakeFiles/Raytracer.dir/main.cpp.o: CMakeFiles/Raytracer.dir/flags.make
 CMakeFiles/Raytracer.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tessa/CLionProjects/Raytracer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Raytracer.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tessa/CLionProjects/Raytracer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Raytracer.dir/main.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Raytracer.dir/main.cpp.o -c /home/tessa/CLionProjects/Raytracer/main.cpp
 
 CMakeFiles/Raytracer.dir/main.cpp.i: cmake_force
@@ -70,302 +83,19 @@ CMakeFiles/Raytracer.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Raytracer.dir/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tessa/CLionProjects/Raytracer/main.cpp -o CMakeFiles/Raytracer.dir/main.cpp.s
 
-CMakeFiles/Raytracer.dir/Helpers/Space/vector2.cpp.o: CMakeFiles/Raytracer.dir/flags.make
-CMakeFiles/Raytracer.dir/Helpers/Space/vector2.cpp.o: ../Helpers/Space/vector2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tessa/CLionProjects/Raytracer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Raytracer.dir/Helpers/Space/vector2.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Raytracer.dir/Helpers/Space/vector2.cpp.o -c /home/tessa/CLionProjects/Raytracer/Helpers/Space/vector2.cpp
-
-CMakeFiles/Raytracer.dir/Helpers/Space/vector2.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Raytracer.dir/Helpers/Space/vector2.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tessa/CLionProjects/Raytracer/Helpers/Space/vector2.cpp > CMakeFiles/Raytracer.dir/Helpers/Space/vector2.cpp.i
-
-CMakeFiles/Raytracer.dir/Helpers/Space/vector2.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Raytracer.dir/Helpers/Space/vector2.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tessa/CLionProjects/Raytracer/Helpers/Space/vector2.cpp -o CMakeFiles/Raytracer.dir/Helpers/Space/vector2.cpp.s
-
-CMakeFiles/Raytracer.dir/Helpers/Space/vector3.cpp.o: CMakeFiles/Raytracer.dir/flags.make
-CMakeFiles/Raytracer.dir/Helpers/Space/vector3.cpp.o: ../Helpers/Space/vector3.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tessa/CLionProjects/Raytracer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Raytracer.dir/Helpers/Space/vector3.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Raytracer.dir/Helpers/Space/vector3.cpp.o -c /home/tessa/CLionProjects/Raytracer/Helpers/Space/vector3.cpp
-
-CMakeFiles/Raytracer.dir/Helpers/Space/vector3.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Raytracer.dir/Helpers/Space/vector3.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tessa/CLionProjects/Raytracer/Helpers/Space/vector3.cpp > CMakeFiles/Raytracer.dir/Helpers/Space/vector3.cpp.i
-
-CMakeFiles/Raytracer.dir/Helpers/Space/vector3.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Raytracer.dir/Helpers/Space/vector3.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tessa/CLionProjects/Raytracer/Helpers/Space/vector3.cpp -o CMakeFiles/Raytracer.dir/Helpers/Space/vector3.cpp.s
-
-CMakeFiles/Raytracer.dir/Helpers/Space/hvector.cpp.o: CMakeFiles/Raytracer.dir/flags.make
-CMakeFiles/Raytracer.dir/Helpers/Space/hvector.cpp.o: ../Helpers/Space/hvector.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tessa/CLionProjects/Raytracer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Raytracer.dir/Helpers/Space/hvector.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Raytracer.dir/Helpers/Space/hvector.cpp.o -c /home/tessa/CLionProjects/Raytracer/Helpers/Space/hvector.cpp
-
-CMakeFiles/Raytracer.dir/Helpers/Space/hvector.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Raytracer.dir/Helpers/Space/hvector.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tessa/CLionProjects/Raytracer/Helpers/Space/hvector.cpp > CMakeFiles/Raytracer.dir/Helpers/Space/hvector.cpp.i
-
-CMakeFiles/Raytracer.dir/Helpers/Space/hvector.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Raytracer.dir/Helpers/Space/hvector.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tessa/CLionProjects/Raytracer/Helpers/Space/hvector.cpp -o CMakeFiles/Raytracer.dir/Helpers/Space/hvector.cpp.s
-
-CMakeFiles/Raytracer.dir/Helpers/Matrices/transform.cpp.o: CMakeFiles/Raytracer.dir/flags.make
-CMakeFiles/Raytracer.dir/Helpers/Matrices/transform.cpp.o: ../Helpers/Matrices/transform.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tessa/CLionProjects/Raytracer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Raytracer.dir/Helpers/Matrices/transform.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Raytracer.dir/Helpers/Matrices/transform.cpp.o -c /home/tessa/CLionProjects/Raytracer/Helpers/Matrices/transform.cpp
-
-CMakeFiles/Raytracer.dir/Helpers/Matrices/transform.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Raytracer.dir/Helpers/Matrices/transform.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tessa/CLionProjects/Raytracer/Helpers/Matrices/transform.cpp > CMakeFiles/Raytracer.dir/Helpers/Matrices/transform.cpp.i
-
-CMakeFiles/Raytracer.dir/Helpers/Matrices/transform.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Raytracer.dir/Helpers/Matrices/transform.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tessa/CLionProjects/Raytracer/Helpers/Matrices/transform.cpp -o CMakeFiles/Raytracer.dir/Helpers/Matrices/transform.cpp.s
-
-CMakeFiles/Raytracer.dir/Helpers/rgb.cpp.o: CMakeFiles/Raytracer.dir/flags.make
-CMakeFiles/Raytracer.dir/Helpers/rgb.cpp.o: ../Helpers/rgb.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tessa/CLionProjects/Raytracer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Raytracer.dir/Helpers/rgb.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Raytracer.dir/Helpers/rgb.cpp.o -c /home/tessa/CLionProjects/Raytracer/Helpers/rgb.cpp
-
-CMakeFiles/Raytracer.dir/Helpers/rgb.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Raytracer.dir/Helpers/rgb.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tessa/CLionProjects/Raytracer/Helpers/rgb.cpp > CMakeFiles/Raytracer.dir/Helpers/rgb.cpp.i
-
-CMakeFiles/Raytracer.dir/Helpers/rgb.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Raytracer.dir/Helpers/rgb.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tessa/CLionProjects/Raytracer/Helpers/rgb.cpp -o CMakeFiles/Raytracer.dir/Helpers/rgb.cpp.s
-
-CMakeFiles/Raytracer.dir/Helpers/image.cpp.o: CMakeFiles/Raytracer.dir/flags.make
-CMakeFiles/Raytracer.dir/Helpers/image.cpp.o: ../Helpers/image.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tessa/CLionProjects/Raytracer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Raytracer.dir/Helpers/image.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Raytracer.dir/Helpers/image.cpp.o -c /home/tessa/CLionProjects/Raytracer/Helpers/image.cpp
-
-CMakeFiles/Raytracer.dir/Helpers/image.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Raytracer.dir/Helpers/image.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tessa/CLionProjects/Raytracer/Helpers/image.cpp > CMakeFiles/Raytracer.dir/Helpers/image.cpp.i
-
-CMakeFiles/Raytracer.dir/Helpers/image.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Raytracer.dir/Helpers/image.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tessa/CLionProjects/Raytracer/Helpers/image.cpp -o CMakeFiles/Raytracer.dir/Helpers/image.cpp.s
-
-CMakeFiles/Raytracer.dir/ray.cpp.o: CMakeFiles/Raytracer.dir/flags.make
-CMakeFiles/Raytracer.dir/ray.cpp.o: ../ray.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tessa/CLionProjects/Raytracer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Raytracer.dir/ray.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Raytracer.dir/ray.cpp.o -c /home/tessa/CLionProjects/Raytracer/ray.cpp
-
-CMakeFiles/Raytracer.dir/ray.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Raytracer.dir/ray.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tessa/CLionProjects/Raytracer/ray.cpp > CMakeFiles/Raytracer.dir/ray.cpp.i
-
-CMakeFiles/Raytracer.dir/ray.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Raytracer.dir/ray.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tessa/CLionProjects/Raytracer/ray.cpp -o CMakeFiles/Raytracer.dir/ray.cpp.s
-
-CMakeFiles/Raytracer.dir/target.cpp.o: CMakeFiles/Raytracer.dir/flags.make
-CMakeFiles/Raytracer.dir/target.cpp.o: ../target.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tessa/CLionProjects/Raytracer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Raytracer.dir/target.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Raytracer.dir/target.cpp.o -c /home/tessa/CLionProjects/Raytracer/target.cpp
-
-CMakeFiles/Raytracer.dir/target.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Raytracer.dir/target.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tessa/CLionProjects/Raytracer/target.cpp > CMakeFiles/Raytracer.dir/target.cpp.i
-
-CMakeFiles/Raytracer.dir/target.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Raytracer.dir/target.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tessa/CLionProjects/Raytracer/target.cpp -o CMakeFiles/Raytracer.dir/target.cpp.s
-
-CMakeFiles/Raytracer.dir/Intersection.cpp.o: CMakeFiles/Raytracer.dir/flags.make
-CMakeFiles/Raytracer.dir/Intersection.cpp.o: ../Intersection.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tessa/CLionProjects/Raytracer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Raytracer.dir/Intersection.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Raytracer.dir/Intersection.cpp.o -c /home/tessa/CLionProjects/Raytracer/Intersection.cpp
-
-CMakeFiles/Raytracer.dir/Intersection.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Raytracer.dir/Intersection.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tessa/CLionProjects/Raytracer/Intersection.cpp > CMakeFiles/Raytracer.dir/Intersection.cpp.i
-
-CMakeFiles/Raytracer.dir/Intersection.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Raytracer.dir/Intersection.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tessa/CLionProjects/Raytracer/Intersection.cpp -o CMakeFiles/Raytracer.dir/Intersection.cpp.s
-
-CMakeFiles/Raytracer.dir/Helpers/Space/apoint.cpp.o: CMakeFiles/Raytracer.dir/flags.make
-CMakeFiles/Raytracer.dir/Helpers/Space/apoint.cpp.o: ../Helpers/Space/apoint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tessa/CLionProjects/Raytracer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Raytracer.dir/Helpers/Space/apoint.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Raytracer.dir/Helpers/Space/apoint.cpp.o -c /home/tessa/CLionProjects/Raytracer/Helpers/Space/apoint.cpp
-
-CMakeFiles/Raytracer.dir/Helpers/Space/apoint.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Raytracer.dir/Helpers/Space/apoint.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tessa/CLionProjects/Raytracer/Helpers/Space/apoint.cpp > CMakeFiles/Raytracer.dir/Helpers/Space/apoint.cpp.i
-
-CMakeFiles/Raytracer.dir/Helpers/Space/apoint.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Raytracer.dir/Helpers/Space/apoint.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tessa/CLionProjects/Raytracer/Helpers/Space/apoint.cpp -o CMakeFiles/Raytracer.dir/Helpers/Space/apoint.cpp.s
-
-CMakeFiles/Raytracer.dir/Helpers/Space/point2.cpp.o: CMakeFiles/Raytracer.dir/flags.make
-CMakeFiles/Raytracer.dir/Helpers/Space/point2.cpp.o: ../Helpers/Space/point2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tessa/CLionProjects/Raytracer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Raytracer.dir/Helpers/Space/point2.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Raytracer.dir/Helpers/Space/point2.cpp.o -c /home/tessa/CLionProjects/Raytracer/Helpers/Space/point2.cpp
-
-CMakeFiles/Raytracer.dir/Helpers/Space/point2.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Raytracer.dir/Helpers/Space/point2.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tessa/CLionProjects/Raytracer/Helpers/Space/point2.cpp > CMakeFiles/Raytracer.dir/Helpers/Space/point2.cpp.i
-
-CMakeFiles/Raytracer.dir/Helpers/Space/point2.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Raytracer.dir/Helpers/Space/point2.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tessa/CLionProjects/Raytracer/Helpers/Space/point2.cpp -o CMakeFiles/Raytracer.dir/Helpers/Space/point2.cpp.s
-
-CMakeFiles/Raytracer.dir/Helpers/Space/point3.cpp.o: CMakeFiles/Raytracer.dir/flags.make
-CMakeFiles/Raytracer.dir/Helpers/Space/point3.cpp.o: ../Helpers/Space/point3.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tessa/CLionProjects/Raytracer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Raytracer.dir/Helpers/Space/point3.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Raytracer.dir/Helpers/Space/point3.cpp.o -c /home/tessa/CLionProjects/Raytracer/Helpers/Space/point3.cpp
-
-CMakeFiles/Raytracer.dir/Helpers/Space/point3.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Raytracer.dir/Helpers/Space/point3.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tessa/CLionProjects/Raytracer/Helpers/Space/point3.cpp > CMakeFiles/Raytracer.dir/Helpers/Space/point3.cpp.i
-
-CMakeFiles/Raytracer.dir/Helpers/Space/point3.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Raytracer.dir/Helpers/Space/point3.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tessa/CLionProjects/Raytracer/Helpers/Space/point3.cpp -o CMakeFiles/Raytracer.dir/Helpers/Space/point3.cpp.s
-
-CMakeFiles/Raytracer.dir/halfspace.cpp.o: CMakeFiles/Raytracer.dir/flags.make
-CMakeFiles/Raytracer.dir/halfspace.cpp.o: ../halfspace.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tessa/CLionProjects/Raytracer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Raytracer.dir/halfspace.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Raytracer.dir/halfspace.cpp.o -c /home/tessa/CLionProjects/Raytracer/halfspace.cpp
-
-CMakeFiles/Raytracer.dir/halfspace.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Raytracer.dir/halfspace.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tessa/CLionProjects/Raytracer/halfspace.cpp > CMakeFiles/Raytracer.dir/halfspace.cpp.i
-
-CMakeFiles/Raytracer.dir/halfspace.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Raytracer.dir/halfspace.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tessa/CLionProjects/Raytracer/halfspace.cpp -o CMakeFiles/Raytracer.dir/halfspace.cpp.s
-
-CMakeFiles/Raytracer.dir/camera.cpp.o: CMakeFiles/Raytracer.dir/flags.make
-CMakeFiles/Raytracer.dir/camera.cpp.o: ../camera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tessa/CLionProjects/Raytracer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Raytracer.dir/camera.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Raytracer.dir/camera.cpp.o -c /home/tessa/CLionProjects/Raytracer/camera.cpp
-
-CMakeFiles/Raytracer.dir/camera.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Raytracer.dir/camera.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tessa/CLionProjects/Raytracer/camera.cpp > CMakeFiles/Raytracer.dir/camera.cpp.i
-
-CMakeFiles/Raytracer.dir/camera.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Raytracer.dir/camera.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tessa/CLionProjects/Raytracer/camera.cpp -o CMakeFiles/Raytracer.dir/camera.cpp.s
-
-CMakeFiles/Raytracer.dir/scene.cpp.o: CMakeFiles/Raytracer.dir/flags.make
-CMakeFiles/Raytracer.dir/scene.cpp.o: ../scene.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tessa/CLionProjects/Raytracer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Raytracer.dir/scene.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Raytracer.dir/scene.cpp.o -c /home/tessa/CLionProjects/Raytracer/scene.cpp
-
-CMakeFiles/Raytracer.dir/scene.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Raytracer.dir/scene.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tessa/CLionProjects/Raytracer/scene.cpp > CMakeFiles/Raytracer.dir/scene.cpp.i
-
-CMakeFiles/Raytracer.dir/scene.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Raytracer.dir/scene.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tessa/CLionProjects/Raytracer/scene.cpp -o CMakeFiles/Raytracer.dir/scene.cpp.s
-
-CMakeFiles/Raytracer.dir/radiance.cpp.o: CMakeFiles/Raytracer.dir/flags.make
-CMakeFiles/Raytracer.dir/radiance.cpp.o: ../radiance.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tessa/CLionProjects/Raytracer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Raytracer.dir/radiance.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Raytracer.dir/radiance.cpp.o -c /home/tessa/CLionProjects/Raytracer/radiance.cpp
-
-CMakeFiles/Raytracer.dir/radiance.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Raytracer.dir/radiance.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tessa/CLionProjects/Raytracer/radiance.cpp > CMakeFiles/Raytracer.dir/radiance.cpp.i
-
-CMakeFiles/Raytracer.dir/radiance.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Raytracer.dir/radiance.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tessa/CLionProjects/Raytracer/radiance.cpp -o CMakeFiles/Raytracer.dir/radiance.cpp.s
-
-CMakeFiles/Raytracer.dir/shader.cpp.o: CMakeFiles/Raytracer.dir/flags.make
-CMakeFiles/Raytracer.dir/shader.cpp.o: ../shader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tessa/CLionProjects/Raytracer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Raytracer.dir/shader.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Raytracer.dir/shader.cpp.o -c /home/tessa/CLionProjects/Raytracer/shader.cpp
-
-CMakeFiles/Raytracer.dir/shader.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Raytracer.dir/shader.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tessa/CLionProjects/Raytracer/shader.cpp > CMakeFiles/Raytracer.dir/shader.cpp.i
-
-CMakeFiles/Raytracer.dir/shader.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Raytracer.dir/shader.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tessa/CLionProjects/Raytracer/shader.cpp -o CMakeFiles/Raytracer.dir/shader.cpp.s
-
-CMakeFiles/Raytracer.dir/luminaire.cpp.o: CMakeFiles/Raytracer.dir/flags.make
-CMakeFiles/Raytracer.dir/luminaire.cpp.o: ../luminaire.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tessa/CLionProjects/Raytracer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Raytracer.dir/luminaire.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Raytracer.dir/luminaire.cpp.o -c /home/tessa/CLionProjects/Raytracer/luminaire.cpp
-
-CMakeFiles/Raytracer.dir/luminaire.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Raytracer.dir/luminaire.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tessa/CLionProjects/Raytracer/luminaire.cpp > CMakeFiles/Raytracer.dir/luminaire.cpp.i
-
-CMakeFiles/Raytracer.dir/luminaire.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Raytracer.dir/luminaire.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tessa/CLionProjects/Raytracer/luminaire.cpp -o CMakeFiles/Raytracer.dir/luminaire.cpp.s
-
-CMakeFiles/Raytracer.dir/triangle.cpp.o: CMakeFiles/Raytracer.dir/flags.make
-CMakeFiles/Raytracer.dir/triangle.cpp.o: ../triangle.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tessa/CLionProjects/Raytracer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/Raytracer.dir/triangle.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Raytracer.dir/triangle.cpp.o -c /home/tessa/CLionProjects/Raytracer/triangle.cpp
-
-CMakeFiles/Raytracer.dir/triangle.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Raytracer.dir/triangle.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tessa/CLionProjects/Raytracer/triangle.cpp > CMakeFiles/Raytracer.dir/triangle.cpp.i
-
-CMakeFiles/Raytracer.dir/triangle.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Raytracer.dir/triangle.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tessa/CLionProjects/Raytracer/triangle.cpp -o CMakeFiles/Raytracer.dir/triangle.cpp.s
-
 # Object files for target Raytracer
 Raytracer_OBJECTS = \
-"CMakeFiles/Raytracer.dir/main.cpp.o" \
-"CMakeFiles/Raytracer.dir/Helpers/Space/vector2.cpp.o" \
-"CMakeFiles/Raytracer.dir/Helpers/Space/vector3.cpp.o" \
-"CMakeFiles/Raytracer.dir/Helpers/Space/hvector.cpp.o" \
-"CMakeFiles/Raytracer.dir/Helpers/Matrices/transform.cpp.o" \
-"CMakeFiles/Raytracer.dir/Helpers/rgb.cpp.o" \
-"CMakeFiles/Raytracer.dir/Helpers/image.cpp.o" \
-"CMakeFiles/Raytracer.dir/ray.cpp.o" \
-"CMakeFiles/Raytracer.dir/target.cpp.o" \
-"CMakeFiles/Raytracer.dir/Intersection.cpp.o" \
-"CMakeFiles/Raytracer.dir/Helpers/Space/apoint.cpp.o" \
-"CMakeFiles/Raytracer.dir/Helpers/Space/point2.cpp.o" \
-"CMakeFiles/Raytracer.dir/Helpers/Space/point3.cpp.o" \
-"CMakeFiles/Raytracer.dir/halfspace.cpp.o" \
-"CMakeFiles/Raytracer.dir/camera.cpp.o" \
-"CMakeFiles/Raytracer.dir/scene.cpp.o" \
-"CMakeFiles/Raytracer.dir/radiance.cpp.o" \
-"CMakeFiles/Raytracer.dir/shader.cpp.o" \
-"CMakeFiles/Raytracer.dir/luminaire.cpp.o" \
-"CMakeFiles/Raytracer.dir/triangle.cpp.o"
+"CMakeFiles/Raytracer.dir/hit.cpp.o" \
+"CMakeFiles/Raytracer.dir/main.cpp.o"
 
 # External object files for target Raytracer
 Raytracer_EXTERNAL_OBJECTS =
 
+Raytracer: CMakeFiles/Raytracer.dir/hit.cpp.o
 Raytracer: CMakeFiles/Raytracer.dir/main.cpp.o
-Raytracer: CMakeFiles/Raytracer.dir/Helpers/Space/vector2.cpp.o
-Raytracer: CMakeFiles/Raytracer.dir/Helpers/Space/vector3.cpp.o
-Raytracer: CMakeFiles/Raytracer.dir/Helpers/Space/hvector.cpp.o
-Raytracer: CMakeFiles/Raytracer.dir/Helpers/Matrices/transform.cpp.o
-Raytracer: CMakeFiles/Raytracer.dir/Helpers/rgb.cpp.o
-Raytracer: CMakeFiles/Raytracer.dir/Helpers/image.cpp.o
-Raytracer: CMakeFiles/Raytracer.dir/ray.cpp.o
-Raytracer: CMakeFiles/Raytracer.dir/target.cpp.o
-Raytracer: CMakeFiles/Raytracer.dir/Intersection.cpp.o
-Raytracer: CMakeFiles/Raytracer.dir/Helpers/Space/apoint.cpp.o
-Raytracer: CMakeFiles/Raytracer.dir/Helpers/Space/point2.cpp.o
-Raytracer: CMakeFiles/Raytracer.dir/Helpers/Space/point3.cpp.o
-Raytracer: CMakeFiles/Raytracer.dir/halfspace.cpp.o
-Raytracer: CMakeFiles/Raytracer.dir/camera.cpp.o
-Raytracer: CMakeFiles/Raytracer.dir/scene.cpp.o
-Raytracer: CMakeFiles/Raytracer.dir/radiance.cpp.o
-Raytracer: CMakeFiles/Raytracer.dir/shader.cpp.o
-Raytracer: CMakeFiles/Raytracer.dir/luminaire.cpp.o
-Raytracer: CMakeFiles/Raytracer.dir/triangle.cpp.o
 Raytracer: CMakeFiles/Raytracer.dir/build.make
 Raytracer: CMakeFiles/Raytracer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/tessa/CLionProjects/Raytracer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Linking CXX executable Raytracer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/tessa/CLionProjects/Raytracer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Raytracer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Raytracer.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
