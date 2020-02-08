@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/tessa/CLionProjects/Raytracer/hit.cpp" "/home/tessa/CLionProjects/Raytracer/cmake-build-debug/CMakeFiles/Raytracer.dir/hit.cpp.o"
-  "/home/tessa/CLionProjects/Raytracer/main.cpp" "/home/tessa/CLionProjects/Raytracer/cmake-build-debug/CMakeFiles/Raytracer.dir/main.cpp.o"
+  "C:/Users/Derek/CLionProjects/Raytracer/hit.cpp" "C:/Users/Derek/CLionProjects/Raytracer/cmake-build-debug/CMakeFiles/Raytracer.dir/hit.cpp.obj"
+  "C:/Users/Derek/CLionProjects/Raytracer/main.cpp" "C:/Users/Derek/CLionProjects/Raytracer/cmake-build-debug/CMakeFiles/Raytracer.dir/main.cpp.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "MSVC")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

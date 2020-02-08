@@ -41,7 +41,7 @@ public:
 template<class T>
 void Image<T>::output() {
     std::ofstream imageFile;
-    imageFile.open("image.ppm", std::ios::trunc);
+    imageFile.open("output_image.ppm", std::ios::trunc);
 
     if (imageFile.is_open()) {
         std::cout << "File is open, now trying to print image" << std::endl;
@@ -49,10 +49,8 @@ void Image<T>::output() {
         imageFile << "P3" << std::endl;
         imageFile << width << " " << height << std::endl;
         imageFile << "255" << std::endl;
-
-        // TODO: write to output file as we compute pixel data!
-        for (int x = 0; x < width; x++) {
-            for (int y = 0; y < height; y++) {
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
                 Color rgb = getPixel(x, y);
                 imageFile << rgb.r << " " << rgb.g << " " << rgb.b << std::endl;
             }
@@ -83,7 +81,8 @@ void Image<T>::initDummyData() {
         for (int x = 0; x < width; x++) {
             _x = x / xRatio;
             _y = y / yRatio;
-            this->setPixel(width - x, y, Color(_x, _y, 0));
+            int _z = (x + y) / (xRatio + yRatio);
+            this->setPixel(x, y, Color(_x, _y, _z));
         }
     }
 }

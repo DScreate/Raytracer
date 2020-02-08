@@ -26,9 +26,9 @@ public:
 
     Vector3() : x(T(0)), y(T(0)), z(T(0)) {}
 
-    Vector3(const T& _x, const T& _y, const T& _z) : x(T(_x)), y(T(_y)), z(T(_z)) {}
+    Vector3(const T &_x, const T &_y, const T &_z) : x(T(_x)), y(T(_y)), z(T(_z)) {}
 
-    Vector3(Vector3<T>& vector3) : Vector3(vector3.x, vector3.y, vector3.z) {}
+    Vector3(const Vector3<T> &vector3) : Vector3(vector3.x, vector3.y, vector3.z) {}
 
     Vector3<T> operator+=(const Vector3<T> &that) const;
     Vector3<T> operator-=(const Vector3<T> &that) const;

@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/tessa/CLionProjects/Raytracer/ Shapes/sphere.h
+C:/Users/Derek/CLionProjects/Raytracer/ Shapes/sphere.h
 ../target.h
-/home/tessa/CLionProjects/Raytracer/target.h
+C:/Users/Derek/CLionProjects/Raytracer/target.h
 
-/home/tessa/CLionProjects/Raytracer/Helpers/Space/vector3.h
+C:/Users/Derek/CLionProjects/Raytracer/Helpers/Space/vector3.h
 
-/home/tessa/CLionProjects/Raytracer/Helpers/image.h
+C:/Users/Derek/CLionProjects/Raytracer/Helpers/image.h
 vector
 -
 fstream
@@ -20,49 +20,49 @@ fstream
 iostream
 -
 rgb.h
-/home/tessa/CLionProjects/Raytracer/Helpers/rgb.h
+C:/Users/Derek/CLionProjects/Raytracer/Helpers/rgb.h
 
-/home/tessa/CLionProjects/Raytracer/Helpers/rgb.h
+C:/Users/Derek/CLionProjects/Raytracer/Helpers/rgb.h
 
-/home/tessa/CLionProjects/Raytracer/intersection.h
+C:/Users/Derek/CLionProjects/Raytracer/intersection.h
 
-/home/tessa/CLionProjects/Raytracer/main.cpp
+C:/Users/Derek/CLionProjects/Raytracer/main.cpp
 iostream
 -
 Helpers/image.h
-/home/tessa/CLionProjects/Raytracer/Helpers/image.h
+C:/Users/Derek/CLionProjects/Raytracer/Helpers/image.h
 scene.h
-/home/tessa/CLionProjects/Raytracer/scene.h
+C:/Users/Derek/CLionProjects/Raytracer/scene.h
  Shapes/sphere.h
-/home/tessa/CLionProjects/Raytracer/ Shapes/sphere.h
+C:/Users/Derek/CLionProjects/Raytracer/ Shapes/sphere.h
 
-/home/tessa/CLionProjects/Raytracer/radiance.h
+C:/Users/Derek/CLionProjects/Raytracer/radiance.h
 
-/home/tessa/CLionProjects/Raytracer/ray.h
+C:/Users/Derek/CLionProjects/Raytracer/ray.h
 Helpers/Space/vector3.h
-/home/tessa/CLionProjects/Raytracer/Helpers/Space/vector3.h
+C:/Users/Derek/CLionProjects/Raytracer/Helpers/Space/vector3.h
 Helpers/image.h
-/home/tessa/CLionProjects/Raytracer/Helpers/image.h
+C:/Users/Derek/CLionProjects/Raytracer/Helpers/image.h
 
-/home/tessa/CLionProjects/Raytracer/scene.h
+C:/Users/Derek/CLionProjects/Raytracer/scene.h
 vector
 -
 memory
 -
 ray.h
-/home/tessa/CLionProjects/Raytracer/ray.h
+C:/Users/Derek/CLionProjects/Raytracer/ray.h
 radiance.h
-/home/tessa/CLionProjects/Raytracer/radiance.h
+C:/Users/Derek/CLionProjects/Raytracer/radiance.h
 intersection.h
-/home/tessa/CLionProjects/Raytracer/intersection.h
+C:/Users/Derek/CLionProjects/Raytracer/intersection.h
 target.h
-/home/tessa/CLionProjects/Raytracer/target.h
+C:/Users/Derek/CLionProjects/Raytracer/target.h
 
-/home/tessa/CLionProjects/Raytracer/target.h
+C:/Users/Derek/CLionProjects/Raytracer/target.h
 intersection.h
-/home/tessa/CLionProjects/Raytracer/intersection.h
+C:/Users/Derek/CLionProjects/Raytracer/intersection.h
 ray.h
-/home/tessa/CLionProjects/Raytracer/ray.h
+C:/Users/Derek/CLionProjects/Raytracer/ray.h
 Helpers/Space/vector3.h
-/home/tessa/CLionProjects/Raytracer/Helpers/Space/vector3.h
+C:/Users/Derek/CLionProjects/Raytracer/Helpers/Space/vector3.h
 
