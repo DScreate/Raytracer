@@ -12,6 +12,11 @@
 
 template<class T>
 class Camera {
+private:
+    Vector3<T> u;
+    Vector3<T> v;
+    Vector3<T> n;
+
 public:
     Vector3<T> position;
 

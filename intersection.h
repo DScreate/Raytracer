@@ -10,9 +10,9 @@ class Intersection {
 public:
     T tMin;
     T tMax;
-    int numHits;
-    Intersection<T>(): tMin(T(0)), tMax(T(0)), numHits(0) {}
-    Intersection<T>(const T &_tMin, const T &_tMax, const int &_numHits) : tMin(_tMin), tMax(_tMax), numHits(_numHits) {}
+    bool hit;
+    Intersection<T>(): tMin(T(0)), tMax(T(0)), hit(false) {}
+    Intersection<T>(const T &_tMin, const T &_tMax, const bool &_hit) : tMin(_tMin), tMax(_tMax), hit(_hit) {}
 };
 
 

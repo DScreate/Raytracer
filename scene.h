@@ -34,12 +34,17 @@ public:
 
 template<class T>
 RGB<T> Scene<T>::traceRay(const Ray<T> &ray, const T &tMin) {
-    Intersection<T> intersection = scene.firstIntersection(ray, tMin);
-    if (intersection.numHits > 0) {
-        return intersection.target.material.illuminate(intersection, ray, scene);
+    Intersection<T> intersection = this->firstIntersection(ray, tMin);
+    if (intersection.hit) {
+        return intersection.target.material.illuminate(intersection, ray, this);
     } else {
         return this->backgroundRadiance;
     }
+}
+
+template<class T>
+RGB<T> traceRay(const Scene<T> &scene, const Ray<T> &ray, const T &tMin) {
+    return scene.traceRay(ray, tMin);
 }
 
 // TODO: Implement this so we do not have to create unique pointer in main
