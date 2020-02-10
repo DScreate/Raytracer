@@ -5,8 +5,9 @@
 #ifndef RAYTRACER_VECTOR3_H
 #define RAYTRACER_VECTOR3_H
 
+#include <cmath>
 
-/*
+/*tan
  * 3D Vector for general purpose use
  * General design sourced from
  * "Fundamentals of Computer Graphics, 4th Edition" by Steve Marschner and Peter Shirley
@@ -38,7 +39,7 @@ public:
 
     Vector3<T> &operator/=(T scalar);
 
-    T Dot(Vector3<T> &that) const;
+    T Dot(const Vector3<T> &that) const;
 
     Vector3<T> Cross(Vector3<T> &that) const;
 
@@ -82,7 +83,7 @@ Vector3<T> &Vector3<T>::operator/=(const T scalar) {
 }
 
 template<class T>
-T Vector3<T>::Dot(Vector3<T> &that) const {
+T Vector3<T>::Dot(const Vector3<T> &that) const {
     return T(this->x * that.x + this->y * that.y + this->z * that.z);
 }
 
@@ -113,14 +114,14 @@ Vector3<T> operator-(const Vector3<T> &Left, const Vector3<T> &Right) {
     return res -= Right;
 }
 
-template<class T, class V>
-Vector3<T> operator*(const Vector3<T> &vector3, const V scalar) {
+template<class T>
+Vector3<T> operator*(const Vector3<T> &vector3, const float scalar) {
     Vector3<T> res = vector3;
     return res *= scalar;
 }
 
-template<class T, class V>
-Vector3<T> operator/(const Vector3<T> &vector3, const V scalar) {
+template<class T>
+Vector3<T> operator/(const Vector3<T> &vector3, const float scalar) {
     Vector3<T> res = vector3;
     return res /= scalar;
 }

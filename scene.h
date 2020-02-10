@@ -24,7 +24,7 @@ public:
 
     int maxRayDistance = 1000;
 
-    Scene() : backgroundRadiance(102, 204, 255) {};
+    Scene() : backgroundRadiance(0, 0, 0) {};
 
     Scene(const RGB<T> &_backgroundColor) : backgroundRadiance(_backgroundColor) {};
     //Scene(vector<Target<T>> _targets) : targets(_targets) {};
@@ -42,7 +42,7 @@ Color Scene<T>::traceRay(const Ray<T> &ray, const T &tMin) {
     Intersection<T> intersection = firstIntersection(ray, tMin);
 
     if (intersection.hit) {
-        return Color(0, 0, 0);//intersection.target.material.illuminate(intersection, ray, this);
+        return Color(255, 255, 255);//intersection.target.material.illuminate(intersection, ray, this);
     }
     return backgroundRadiance;
 }

@@ -57,6 +57,18 @@ public:
             return res;
         }
 
+        auto plusT = (-B + sqrt(discriminant)) / (2 * A);
+        auto minusT = (-B + sqrt(discriminant)) / (2 * A);
+
+
+        if (plusT >= 0 & minusT >= 0) {
+            res.tMin = plusT > minusT ? plusT : minusT;
+        } else if (plusT >= 0) {
+            res.tMin = plusT;
+        } else if (minusT >= 0) {
+            res.tMin = minusT;
+        }
+
         res.hit = true;
         return res;
     }
