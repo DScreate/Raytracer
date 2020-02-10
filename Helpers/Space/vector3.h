@@ -30,44 +30,60 @@ public:
 
     Vector3(const Vector3<T> &vector3) : Vector3(vector3.x, vector3.y, vector3.z) {}
 
-    Vector3<T> operator+=(const Vector3<T> &that) const;
-    Vector3<T> operator-=(const Vector3<T> &that) const;
+    Vector3<T> &operator+=(const Vector3<T> &that);
 
-    Vector3<T> operator*=(const T &scalar) const;
-    Vector3<T> operator/=(const T &scalar) const;
+    Vector3<T> &operator-=(const Vector3<T> &that);
+
+    Vector3<T> &operator*=(T scalar);
+
+    Vector3<T> &operator/=(T scalar);
 
     T Dot(Vector3<T> &that) const;
+
     Vector3<T> Cross(Vector3<T> &that) const;
 
     T Magnitude() const;
+
     Vector3<T> Orthonormal() const;
 
 };
 
 
 template<class T>
-Vector3<T> Vector3<T>::operator+=(const Vector3<T> &that) const {
-    return Vector3<T>(this->x + that.x, this->z + that.y, this->z + that.z);
+Vector3<T> &Vector3<T>::operator+=(const Vector3<T> &that) {
+    this->x += that.x;
+    this->y += that.y;
+    this->z += that.z;
+    return *this;
 }
 
 template<class T>
-Vector3<T> Vector3<T>::operator-=(const Vector3<T> &that) const {
-    return Vector3<T>(this->x - that.x, this->y - that.y, this->z - that.z);
+Vector3<T> &Vector3<T>::operator-=(const Vector3<T> &that) {
+    this->x -= that.x;
+    this->y -= that.y;
+    this->z -= that.z;
+    return *this;
 }
 
 template<class T>
-Vector3<T> Vector3<T>::operator*=(const T &scalar) const {
-    return Vector3<T>(this->x * scalar, this->y * scalar, this->z * scalar);
+Vector3<T> &Vector3<T>::operator*=(const T scalar) {
+    this->x *= scalar;
+    this->y *= scalar;
+    this->z *= scalar;
+    return *this;
 }
 
 template<class T>
-Vector3<T> Vector3<T>::operator/=(const T &scalar) const {
-    return Vector3<T>(this->x / scalar, this->y / scalar, this->z / scalar);
+Vector3<T> &Vector3<T>::operator/=(const T scalar) {
+    this->x /= scalar;
+    this->y /= scalar;
+    this->z /= scalar;
+    return *this;
 }
 
 template<class T>
 T Vector3<T>::Dot(Vector3<T> &that) const {
-    return T(this->x * that.x + this->y * that.y, this->z * that.z);
+    return T(this->x * that.x + this->y * that.y + this->z * that.z);
 }
 
 template<class T>
@@ -82,23 +98,54 @@ T Vector3<T>::Magnitude() const {
 
 template<class T>
 Vector3<T> Vector3<T>::Orthonormal() const {
-    return this / (this->Magnitude());
+    return *this / (this->Magnitude());
 }
 
 template<class T>
-Vector3<T> operator+(const Vector3<T> &Left, const Vector3<T> &Right) { return Left += Right; }
+Vector3<T> operator+(const Vector3<T> &Left, const Vector3<T> &Right) {
+    Vector3<T> res = Left;
+    return res += Right;
+}
+
 template<class T>
-Vector3<T> operator-(const Vector3<T> &Left, const Vector3<T> &Right) { return Left -= Right; }
+Vector3<T> operator-(const Vector3<T> &Left, const Vector3<T> &Right) {
+    Vector3<T> res = Left;
+    return res -= Right;
+}
+
+template<class T, class V>
+Vector3<T> operator*(const Vector3<T> &vector3, const V scalar) {
+    Vector3<T> res = vector3;
+    return res *= scalar;
+}
+
+template<class T, class V>
+Vector3<T> operator/(const Vector3<T> &vector3, const V scalar) {
+    Vector3<T> res = vector3;
+    return res /= scalar;
+}
+
 template<class T>
-Vector3<T>& operator*(const Vector3<T> &vector3, const T &scalar) { return vector3 *= scalar; }
+T Dot(const Vector3<T> &Left, const Vector3<T> &Right) {
+    Vector3<T> res = Left;
+    return res.Dot(Right);
+}
+
 template<class T>
-Vector3<T>& operator/(const Vector3<T> &vector3, const T &scalar) { return vector3 /= scalar; }
+Vector3<T> Cross(const Vector3<T> &Left, const Vector3<T> &Right) {
+    Vector3<T> res = Left;
+    return res.Cross(Right);
+}
+
 template<class T>
-T& Dot(const Vector3<T> &Left, const Vector3<T> &Right) { return Left.Dot(Right); }
+T Magnitude(const Vector3<T> &vector3) {
+    Vector3<T> res = vector3;
+    return res.Magnitude();
+}
+
 template<class T>
-Vector3<T>& Cross(const Vector3<T> &Left, const Vector3<T> &Right) { return Left.Cross(Right); }
-template<class T>
-T& Magnitude(const Vector3<T> &vector3) { return vector3.Magnitude(); }
-template<class T>
-Vector3<T>& Normalize(const Vector3<T> &vector3) { return vector3.Orthonormal(); }
+Vector3<T> Normalize(const Vector3<T> &vector3) {
+    Vector3<T> res = vector3;
+    return res.Orthonormal();
+}
 #endif //RAYTRACER_VECTOR3_H

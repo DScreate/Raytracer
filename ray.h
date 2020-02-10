@@ -27,8 +27,10 @@ public:
     T tMin;
     T tMax;
 
-    Ray() : origin(), direction(), distance(T(0)), tMin(0), tMax(1000) {};
-    Ray(const Vector3<T>& _origin, const Vector3<T>& _direction, const T _distance, const T _tMin = 0, const T _tMax = 1000):
+    Ray() : origin(), direction(), distance(T(1)), tMin(0), tMax(1000) {};
+
+    Ray(const Vector3<T> &_origin, const Vector3<T> &_direction, const T _distance, const T _tMin = 0,
+        const T _tMax = 1000) :
             origin(_origin), direction(_direction), distance(_distance), tMin(_tMin), tMax(_tMax) {};
 };
 

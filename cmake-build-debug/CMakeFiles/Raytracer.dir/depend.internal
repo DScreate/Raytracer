@@ -8,6 +8,7 @@ CMakeFiles/Raytracer.dir/main.cpp.obj
  C:/Users/Derek/CLionProjects/Raytracer/Helpers/Space/vector3.h
  C:/Users/Derek/CLionProjects/Raytracer/Helpers/image.h
  C:/Users/Derek/CLionProjects/Raytracer/Helpers/rgb.h
+ C:/Users/Derek/CLionProjects/Raytracer/camera.h
  C:/Users/Derek/CLionProjects/Raytracer/intersection.h
  C:/Users/Derek/CLionProjects/Raytracer/main.cpp
  C:/Users/Derek/CLionProjects/Raytracer/radiance.h

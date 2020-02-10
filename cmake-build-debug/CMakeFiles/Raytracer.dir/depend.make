@@ -7,6 +7,7 @@ CMakeFiles\Raytracer.dir\main.cpp.obj: "..\ Shapes\sphere.h"
 CMakeFiles\Raytracer.dir\main.cpp.obj: ..\Helpers\Space\vector3.h
 CMakeFiles\Raytracer.dir\main.cpp.obj: ..\Helpers\image.h
 CMakeFiles\Raytracer.dir\main.cpp.obj: ..\Helpers\rgb.h
+CMakeFiles\Raytracer.dir\main.cpp.obj: ..\camera.h
 CMakeFiles\Raytracer.dir\main.cpp.obj: ..\intersection.h
 CMakeFiles\Raytracer.dir\main.cpp.obj: ..\main.cpp
 CMakeFiles\Raytracer.dir\main.cpp.obj: ..\radiance.h

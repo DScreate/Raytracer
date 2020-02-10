@@ -9,9 +9,10 @@
 #include "../target.h"
 
 template<class T>
-class Triangle: public Target<T> {
+class Triangle : public Target {
     Intersection<T> firstIntersectionBetween(const Ray<T> &ray, const T &tMin, const T &tMax) const override;
-    Vector3<T> getNormal(const Vector3<T>& point) const override;
+
+    Vector3<T> getNormal(const Vector3<T> &point) const override;
 };
 
 //TODO: Finish this

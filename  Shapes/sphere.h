@@ -8,13 +8,14 @@
 #include "../target.h"
 
 template<class T>
-class Sphere: public Target<T> {
+class Sphere : public Target {
 public:
     Vector3<T> center;
     T radius;
 
-    Sphere(): center(Vector3<T>(T(0), T(0), T(0))), radius(T(1)) {};
-    Sphere(const Vector3<T> &_center, const T & _radius) : radius(_radius), center(_center) {};
+    Sphere() : center(Vector3<T>(T(0), T(0), T(0))), radius(T(1)) {};
+
+    Sphere(const Vector3<T> &_center, const T &_radius) : radius(_radius), center(_center) {};
     /*
      * center c = (xc, yc, zc) and radius R can be represented by the implicit equation
      * (x - xc)^2 + (y - yc)^2 + (z - zc)^2 - R^2 = 0
@@ -28,44 +29,38 @@ public:
 
     // TODO
     Vector3<T> getNormal(const Vector3<T> &point) const {
-        return point - center;
+        return (point - center) * 2;
     }
 
     Intersection<T> firstIntersectionBetween(const Ray<T> &ray, const T &tMin, const T &tMax) const {
-        return Intersection<T>();
+        Intersection<T> res = Intersection<T>(tMin, tMax, false);
+        // a sphere with center c~ = (xc, yc, zc) and radius R
+        // can also be written as (p~ - c~) - (p~ - c~) - R^2 = 0
+        // If we plug points on the ray p~(t) = e~ + td~
+        // we get:
+        // (e~ + td~ - c~) * (e~ + td~ - c~) - R^2 = 0
+        // Remember: e is the ray's origin and t is the distance.
+        // d is also (s - e) aka direction
+        // A = 1;
+        // B = 2(d_ * (o - c));
+        // C = abs(o - c)^2 - R^2);
+        // t = {-B +- root(B^2 - 4AC)} / 2A
+
+        // first check if discriminant is negative
+        // if so, ray and object do not intersect
+        auto A = 1;
+        auto B = (ray.direction.Dot(ray.origin - center)) * 2;
+        auto C = ((ray.origin - center).Dot(ray.origin - center)) - pow(radius, 2);
+        auto discriminant = pow(B, 2) - 4 * A * C;
+        if (discriminant < 0) {
+            res.hit = false;
+            return res;
+        }
+
+        res.hit = true;
+        return res;
     }
 };
-
-/*
- *
- */
-/*
-template<class T>
-Intersection<T>& Sphere<T>::firstIntersectionBetween(Ray<T> &ray, T &tMin, T &tMax) {
-    // a sphere with center c~ = (xc, yc, zc) and radius R
-    // can also be written as (p~ - c~) - (p~ - c~) - R^2 = 0
-    // If we plug points on the ray p~(t) = e~ + td~
-    // we get:
-    // (e~ + td~ - c~) * (e~ + td~ - c~) - R^2 = 0
-    // Remember: e is the ray's origin and t is the distance.
-    // d is also (s - e) aka direction
-    // A = 1;
-    // B = 2(d_ * (o - c));
-    // C = abs(o - c)^2 - R^2);
-    // t = {-B +- root(B^2 - 4AC)} / 2A
-
-    // first check if discriminant is negative
-    // if so, ray and object do not intersect
-    T A = 1;
-    T B = 2(ray.direction * (ray.origin - this->center));
-    if(B < 0)
-        return &Intersection(tMin, tMax, 0);
-
-    T C = abs(ray.origin - this->center)^2 - this->radius^2;
-
-}
- */
-
 
 
 template<class T>

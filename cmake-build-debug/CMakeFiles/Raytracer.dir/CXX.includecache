@@ -24,6 +24,14 @@ C:/Users/Derek/CLionProjects/Raytracer/Helpers/rgb.h
 
 C:/Users/Derek/CLionProjects/Raytracer/Helpers/rgb.h
 
+C:/Users/Derek/CLionProjects/Raytracer/camera.h
+Helpers/image.h
+C:/Users/Derek/CLionProjects/Raytracer/Helpers/image.h
+scene.h
+C:/Users/Derek/CLionProjects/Raytracer/scene.h
+radiance.h
+C:/Users/Derek/CLionProjects/Raytracer/radiance.h
+
 C:/Users/Derek/CLionProjects/Raytracer/intersection.h
 
 C:/Users/Derek/CLionProjects/Raytracer/main.cpp
@@ -35,6 +43,8 @@ scene.h
 C:/Users/Derek/CLionProjects/Raytracer/scene.h
  Shapes/sphere.h
 C:/Users/Derek/CLionProjects/Raytracer/ Shapes/sphere.h
+camera.h
+C:/Users/Derek/CLionProjects/Raytracer/camera.h
 
 C:/Users/Derek/CLionProjects/Raytracer/radiance.h
 
@@ -57,6 +67,8 @@ intersection.h
 C:/Users/Derek/CLionProjects/Raytracer/intersection.h
 target.h
 C:/Users/Derek/CLionProjects/Raytracer/target.h
+ Shapes/sphere.h
+C:/Users/Derek/CLionProjects/Raytracer/ Shapes/sphere.h
 
 C:/Users/Derek/CLionProjects/Raytracer/target.h
 intersection.h
