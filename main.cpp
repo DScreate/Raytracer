@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Helpers/image.h"
 #include "scene.h"
-#include " Shapes/sphere.h"
+#include "Shapes/sphere.h"
 #include "camera.h"
 
 int main() {

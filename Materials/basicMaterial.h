@@ -1,0 +1,27 @@
+//
+// Created by tessa on 2/10/20.
+//
+
+#include "material.h"
+
+#ifndef RAYTRACER_BASICMATERIAL_H
+#define RAYTRACER_BASICMATERIAL_H
+
+#endif //RAYTRACER_BASICMATERIAL_H
+
+template<class T>
+class BasicMaterial : public Material<T> {
+public:
+    Color basicColor;
+
+    BasicMaterial<T>() : basicColor(255, 255, 255) {};
+
+    Color illuminate(const Intersection<T> &_intersection, const Ray<T> &_ray, const Scene<T> &_scene) const override;
+
+};
+
+template<class T>
+Color
+BasicMaterial<T>::illuminate(const Intersection<T> &_intersection, const Ray<T> &_ray, const Scene<T> &_scene) const {
+    return basicColor;
+}

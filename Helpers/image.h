@@ -9,6 +9,7 @@
 #include <fstream>
 #include <iostream>
 #include "rgb.h"
+#include "typedefs.h"
 
 /*
  * Image class for display pixel data
@@ -16,7 +17,6 @@
  * "Fundamentals of Computer Graphics, 4th Edition" by Steve Marschner and Peter Shirley
  * pp. 9
  */
-typedef RGB<int> Color;
 
 template<class T>
 class Image {

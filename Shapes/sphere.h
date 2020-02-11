@@ -57,16 +57,23 @@ public:
             return res;
         }
 
-        auto plusT = (-B + sqrt(discriminant)) / (2 * A);
-        auto minusT = (-B + sqrt(discriminant)) / (2 * A);
+
+        if (discriminant > 0) {
+            auto plusT = (-B + sqrt(discriminant)) / (2 * A);
+            auto minusT = (-B + sqrt(discriminant)) / (2 * A);
+            // two roots
+            res.tMin = std::min(plusT, minusT);
+        } else {
+            // one root
+            res.tMin = -B / (2 * A);
+        }
+
+        res.point = ray.origin + ray.direction * ray.distance;
+        res.target = this;
 
 
-        if (plusT >= 0 & minusT >= 0) {
-            res.tMin = plusT > minusT ? plusT : minusT;
-        } else if (plusT >= 0) {
-            res.tMin = plusT;
-        } else if (minusT >= 0) {
-            res.tMin = minusT;
+        if (res.tMin < tMin || res.tMin > tMax) {
+            return res;
         }
 
         res.hit = true;

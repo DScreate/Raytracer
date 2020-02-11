@@ -11,9 +11,11 @@
 #include "radiance.h"
 #include "intersection.h"
 #include "target.h"
-#include " Shapes/sphere.h"
+#include "Shapes/sphere.h"
+#include "Helpers/typedefs.h"
 
 using std::vector;
+typedef ATarget<float> Target;
 
 template<class T>
 class Scene {
@@ -42,7 +44,7 @@ Color Scene<T>::traceRay(const Ray<T> &ray, const T &tMin) {
     Intersection<T> intersection = firstIntersection(ray, tMin);
 
     if (intersection.hit) {
-        return Color(255, 255, 255);//intersection.target.material.illuminate(intersection, ray, this);
+        return intersection.target->material->illuminate();
     }
     return backgroundRadiance;
 }
