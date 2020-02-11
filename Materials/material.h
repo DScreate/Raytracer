@@ -8,7 +8,6 @@
 
 template<class T>
 class Intersection;
-
 template<class T>
 class Scene;
 

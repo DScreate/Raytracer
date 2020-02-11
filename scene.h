@@ -12,6 +12,7 @@
 #include "intersection.h"
 #include "target.h"
 #include "Shapes/sphere.h"
+#include "Lighting/luminaire.h"
 
 using std::vector;
 
@@ -20,6 +21,7 @@ class Scene {
 public:
 
     vector<Target *> targets;
+    vector<Luminaire<T> *> luminaires;
     Color backgroundRadiance;
 
     int maxRayDistance = 1000;
@@ -60,7 +62,7 @@ void Scene<T>::addTarget(Target<T> &_target) {
 }
  */
 
-// TODO: Double check this on conforming to Dr. Lewis' slide?
+// TODO: Double check this on conforming to Dr. Lewis' slide? We may be continuing on with the Ray intersection when we don't need to
 template<class T>
 Intersection<T> Scene<T>::firstIntersection(const Ray<T> &ray, const T &tMin) {
     int tMax = maxRayDistance;

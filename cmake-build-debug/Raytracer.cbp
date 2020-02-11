@@ -84,6 +84,30 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/Helpers/RGBA.h">
+			<Option target="Raytracer"/>
+		</Unit>
+		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/Helpers/typedefs.h">
+			<Option target="Raytracer"/>
+		</Unit>
+		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/Lighting/directionalLuminaire.h">
+			<Option target="Raytracer"/>
+		</Unit>
+		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/Lighting/luminaire.h">
+			<Option target="Raytracer"/>
+		</Unit>
+		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/Materials/basicMaterial.h">
+			<Option target="Raytracer"/>
+		</Unit>
+		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/Materials/diffuserShader.h">
+			<Option target="Raytracer"/>
+		</Unit>
+		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/Materials/material.h">
+			<Option target="Raytracer"/>
+		</Unit>
+		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/Materials/shader.h">
+			<Option target="Raytracer"/>
+		</Unit>
 		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/camera.h">
 			<Option target="Raytracer"/>
 		</Unit>
@@ -96,9 +120,6 @@
 		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/intersection.h">
 			<Option target="Raytracer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/luminaire.h">
-			<Option target="Raytracer"/>
-		</Unit>
 		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/main.cpp">
 			<Option target="Raytracer"/>
 		</Unit>
@@ -109,9 +130,6 @@
 			<Option target="Raytracer"/>
 		</Unit>
 		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/scene.h">
-			<Option target="Raytracer"/>
-		</Unit>
-		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/shader.h">
 			<Option target="Raytracer"/>
 		</Unit>
 		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/target.h">

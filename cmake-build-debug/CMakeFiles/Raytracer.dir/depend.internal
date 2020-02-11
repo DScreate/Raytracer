@@ -4,10 +4,16 @@
 CMakeFiles/Raytracer.dir/hit.cpp.obj
  C:/Users/Derek/CLionProjects/Raytracer/hit.cpp
 CMakeFiles/Raytracer.dir/main.cpp.obj
- C:/Users/Derek/CLionProjects/Raytracer/ Shapes/sphere.h
  C:/Users/Derek/CLionProjects/Raytracer/Helpers/Space/vector3.h
  C:/Users/Derek/CLionProjects/Raytracer/Helpers/image.h
  C:/Users/Derek/CLionProjects/Raytracer/Helpers/rgb.h
+ C:/Users/Derek/CLionProjects/Raytracer/Helpers/typedefs.h
+ C:/Users/Derek/CLionProjects/Raytracer/Lighting/luminaire.h
+ C:/Users/Derek/CLionProjects/Raytracer/Materials/basicMaterial.h
+ C:/Users/Derek/CLionProjects/Raytracer/Materials/diffuserShader.h
+ C:/Users/Derek/CLionProjects/Raytracer/Materials/material.h
+ C:/Users/Derek/CLionProjects/Raytracer/Materials/shader.h
+ C:/Users/Derek/CLionProjects/Raytracer/Shapes/sphere.h
  C:/Users/Derek/CLionProjects/Raytracer/camera.h
  C:/Users/Derek/CLionProjects/Raytracer/intersection.h
  C:/Users/Derek/CLionProjects/Raytracer/main.cpp

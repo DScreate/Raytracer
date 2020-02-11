@@ -6,11 +6,9 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Derek/CLionProjects/Raytracer/ Shapes/sphere.h
-../target.h
-C:/Users/Derek/CLionProjects/Raytracer/target.h
-
 C:/Users/Derek/CLionProjects/Raytracer/Helpers/Space/vector3.h
+cmath
+-
 
 C:/Users/Derek/CLionProjects/Raytracer/Helpers/image.h
 vector
@@ -21,10 +19,56 @@ iostream
 -
 rgb.h
 C:/Users/Derek/CLionProjects/Raytracer/Helpers/rgb.h
+typedefs.h
+C:/Users/Derek/CLionProjects/Raytracer/Helpers/typedefs.h
 
 C:/Users/Derek/CLionProjects/Raytracer/Helpers/rgb.h
+iostream
+-
+
+C:/Users/Derek/CLionProjects/Raytracer/Helpers/typedefs.h
+
+C:/Users/Derek/CLionProjects/Raytracer/Lighting/luminaire.h
+
+C:/Users/Derek/CLionProjects/Raytracer/Materials/basicMaterial.h
+material.h
+C:/Users/Derek/CLionProjects/Raytracer/Materials/material.h
+../Helpers/rgb.h
+C:/Users/Derek/CLionProjects/Raytracer/Helpers/rgb.h
+../ray.h
+C:/Users/Derek/CLionProjects/Raytracer/ray.h
+
+C:/Users/Derek/CLionProjects/Raytracer/Materials/diffuserShader.h
+shader.h
+C:/Users/Derek/CLionProjects/Raytracer/Materials/shader.h
+
+C:/Users/Derek/CLionProjects/Raytracer/Materials/material.h
+
+C:/Users/Derek/CLionProjects/Raytracer/Materials/shader.h
+material.h
+C:/Users/Derek/CLionProjects/Raytracer/Materials/material.h
+../Lighting/luminaire.h
+C:/Users/Derek/CLionProjects/Raytracer/Lighting/luminaire.h
+../Helpers/rgb.h
+C:/Users/Derek/CLionProjects/Raytracer/Helpers/rgb.h
+../Helpers/Space/vector3.h
+C:/Users/Derek/CLionProjects/Raytracer/Helpers/Space/vector3.h
+../ray.h
+C:/Users/Derek/CLionProjects/Raytracer/ray.h
+../intersection.h
+C:/Users/Derek/CLionProjects/Raytracer/intersection.h
+../scene.h
+C:/Users/Derek/CLionProjects/Raytracer/scene.h
+
+C:/Users/Derek/CLionProjects/Raytracer/Shapes/sphere.h
+algorithm
+-
+../target.h
+C:/Users/Derek/CLionProjects/Raytracer/target.h
 
 C:/Users/Derek/CLionProjects/Raytracer/camera.h
+cmath
+-
 Helpers/image.h
 C:/Users/Derek/CLionProjects/Raytracer/Helpers/image.h
 scene.h
@@ -33,6 +77,8 @@ radiance.h
 C:/Users/Derek/CLionProjects/Raytracer/radiance.h
 
 C:/Users/Derek/CLionProjects/Raytracer/intersection.h
+target.h
+C:/Users/Derek/CLionProjects/Raytracer/target.h
 
 C:/Users/Derek/CLionProjects/Raytracer/main.cpp
 iostream
@@ -41,10 +87,14 @@ Helpers/image.h
 C:/Users/Derek/CLionProjects/Raytracer/Helpers/image.h
 scene.h
 C:/Users/Derek/CLionProjects/Raytracer/scene.h
- Shapes/sphere.h
-C:/Users/Derek/CLionProjects/Raytracer/ Shapes/sphere.h
+Shapes/sphere.h
+C:/Users/Derek/CLionProjects/Raytracer/Shapes/sphere.h
 camera.h
 C:/Users/Derek/CLionProjects/Raytracer/camera.h
+Materials/basicMaterial.h
+C:/Users/Derek/CLionProjects/Raytracer/Materials/basicMaterial.h
+Materials/diffuserShader.h
+C:/Users/Derek/CLionProjects/Raytracer/Materials/diffuserShader.h
 
 C:/Users/Derek/CLionProjects/Raytracer/radiance.h
 
@@ -67,14 +117,16 @@ intersection.h
 C:/Users/Derek/CLionProjects/Raytracer/intersection.h
 target.h
 C:/Users/Derek/CLionProjects/Raytracer/target.h
- Shapes/sphere.h
-C:/Users/Derek/CLionProjects/Raytracer/ Shapes/sphere.h
+Shapes/sphere.h
+C:/Users/Derek/CLionProjects/Raytracer/Shapes/sphere.h
+Lighting/luminaire.h
+C:/Users/Derek/CLionProjects/Raytracer/Lighting/luminaire.h
 
 C:/Users/Derek/CLionProjects/Raytracer/target.h
-intersection.h
-C:/Users/Derek/CLionProjects/Raytracer/intersection.h
 ray.h
 C:/Users/Derek/CLionProjects/Raytracer/ray.h
 Helpers/Space/vector3.h
 C:/Users/Derek/CLionProjects/Raytracer/Helpers/Space/vector3.h
+Materials/material.h
+C:/Users/Derek/CLionProjects/Raytracer/Materials/material.h
 

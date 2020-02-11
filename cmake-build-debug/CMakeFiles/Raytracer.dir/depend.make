@@ -3,10 +3,16 @@
 
 CMakeFiles\Raytracer.dir\hit.cpp.obj: ..\hit.cpp
 
-CMakeFiles\Raytracer.dir\main.cpp.obj: "..\ Shapes\sphere.h"
 CMakeFiles\Raytracer.dir\main.cpp.obj: ..\Helpers\Space\vector3.h
 CMakeFiles\Raytracer.dir\main.cpp.obj: ..\Helpers\image.h
 CMakeFiles\Raytracer.dir\main.cpp.obj: ..\Helpers\rgb.h
+CMakeFiles\Raytracer.dir\main.cpp.obj: ..\Helpers\typedefs.h
+CMakeFiles\Raytracer.dir\main.cpp.obj: ..\Lighting\luminaire.h
+CMakeFiles\Raytracer.dir\main.cpp.obj: ..\Materials\basicMaterial.h
+CMakeFiles\Raytracer.dir\main.cpp.obj: ..\Materials\diffuserShader.h
+CMakeFiles\Raytracer.dir\main.cpp.obj: ..\Materials\material.h
+CMakeFiles\Raytracer.dir\main.cpp.obj: ..\Materials\shader.h
+CMakeFiles\Raytracer.dir\main.cpp.obj: ..\Shapes\sphere.h
 CMakeFiles\Raytracer.dir\main.cpp.obj: ..\camera.h
 CMakeFiles\Raytracer.dir\main.cpp.obj: ..\intersection.h
 CMakeFiles\Raytracer.dir\main.cpp.obj: ..\main.cpp
