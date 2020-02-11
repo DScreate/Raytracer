@@ -5,7 +5,8 @@
 #ifndef RAYTRACER_INTERSECTION_H
 #define RAYTRACER_INTERSECTION_H
 
-#include "Helpers/typedefs.h"
+
+#include "target.h"
 
 template<class T>
 class Intersection {

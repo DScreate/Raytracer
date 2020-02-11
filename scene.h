@@ -12,10 +12,8 @@
 #include "intersection.h"
 #include "target.h"
 #include "Shapes/sphere.h"
-#include "Helpers/typedefs.h"
 
 using std::vector;
-typedef ATarget<float> Target;
 
 template<class T>
 class Scene {
@@ -44,7 +42,7 @@ Color Scene<T>::traceRay(const Ray<T> &ray, const T &tMin) {
     Intersection<T> intersection = firstIntersection(ray, tMin);
 
     if (intersection.hit) {
-        return intersection.target->material->illuminate();
+        return intersection.target->material->illuminate(intersection, ray, *this);
     }
     return backgroundRadiance;
 }
@@ -62,16 +60,20 @@ void Scene<T>::addTarget(Target<T> &_target) {
 }
  */
 
+// TODO: Double check this on conforming to Dr. Lewis' slide?
 template<class T>
 Intersection<T> Scene<T>::firstIntersection(const Ray<T> &ray, const T &tMin) {
     int tMax = maxRayDistance;
+    Intersection<T> candidate = Intersection<T>();
+    Intersection<T> intersection;
+    candidate.tMin = maxRayDistance;
     for (const auto &item : this->targets) {
-        Intersection<T> intersection = item->firstIntersectionBetween(ray, tMin, tMax);
-        if (intersection.hit) {
-            return intersection;
+        intersection = item->firstIntersectionBetween(ray, tMin, tMax);
+        if (intersection.hit && intersection.tMin < candidate.tMin) {
+            candidate = intersection;
         }
     }
-    return Intersection<T>();
+    return candidate;
 }
 
 

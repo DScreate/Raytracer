@@ -3,6 +3,8 @@
 //
 
 #include "material.h"
+#include "../Helpers/rgb.h"
+#include "../ray.h"
 
 #ifndef RAYTRACER_BASICMATERIAL_H
 #define RAYTRACER_BASICMATERIAL_H

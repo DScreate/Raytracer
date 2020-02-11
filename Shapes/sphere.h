@@ -5,6 +5,7 @@
 #ifndef RAYTRACER_SPHERE_H
 #define RAYTRACER_SPHERE_H
 
+#include <algorithm>
 #include "../target.h"
 
 template<class T>

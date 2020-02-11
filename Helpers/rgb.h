@@ -13,14 +13,20 @@ public:
     int b;
 
     RGB() : r(255), g(255), b(255) {};
+
     RGB(const int &_r, const int &_g, const int &_b) : r(_r), g(_g), b(_b) {};
 
     RGB operator+=(const RGB &that) const;
+
     RGB operator-=(const RGB &that) const;
+
     RGB operator*=(const RGB &that) const;
+
     RGB operator*=(const T &factor) const;
+
     RGB operator/=(const T &factor) const;
 };
 
+typedef RGB<float> Color;
 
 #endif //RAYTRACER_RGB_H

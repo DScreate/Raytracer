@@ -5,9 +5,8 @@
 #ifndef RAYTRACER_TYPEDEFS_H
 #define RAYTRACER_TYPEDEFS_H
 
-#include "../target.h"
+//#include "../target.h"
 
-typedef ATarget<float> Target;
-typedef RGB<float> Color;
+
 
 #endif //RAYTRACER_TYPEDEFS_H
