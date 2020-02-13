@@ -17,7 +17,7 @@ class Intersection;
 template<class T>
 class ATarget {
 public:
-    Material<T> *material;
+    std::vector<Material<T> *> material;
 
     virtual Intersection<T> firstIntersectionBetween(const Ray<T> &ray, const T &tMin, const T &tMax) const = 0;
 

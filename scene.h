@@ -23,7 +23,7 @@ public:
     vector<Target *> targets;
     vector<Luminaire<T> *> luminaires;
     Color backgroundRadiance;
-
+    T ambientRefractiveIndex = T(1.);
     int maxRayDistance = 1000;
 
     Scene() : backgroundRadiance(0, 0, 0) {};
@@ -47,8 +47,12 @@ Color Scene<T>::traceRay(const Ray<T> &ray, const T &tMin) {
 
     Intersection<T> intersection = firstIntersection(ray, tMin);
 
+    Color result = Color();
     if (intersection.hit) {
-        return intersection.target->material->illuminate(intersection, ray, *this);
+        for (Material<T> *material : intersection.target->material) {
+            result += material->illuminate(intersection, ray, *this);
+        }
+        return result;
     }
     return backgroundRadiance;
 }

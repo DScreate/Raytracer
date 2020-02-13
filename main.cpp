@@ -24,11 +24,15 @@ int main() {
     mainScene.backgroundRadiance = Color(.65, .75, .95);
 
     DiffuseShader<float> testMat1 = DiffuseShader<float>();
+
+    DiffuseShader<float> noColorDiffuse = DiffuseShader<float>();
+    noColorDiffuse.reflectivity = Color(0, 0, 0);
+
     testMat1.reflectivity = Color(1, 0, 0);
     Sphere<float> testSphere1 = Sphere<float>();
     testSphere1.radius = 5;
     testSphere1.center = Vector3<float>(0, 0, -10);
-    testSphere1.material = &testMat1;
+    testSphere1.material.push_back(&testMat1);
     mainScene.targets.push_back(&testSphere1);
 
 
@@ -45,8 +49,8 @@ int main() {
     testMat2.reflectivity = Color(0, 1, 0);
     Sphere<float> testSphere2 = Sphere<float>();
     testSphere2.radius = 2;
-    testSphere2.center = Vector3<float>(-3, 0, 15);
-    testSphere2.material = &testMat2;
+    testSphere2.center = Vector3<float>(-3, -5, 15);
+    testSphere2.material.push_back(&testMat2);
     mainScene.targets.push_back(&testSphere2);
 
 
@@ -54,37 +58,35 @@ int main() {
     testMat3.reflectivity = Color(0, 0, 1);
     Sphere<float> testSphere3 = Sphere<float>();
     testSphere3.radius = 5;
-    testSphere3.center = Vector3<float>(15, 0, 15);
-    testSphere3.material = &testMat3;
+    testSphere3.center = Vector3<float>(15, 8, 15);
+    testSphere3.material.push_back(&testMat3);
     mainScene.targets.push_back(&testSphere3);
-
-    DiffuseShader<float> testMat4 = DiffuseShader<float>();
-    testMat4.reflectivity = Color(0, 0.8f, 0.55f);
 
 
     Sphere<float> bigSphere = Sphere<float>();
     bigSphere.radius = 100;
     bigSphere.center = Vector3<float>(0, -105, -1);
-    bigSphere.material = &copper;
+    bigSphere.material.push_back(&copper);
+    //bigSphere.material.push_back(&noColorDiffuse);
     mainScene.targets.push_back(&bigSphere);
 
     Sphere<float> bigSphere2 = Sphere<float>();
     bigSphere2.radius = 10;
     bigSphere2.center = Vector3<float>(-2, 20, -1);
-    bigSphere2.material = &silver;
+    bigSphere2.material.push_back(&silver);
     mainScene.targets.push_back(&bigSphere2);
 
     Sphere<float> testSphere4 = Sphere<float>();
     testSphere4.radius = 5;
     testSphere4.center = Vector3<float>(5, 0, 5);
-    testSphere4.material = &pureRef;
+    testSphere4.material.push_back(&pureRef);
     mainScene.targets.push_back(&testSphere4);
 
 
     Sphere<float> testSphere5 = Sphere<float>();
     testSphere5.radius = 8;
     testSphere5.center = Vector3<float>(-12, 7, -10);
-    testSphere5.material = &copper;
+    testSphere5.material.push_back(&copper);
     mainScene.targets.push_back(&testSphere5);
 
 
@@ -103,6 +105,7 @@ int main() {
     //Vector3<float> camPosition = Vector3<float>(50, 100, 75);
     //Vector3<float> camPosition = Vector3<float>(0, 0, 0);
     Vector3<float> camPosition = Vector3<float>(-15, 15, 35);
+    //Vector3<float> camPosition = Vector3<float>(-15, 45, 35);
 
     Vector3<float> camLookAt = Vector3<float>(0, 0, 0);
     Vector3<float> camViewUp = Vector3<float>(0, 1, 0);

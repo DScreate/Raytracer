@@ -6,6 +6,6 @@
 #define RAYTRACER_CONSTANTS_H
 
 const double EPSILON = 1e-2;
-const double MAX_RAY_DEPTH = 12;
+const double MAX_RAY_DEPTH = 24;
 
 #endif //RAYTRACER_CONSTANTS_H

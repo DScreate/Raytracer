@@ -37,8 +37,6 @@ Color Shader<T>::directRadiance(Intersection<T> _intersection, Ray<T> _incidentR
     Vector3<T> towardsCamera = _incidentRay.direction.Orthonormal();
     Vector3<T> normal = _intersection.getNormal().Orthonormal();
     Vector3<T> towardsLuminaire = (_luminaire.towardsLum(_intersection.point)).Orthonormal();
-    auto temp = _luminaire.irradiance(_intersection.point, normal);
-    auto check = normal.Dot(towardsLuminaire);
     auto tempDot = std::max(0.f, normal.Dot(towardsLuminaire));
     return ((brdf(towardsLuminaire, normal, towardsCamera) / PI) * _luminaire.intensity * _luminaire.lightColor *
             tempDot);

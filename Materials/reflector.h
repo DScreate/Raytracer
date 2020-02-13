@@ -18,8 +18,6 @@ public:
 
     Color indirectRadiance(Intersection<T> _intersection, Ray<T> _incidentRay, Scene<T> _scene) const override;
 
-    Color
-    illuminate(const Intersection<T> &_intersection, const Ray<T> &_incidentRay, const Scene<T> &_scene) const override;
 };
 
 template<class T>
@@ -36,6 +34,7 @@ Color Reflector<T>::indirectRadiance(Intersection<T> _intersection, Ray<T> _inci
     return reflectivity * _scene.traceRay(reflectedRay, EPSILON);
 }
 
+/*
 template<class T>
 Color
 Reflector<T>::illuminate(const Intersection<T> &_intersection, const Ray<T> &_incidentRay,
@@ -56,5 +55,6 @@ Reflector<T>::illuminate(const Intersection<T> &_intersection, const Ray<T> &_in
     }
     return color;
 }
+*/
 
 #endif //RAYTRACER_REFLECTOR_H
