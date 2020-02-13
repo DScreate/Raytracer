@@ -39,6 +39,8 @@ public:
 
     Vector3<T> &operator/=(T scalar);
 
+    std::ostream &operator<<(std::ostream &stream) const;
+
     T Dot(const Vector3<T> &that) const;
 
     Vector3<T> Cross(Vector3<T> &that) const;
@@ -82,6 +84,13 @@ Vector3<T> &Vector3<T>::operator/=(const T scalar) {
     return *this;
 }
 
+
+template<class T>
+std::ostream &Vector3<T>::operator<<(std::ostream &ostream) const {
+    return ostream << "{" << this->x << ", " << this->y << ", " << this->z << "}";
+}
+
+
 template<class T>
 T Vector3<T>::Dot(const Vector3<T> &that) const {
     return T(this->x * that.x + this->y * that.y + this->z * that.z);
@@ -89,7 +98,8 @@ T Vector3<T>::Dot(const Vector3<T> &that) const {
 
 template<class T>
 Vector3<T> Vector3<T>::Cross(Vector3<T> &that) const {
-    return Vector3<T>( this->y * that.z - this->z * that.y, this->z * that.x - this->x * that.z, this->x * that.y - this->y * that.x);
+    return Vector3<T>(this->y * that.z - this->z * that.y, this->z * that.x - this->x * that.z,
+                      this->x * that.y - this->y * that.x);
 }
 
 template<class T>
@@ -99,7 +109,9 @@ T Vector3<T>::Magnitude() const {
 
 template<class T>
 Vector3<T> Vector3<T>::Orthonormal() const {
-    return *this / (this->Magnitude());
+    auto inv = 1 / (this->Magnitude());
+    Vector3<T> res = Vector3<T>(this->x * inv, this->y * inv, this->z * inv);
+    return res;
 }
 
 template<class T>

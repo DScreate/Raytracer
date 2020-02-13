@@ -4,6 +4,9 @@
 
 #ifndef RAYTRACER_LUMINAIRE_H
 #define RAYTRACER_LUMINAIRE_H
+
+#include <cmath>
+
 template<class T>
 class Luminaire {
 public:
@@ -11,24 +14,33 @@ public:
 
     // TODO: Look into how to relate these, this is a hack!
     Color lightColor;
-    T radiantFlux;
+    T intensity = 35.0f;
 
-    Luminaire<T>() : position(), lightColor(255, 255, 255) {};
+    Luminaire<T>() : position(), lightColor(1, 1, 1) {};
 
-    Vector3<T> towards(Vector3<T> _point);
+    Vector3<T> towardsLum(Vector3<T> _point);
 
-    T irradiance(Vector3<T> _point, Vector3<T> _normal);
+    Color irradiance(Vector3<T> _point, Vector3<T> _normal);
+
+    Color flux() {
+        return lightColor * intensity;
+    }
 
 };
 
 template<class T>
-Vector3<T> Luminaire<T>::towards(Vector3<T> _point) {
+Vector3<T> Luminaire<T>::towardsLum(Vector3<T> _point) {
     return position - _point;
 }
 
 template<class T>
-T Luminaire<T>::irradiance(Vector3<T> _point, Vector3<T> _normal) {
-    return radiantFlux * _normal.Orthonormal().Dot(_point.Orthonormal());
+Color Luminaire<T>::irradiance(Vector3<T> _point, Vector3<T> _normal) {
+    Color val = flux() * std::max(T(0), _normal.Dot(towardsLum(_point)));
+
+    return val;
 }
+
+
+
 
 #endif //RAYTRACER_LUMINAIRE_H

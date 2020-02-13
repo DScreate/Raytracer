@@ -14,9 +14,9 @@
 template<class T>
 class BasicMaterial : public Material<T> {
 public:
-    Color basicColor;
+    Color reflectivity;
 
-    BasicMaterial<T>() : basicColor(255, 255, 255) {};
+    BasicMaterial<T>() : reflectivity(255, 255, 255) {};
 
     Color illuminate(const Intersection<T> &_intersection, const Ray<T> &_ray, const Scene<T> &_scene) const override;
 
@@ -25,5 +25,5 @@ public:
 template<class T>
 Color
 BasicMaterial<T>::illuminate(const Intersection<T> &_intersection, const Ray<T> &_ray, const Scene<T> &_scene) const {
-    return basicColor;
+    return reflectivity;
 }

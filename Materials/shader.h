@@ -20,26 +20,50 @@ public:
 
     Color directRadiance(Intersection<T> _intersection, Ray<T> _incidentRay, Luminaire<T> _luminaire) const;
 
+    Color indirectRadiance(Intersection<T> _intersection, Ray<T> _incidentRay, Scene<T> _scene) const;
+
     virtual Color brdf(Vector3<T> _towardsLuminaire, Vector3<T> _normal, Vector3<T> _towardsCamera) const = 0;
 };
 
+/*
+ * Light that shines directly
+ */
+// TODO: Convert these to be const refs
 template<class T>
 Color Shader<T>::directRadiance(Intersection<T> _intersection, Ray<T> _incidentRay, Luminaire<T> _luminaire) const {
 
-    Vector3<T> towardsCamera = _incidentRay.direction.Orthonormal() * -1;
-    Vector3<T> normal = _intersection.point.Orthonormal();
-    Vector3<T> towardsLuminaire = _luminaire.towards(_intersection.point);
-    return (brdf(towardsLuminaire, normal, towardsCamera) * _luminaire.radiantFlux *
-            normal.Orthonormal().Dot(towardsLuminaire.Orthonormal()));
+    Vector3<T> towardsCamera = _incidentRay.direction.Orthonormal();
+    Vector3<T> normal = _intersection.getNormal().Orthonormal();
+    Vector3<T> towardsLuminaire = (_luminaire.towardsLum(_intersection.point)).Orthonormal();
+    auto temp = _luminaire.irradiance(_intersection.point, normal);
+    auto check = normal.Dot(towardsLuminaire);
+    auto tempDot = std::max(0.f, normal.Dot(towardsLuminaire));
+    return ((brdf(towardsLuminaire, normal, towardsCamera) / PI) * _luminaire.intensity * _luminaire.lightColor *
+            tempDot);
 }
 
 template<class T>
-Color Shader<T>::illuminate(const Intersection<T> &_intersection, const Ray<T> &_ray, const Scene<T> &_scene) const {
+Color
+Shader<T>::illuminate(const Intersection<T> &_intersection, const Ray<T> &_incidentRay, const Scene<T> &_scene) const {
+    auto radiance = indirectRadiance(_intersection, _incidentRay, _scene);
+    Vector3<T> towardsCamera = _incidentRay.direction * -1;
+    Vector3<T> point = _intersection.point;
+    Vector3<T> normal = _intersection.getNormal();
+    Vector3<T> towardsLuminaire;
     Color color = Color();
-    for (auto &luminaire : _scene.luminaires) {
-        color += this->directRadiance(_intersection, _ray, *luminaire);
+    for (Luminaire<T> *luminaire : _scene.luminaires) {
+        towardsLuminaire = luminaire->towardsLum(point).Orthonormal();
+        auto temp = normal.Dot(towardsLuminaire);
+        if (normal.Dot(towardsLuminaire) >= 0) { // above horizon
+            color += directRadiance(_intersection, _incidentRay, *luminaire);
+        }
     }
     return color;
+}
+
+template<class T>
+Color Shader<T>::indirectRadiance(Intersection<T> _intersection, Ray<T> _incidentRay, Scene<T> _scene) const {
+    return Color();
 }
 
 #endif //RAYTRACER_SHADER_H

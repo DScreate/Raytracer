@@ -3,9 +3,11 @@
   <component name="CMakeWorkspace" PROJECT_DIR="$PROJECT_DIR$" />
   <component name="CidrRootsConfiguration">
     <sourceRoots>
-      <file path="$PROJECT_DIR$/ Shapes" />
       <file path="$PROJECT_DIR$/Helpers/Matrices" />
       <file path="$PROJECT_DIR$/Helpers/Space" />
+      <file path="$PROJECT_DIR$/Lighting" />
+      <file path="$PROJECT_DIR$/Materials" />
+      <file path="$PROJECT_DIR$/Shapes" />
     </sourceRoots>
   </component>
   <component name="JavaScriptSettings">

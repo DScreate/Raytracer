@@ -18,6 +18,7 @@
  * pp. 9
  */
 
+// TODO: Add "colorScale" variable to account for scales other than 0 - 255
 template<class T>
 class Image {
 public:
@@ -25,6 +26,7 @@ public:
     int height;
 
     std::vector<Color> pixels;
+
     Image(): width(256), height(256), pixels(256 * 256) {};
 
     Image(const int _width, const int _height): width(_width), height(_height), pixels(_width * _height) {}
@@ -32,11 +34,20 @@ public:
     //Image(): RGB<T>(RGB<T>() = {}) {};
 
     void initDummyData();
+
     [[nodiscard]] Color getPixel(int x, int y) const;
-    void setPixel(int x, int y, const Color& rgb);
+
+    void setPixel(int x, int y, const Color &rgb);
+
     void output();
+
     void initDummyFast();
 };
+
+template<typename T>
+T clipPixel(const T &n, const T &lower, const T &upper) {
+    return std::max(lower, std::min(n, upper));
+}
 
 template<class T>
 void Image<T>::output() {
@@ -52,7 +63,8 @@ void Image<T>::output() {
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
                 Color rgb = getPixel(x, y);
-                imageFile << rgb.r << " " << rgb.g << " " << rgb.b << std::endl;
+                imageFile << clipPixel(int(rgb.r * 255.99), 0, 255) << " " << clipPixel(int(rgb.g * 255.99), 0, 255)
+                          << " " << clipPixel(int(rgb.b * 255.99), 0, 255) << std::endl;
             }
         }
 
@@ -82,7 +94,7 @@ void Image<T>::initDummyData() {
             _x = x / xRatio;
             _y = y / yRatio;
             int _z = (x + y) / (xRatio + yRatio);
-            this->setPixel(x, y, Color(_x, _y, _z));
+            this->setPixel(x, y, Color(_x / 255, _y / 255, _z / 255));
         }
     }
 }
@@ -111,7 +123,7 @@ void Image<T>::initDummyFast() {
                 _x = x / xRatio;
                 _y = y / yRatio;
                 int _z = (x + y) / (xRatio + yRatio);
-                this->setPixel(x, y, Color(_x, _y, _z));
+                this->setPixel(x, y, Color(_x / 255, _y / 255, _z / 255));
                 Color rgb = getPixel(x, y);
                 imageFile << rgb.r << " " << rgb.g << " " << rgb.b << std::endl;
             }

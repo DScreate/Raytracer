@@ -14,7 +14,7 @@ public:
 
     Color brdf(Vector3<T> _towardsLuminaire, Vector3<T> _normal, Vector3<T> _towardsCamera) const override;
 
-    DiffuseShader<T>() : reflectivity(255, 255, 255) {};
+    DiffuseShader<T>() : reflectivity(0, 0, 0) {};
 };
 
 template<class T>

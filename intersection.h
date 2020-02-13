@@ -20,7 +20,14 @@ public:
     Intersection<T>() : tMin(T(0)), tMax(T(0)), hit(false) {}
 
     Intersection<T>(const T &_tMin, const T &_tMax, const bool &_hit) : tMin(_tMin), tMax(_tMax), hit(_hit) {}
+
+    Vector3<T> getNormal() const;
 };
+
+template<class T>
+Vector3<T> Intersection<T>::getNormal() const {
+    return target->getNormal(point);
+}
 
 
 #endif //RAYTRACER_INTERSECTION_H
