@@ -12,6 +12,7 @@
 #include "../ray.h"
 #include "../intersection.h"
 #include "../scene.h"
+#include "../constants.h"
 
 template<class T>
 class Shader : public Material<T> {
@@ -54,8 +55,12 @@ Shader<T>::illuminate(const Intersection<T> &_intersection, const Ray<T> &_incid
     for (Luminaire<T> *luminaire : _scene.luminaires) {
         towardsLuminaire = luminaire->towardsLum(point).Orthonormal();
         auto temp = normal.Dot(towardsLuminaire);
-        if (normal.Dot(towardsLuminaire) >= 0) { // above horizon
-            color += directRadiance(_intersection, _incidentRay, *luminaire);
+        if (normal.Dot(towardsLuminaire) > 0) { // above horizon
+            auto shadowRay = Ray<T>(point, towardsLuminaire, _incidentRay.refractionRate());
+            Intersection<T> shadowIntersection = _scene.firstIntersection(shadowRay, EPSILON);
+            if (!shadowIntersection.hit || luminaire->isBetween(shadowIntersection.point, point)) {
+                color += directRadiance(_intersection, _incidentRay, *luminaire);
+            }
         }
     }
     return color;

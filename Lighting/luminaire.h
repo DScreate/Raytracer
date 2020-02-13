@@ -6,6 +6,7 @@
 #define RAYTRACER_LUMINAIRE_H
 
 #include <cmath>
+#include "../constants.h"
 
 template<class T>
 class Luminaire {
@@ -21,6 +22,8 @@ public:
     Vector3<T> towardsLum(Vector3<T> _point);
 
     Color irradiance(Vector3<T> _point, Vector3<T> _normal);
+
+    bool isBetween(Vector3<T> _pointA, Vector3<T> _pointC);
 
     Color flux() {
         return lightColor * intensity;
@@ -40,7 +43,25 @@ Color Luminaire<T>::irradiance(Vector3<T> _point, Vector3<T> _normal) {
     return val;
 }
 
+template<class T>
+bool Luminaire<T>::isBetween(Vector3<T> _pointA, Vector3<T> _pointC) {
+    Vector3<T> cross = (position - _pointA).Cross(_pointC - _pointA);
+    if (fabs(cross.Magnitude()) > EPSILON) {
+        return false;
+    }
 
+    T dot = (position - _pointA).Dot(_pointC - _pointA);
+    if (dot < 0) {
+        return false;
+    }
+
+    T dist = (position - _pointA).Magnitude();
+    if (dot > dist) {
+        return false;
+    }
+
+    return true;
+}
 
 
 #endif //RAYTRACER_LUMINAIRE_H

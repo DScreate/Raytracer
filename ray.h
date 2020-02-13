@@ -26,15 +26,21 @@ public:
     T distance;
     T tMin;
     T tMax;
+    T refractiveIndex = 1.0f;
 
     Ray() : origin(), direction(), distance(T(1)), tMin(0), tMax(1000) {};
 
     Ray(const Vector3<T> &_origin, const Vector3<T> &_direction, const T _distance, const T _tMin = 0,
         const T _tMax = 1000) :
             origin(_origin), direction(_direction), distance(_distance), tMin(_tMin), tMax(_tMax) {};
+
+    T refractionRate();
 };
 
-
+template<class T>
+T Ray<T>::refractionRate() {
+    return 1.0f / refractiveIndex;
+}
 
 
 #endif //RAYTRACER_RAY_H
