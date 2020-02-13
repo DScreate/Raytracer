@@ -17,11 +17,12 @@
 template<class T>
 class Shader : public Material<T> {
 public:
-    Color illuminate(const Intersection<T> &_intersection, const Ray<T> &_ray, const Scene<T> &_scene) const override;
+    Color
+    illuminate(const Intersection<T> &_intersection, const Ray<T> &_incidentRay, const Scene<T> &_scene) const override;
 
     Color directRadiance(Intersection<T> _intersection, Ray<T> _incidentRay, Luminaire<T> _luminaire) const;
 
-    Color indirectRadiance(Intersection<T> _intersection, Ray<T> _incidentRay, Scene<T> _scene) const;
+    virtual Color indirectRadiance(Intersection<T> _intersection, Ray<T> _incidentRay, Scene<T> _scene) const;
 
     virtual Color brdf(Vector3<T> _towardsLuminaire, Vector3<T> _normal, Vector3<T> _towardsCamera) const = 0;
 };
@@ -46,19 +47,20 @@ Color Shader<T>::directRadiance(Intersection<T> _intersection, Ray<T> _incidentR
 template<class T>
 Color
 Shader<T>::illuminate(const Intersection<T> &_intersection, const Ray<T> &_incidentRay, const Scene<T> &_scene) const {
-    auto radiance = indirectRadiance(_intersection, _incidentRay, _scene);
+    Color color = Color();
+
+    color += indirectRadiance(_intersection, _incidentRay, _scene);
     Vector3<T> towardsCamera = _incidentRay.direction * -1;
     Vector3<T> point = _intersection.point;
     Vector3<T> normal = _intersection.getNormal();
     Vector3<T> towardsLuminaire;
-    Color color = Color();
     for (Luminaire<T> *luminaire : _scene.luminaires) {
         towardsLuminaire = luminaire->towardsLum(point).Orthonormal();
         auto temp = normal.Dot(towardsLuminaire);
         if (normal.Dot(towardsLuminaire) > 0) { // above horizon
             auto shadowRay = Ray<T>(point, towardsLuminaire, _incidentRay.refractionRate());
             Intersection<T> shadowIntersection = _scene.firstIntersection(shadowRay, EPSILON);
-            if (!shadowIntersection.hit || luminaire->isBetween(shadowIntersection.point, point)) {
+            if (!shadowIntersection.hit || luminaire->isBetween(shadowIntersection.point, point, shadowRay)) {
                 color += directRadiance(_intersection, _incidentRay, *luminaire);
             }
         }

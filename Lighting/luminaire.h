@@ -23,7 +23,7 @@ public:
 
     Color irradiance(Vector3<T> _point, Vector3<T> _normal);
 
-    bool isBetween(Vector3<T> _pointA, Vector3<T> _pointC);
+    bool isBetween(const Vector3<T> &_pointA, const Vector3<T> &_pointB, const Ray<T> &_shadowRay) const;
 
     Color flux() {
         return lightColor * intensity;
@@ -44,23 +44,14 @@ Color Luminaire<T>::irradiance(Vector3<T> _point, Vector3<T> _normal) {
 }
 
 template<class T>
-bool Luminaire<T>::isBetween(Vector3<T> _pointA, Vector3<T> _pointC) {
-    Vector3<T> cross = (position - _pointA).Cross(_pointC - _pointA);
-    if (fabs(cross.Magnitude()) > EPSILON) {
+bool Luminaire<T>::isBetween(const Vector3<T> &_pointA, const Vector3<T> &_pointB, const Ray<T> &_shadowRay) const {
+    Vector3<T> cross = (_pointB - _pointA).Cross(position - _pointA);
+    if (abs(cross.Magnitude()) > EPSILON) {
         return false;
     }
 
-    T dot = (position - _pointA).Dot(_pointC - _pointA);
-    if (dot < 0) {
-        return false;
-    }
+    return !((_pointB - _pointA).Magnitude() - (position - _pointA).Magnitude() < EPSILON);
 
-    T dist = (position - _pointA).Magnitude();
-    if (dot > dist) {
-        return false;
-    }
-
-    return true;
 }
 
 

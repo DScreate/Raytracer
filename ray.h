@@ -27,18 +27,20 @@ public:
     T tMin;
     T tMax;
     T refractiveIndex = 1.0f;
+    int depth = 0;
 
     Ray() : origin(), direction(), distance(T(1)), tMin(0), tMax(1000) {};
 
     Ray(const Vector3<T> &_origin, const Vector3<T> &_direction, const T _distance, const T _tMin = 0,
-        const T _tMax = 1000) :
-            origin(_origin), direction(_direction), distance(_distance), tMin(_tMin), tMax(_tMax) {};
+        const T _tMax = 1000, const T _refractiveIndex = 1, const T _depth = 0) :
+            origin(_origin), direction(_direction), distance(_distance), tMin(_tMin), tMax(_tMax),
+            refractiveIndex(_refractiveIndex), depth(_depth) {};
 
-    T refractionRate();
+    T refractionRate() const;
 };
 
 template<class T>
-T Ray<T>::refractionRate() {
+T Ray<T>::refractionRate() const {
     return 1.0f / refractiveIndex;
 }
 

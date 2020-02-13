@@ -49,6 +49,7 @@ public:
 
     Vector3<T> Orthonormal() const;
 
+    Vector3<T> Reflect(const Vector3<T> &_normal) const;
 };
 
 
@@ -112,6 +113,12 @@ Vector3<T> Vector3<T>::Orthonormal() const {
     auto inv = 1 / (this->Magnitude());
     Vector3<T> res = Vector3<T>(this->x * inv, this->y * inv, this->z * inv);
     return res;
+}
+
+template<class T>
+Vector3<T> Vector3<T>::Reflect(const Vector3<T> &_normal) const {
+    Vector3<T> res = *this;
+    return (res * -1) + (_normal * (res.Dot(_normal) * 2));
 }
 
 template<class T>

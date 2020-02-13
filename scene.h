@@ -35,11 +35,15 @@ public:
     //void addTarget(Target<T> &_target);
     Color traceRay(const Ray<T> &ray, const T &tMin);
 
-    Intersection<T> firstIntersection(const Ray<T> &ray, const T &tMin);
+    Intersection<T> firstIntersection(const Ray<T> &ray, const T &tMin) const;
 };
 
 template<class T>
 Color Scene<T>::traceRay(const Ray<T> &ray, const T &tMin) {
+
+    if (ray.depth > MAX_RAY_DEPTH) {
+        return Color(0, 0, 0);
+    }
 
     Intersection<T> intersection = firstIntersection(ray, tMin);
 
@@ -64,7 +68,7 @@ void Scene<T>::addTarget(Target<T> &_target) {
 
 // TODO: Double check this on conforming to Dr. Lewis' slide? We may be continuing on with the Ray intersection when we don't need to
 template<class T>
-Intersection<T> Scene<T>::firstIntersection(const Ray<T> &ray, const T &tMin) {
+Intersection<T> Scene<T>::firstIntersection(const Ray<T> &ray, const T &tMin) const {
     int tMax = maxRayDistance;
     Intersection<T> candidate = Intersection<T>();
     Intersection<T> intersection;

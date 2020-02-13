@@ -6,6 +6,7 @@
 #include "Materials/basicMaterial.h"
 #include "Materials/diffuserShader.h"
 #include "Materials/surfaceNormalMaterial.h"
+#include "Materials/reflector.h"
 
 int main() {
     std::cout << "Starting up Raytracer" << std::endl;
@@ -31,6 +32,15 @@ int main() {
     mainScene.targets.push_back(&testSphere1);
 
 
+    Reflector<float> pureRef = Reflector<float>();
+    pureRef.reflectivity = Color(1, 1, 1);
+
+    Reflector<float> copper = Reflector<float>();
+    copper.reflectivity = Color(0.72, 0.45, 0.20);
+
+    Reflector<float> silver = Reflector<float>();
+    silver.reflectivity = Color(0.753, 0.753, 0.753);
+
     DiffuseShader<float> testMat2 = DiffuseShader<float>();
     testMat2.reflectivity = Color(0, 1, 0);
     Sphere<float> testSphere2 = Sphere<float>();
@@ -50,45 +60,49 @@ int main() {
 
     DiffuseShader<float> testMat4 = DiffuseShader<float>();
     testMat4.reflectivity = Color(0, 0.8f, 0.55f);
+
+
     Sphere<float> bigSphere = Sphere<float>();
     bigSphere.radius = 100;
     bigSphere.center = Vector3<float>(0, -105, -1);
-    bigSphere.material = &testMat4;
+    bigSphere.material = &copper;
     mainScene.targets.push_back(&bigSphere);
 
     Sphere<float> bigSphere2 = Sphere<float>();
-    bigSphere2.radius = 15;
-    bigSphere2.center = Vector3<float>(-2, 25, -1);
-    bigSphere2.material = &testMat1;
+    bigSphere2.radius = 10;
+    bigSphere2.center = Vector3<float>(-2, 20, -1);
+    bigSphere2.material = &silver;
     mainScene.targets.push_back(&bigSphere2);
 
-    /*
-    for (int i = 0; i < 12; i++) {
-        BasicMaterial<float> randMat = *new BasicMaterial<float>();
-        auto randColor = new Color(int(255 * makeRandom<float>()), int(255 * makeRandom<float>()), int(255 * makeRandom<float>()));
-        testMat1.basicColor = *randColor;
-        auto* randSphere = new Sphere<float>();
-        testSphere1.radius = 25;
-        testSphere1.center = *new Vector3<float>(makeRandom<float>() * 10.0f, makeRandom<float>() * 10.0f, makeRandom<float>() * 10.0f);
-        testSphere1.material = &randMat;
-        mainScene.targets.push_back(randSphere);
-    }
-    */
+    Sphere<float> testSphere4 = Sphere<float>();
+    testSphere4.radius = 5;
+    testSphere4.center = Vector3<float>(5, 0, 5);
+    testSphere4.material = &pureRef;
+    mainScene.targets.push_back(&testSphere4);
+
+
+    Sphere<float> testSphere5 = Sphere<float>();
+    testSphere5.radius = 8;
+    testSphere5.center = Vector3<float>(-12, 7, -10);
+    testSphere5.material = &copper;
+    mainScene.targets.push_back(&testSphere5);
+
 
     Luminaire<float> testLumn = Luminaire<float>();
-    testLumn.position = Vector3<float>(0, 0, 0);
+    testLumn.position = Vector3<float>(0, 1, 0);
     testLumn.intensity = 5.f;
     mainScene.luminaires.push_back(&testLumn);
 
     Luminaire<float> testLumn1 = Luminaire<float>();
-    testLumn1.position = Vector3<float>(30, 20, 10);
+    testLumn1.position = Vector3<float>(0, 0, 10);
     testLumn1.intensity = 5.f;
     //testLumn1.lightColor = Color(0.9, 0.0, 0.8);
     //mainScene.luminaires.push_back(&testLumn1);
 
     //Vector3<float> camPosition = Vector3<float>(0, 0, 50);
-    Vector3<float> camPosition = Vector3<float>(50, 100, 75);
+    //Vector3<float> camPosition = Vector3<float>(50, 100, 75);
     //Vector3<float> camPosition = Vector3<float>(0, 0, 0);
+    Vector3<float> camPosition = Vector3<float>(-15, 15, 35);
 
     Vector3<float> camLookAt = Vector3<float>(0, 0, 0);
     Vector3<float> camViewUp = Vector3<float>(0, 1, 0);
