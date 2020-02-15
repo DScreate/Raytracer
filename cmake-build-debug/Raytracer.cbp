@@ -4,138 +4,148 @@
 	<Project>
 		<Option title="Raytracer"/>
 		<Option makefile_is_custom="1"/>
-		<Option compiler="msvc8"/>
+		<Option compiler="gcc"/>
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/Derek/CLionProjects/Raytracer/cmake-build-debug"/>
+				<Option working_dir="/home/tessa/CLionProjects/Raytracer/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\Makefile VERBOSE=1 all"/>
-					<CompileFile command="nmake /NOLOGO /f C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="Raytracer">
-				<Option output="C:/Users/Derek/CLionProjects/Raytracer/cmake-build-debug/Raytracer.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Derek/CLionProjects/Raytracer/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="msvc8"/>
-				<Compiler>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.24.28314\ATLMFC\include"/>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.24.28314\include"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\Makefile VERBOSE=1 Raytracer"/>
-					<CompileFile command="nmake /NOLOGO /f C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="Raytracer/fast">
-				<Option output="C:/Users/Derek/CLionProjects/Raytracer/cmake-build-debug/Raytracer.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Derek/CLionProjects/Raytracer/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="msvc8"/>
-				<Compiler>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.24.28314\ATLMFC\include"/>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.24.28314\include"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\Makefile VERBOSE=1 Raytracer/fast"/>
-					<CompileFile command="nmake /NOLOGO /f C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="C:/Users/Derek/CLionProjects/Raytracer/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
-					<CompileFile command="nmake /NOLOGO /f C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/tessa/CLionProjects/Raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/tessa/CLionProjects/Raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/tessa/CLionProjects/Raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/tessa/CLionProjects/Raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/Derek/CLionProjects/Raytracer/cmake-build-debug"/>
+				<Option working_dir="/home/tessa/CLionProjects/Raytracer/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="nmake /NOLOGO /f C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\Users\Derek\CLionProjects\Raytracer\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/tessa/CLionProjects/Raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/tessa/CLionProjects/Raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/tessa/CLionProjects/Raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/tessa/CLionProjects/Raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Raytracer">
+				<Option output="/home/tessa/CLionProjects/Raytracer/cmake-build-debug/Raytracer" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/tessa/CLionProjects/Raytracer/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../include/c++/9.2.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../include/c++/9.2.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../include/c++/9.2.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/tessa/CLionProjects/Raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 Raytracer"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/tessa/CLionProjects/Raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/tessa/CLionProjects/Raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/tessa/CLionProjects/Raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Raytracer/fast">
+				<Option output="/home/tessa/CLionProjects/Raytracer/cmake-build-debug/Raytracer" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/tessa/CLionProjects/Raytracer/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../include/c++/9.2.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../include/c++/9.2.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../include/c++/9.2.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/tessa/CLionProjects/Raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 Raytracer/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/tessa/CLionProjects/Raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/tessa/CLionProjects/Raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/tessa/CLionProjects/Raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/tessa/CLionProjects/Raytracer/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/tessa/CLionProjects/Raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/tessa/CLionProjects/Raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/tessa/CLionProjects/Raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/tessa/CLionProjects/Raytracer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/Helpers/RGBA.h">
+		<Unit filename="/home/tessa/CLionProjects/Raytracer/Helpers/RGBA.h">
 			<Option target="Raytracer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/Helpers/typedefs.h">
+		<Unit filename="/home/tessa/CLionProjects/Raytracer/Helpers/random.h">
 			<Option target="Raytracer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/Lighting/directionalLuminaire.h">
+		<Unit filename="/home/tessa/CLionProjects/Raytracer/Helpers/typedefs.h">
 			<Option target="Raytracer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/Lighting/luminaire.h">
+		<Unit filename="/home/tessa/CLionProjects/Raytracer/Lighting/directionalLuminaire.h">
 			<Option target="Raytracer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/Materials/basicMaterial.h">
+		<Unit filename="/home/tessa/CLionProjects/Raytracer/Lighting/luminaire.h">
 			<Option target="Raytracer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/Materials/diffuserShader.h">
+		<Unit filename="/home/tessa/CLionProjects/Raytracer/Lighting/pointLuminaire.h">
 			<Option target="Raytracer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/Materials/material.h">
+		<Unit filename="/home/tessa/CLionProjects/Raytracer/Materials/basicMaterial.h">
 			<Option target="Raytracer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/Materials/shader.h">
+		<Unit filename="/home/tessa/CLionProjects/Raytracer/Materials/dielectric.h">
 			<Option target="Raytracer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/camera.h">
+		<Unit filename="/home/tessa/CLionProjects/Raytracer/Materials/diffuserShader.h">
 			<Option target="Raytracer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/constants.h">
+		<Unit filename="/home/tessa/CLionProjects/Raytracer/Materials/material.h">
 			<Option target="Raytracer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/hit.cpp">
+		<Unit filename="/home/tessa/CLionProjects/Raytracer/Materials/reflector.h">
 			<Option target="Raytracer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/intersection.h">
+		<Unit filename="/home/tessa/CLionProjects/Raytracer/Materials/shader.h">
 			<Option target="Raytracer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/main.cpp">
+		<Unit filename="/home/tessa/CLionProjects/Raytracer/camera.h">
 			<Option target="Raytracer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/radiance.h">
+		<Unit filename="/home/tessa/CLionProjects/Raytracer/constants.h">
 			<Option target="Raytracer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/ray.h">
+		<Unit filename="/home/tessa/CLionProjects/Raytracer/hit.cpp">
 			<Option target="Raytracer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/scene.h">
+		<Unit filename="/home/tessa/CLionProjects/Raytracer/intersection.h">
 			<Option target="Raytracer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/target.h">
+		<Unit filename="/home/tessa/CLionProjects/Raytracer/main.cpp">
 			<Option target="Raytracer"/>
 		</Unit>
-		<Unit filename="C:/Users/Derek/CLionProjects/Raytracer/CMakeLists.txt">
+		<Unit filename="/home/tessa/CLionProjects/Raytracer/radiance.h">
+			<Option target="Raytracer"/>
+		</Unit>
+		<Unit filename="/home/tessa/CLionProjects/Raytracer/ray.h">
+			<Option target="Raytracer"/>
+		</Unit>
+		<Unit filename="/home/tessa/CLionProjects/Raytracer/scene.h">
+			<Option target="Raytracer"/>
+		</Unit>
+		<Unit filename="/home/tessa/CLionProjects/Raytracer/target.h">
+			<Option target="Raytracer"/>
+		</Unit>
+		<Unit filename="/home/tessa/CLionProjects/Raytracer/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
