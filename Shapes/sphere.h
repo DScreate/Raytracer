@@ -87,7 +87,7 @@ Intersection<T> Sphere<T>::firstIntersectionBetween(const Ray<T> &ray, const T &
 
 template<class T>
 Vector3<T> Sphere<T>::getNormal(const Vector3<T> &point) const {
-    return (point - center).Orthonormal();
+    return (point - center);
 }
 
 #endif //RAYTRACER_SPHERE_H

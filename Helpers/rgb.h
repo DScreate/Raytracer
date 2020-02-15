@@ -23,7 +23,7 @@ public:
     T g;
     T b;
 
-    RGB() : r(0), g(0), b(0) {};
+    RGB() : r(T(0)), g(T(0)), b(T(0)) {};
 
     RGB(const T &_r, const T &_g, const T &_b) : r(_r), g(_g), b(_b) {};
 
@@ -106,8 +106,9 @@ RGB<T> operator/(const RGB<T> &Left, const T &Right) {
     return res /= Right;
 }
 
+
 template<class T>
-RGB<T> operator/(const RGB<T> &Left, const double &Right) {
+RGB<T> operator/(const RGB<T> &Left, const int &Right) {
     RGB<T> res = Left;
     return res /= Right;
 }

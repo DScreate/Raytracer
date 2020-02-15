@@ -26,7 +26,7 @@ public:
 
 template<class T>
 Vector3<T> Intersection<T>::getNormal() const {
-    return target->getNormal(point);
+    return target->getNormal(point).Orthonormal();
 }
 
 

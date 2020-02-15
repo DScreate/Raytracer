@@ -12,6 +12,8 @@ class Reflector : public Shader<T> {
 public:
     Color reflectivity;
 
+    T reflectivityLoss = T(.80);
+
     Color brdf(Vector3<T> _towardsLuminaire, Vector3<T> _normal, Vector3<T> _towardsCamera) const;
 
     Reflector<T>() : reflectivity(0, 0, 0) {};
@@ -22,7 +24,7 @@ public:
 
 template<class T>
 Color Reflector<T>::brdf(Vector3<T> _towardsLuminaire, Vector3<T> _normal, Vector3<T> _towardsCamera) const {
-    return reflectivity;
+    return reflectivity * reflectivityLoss;
 }
 
 template<class T>

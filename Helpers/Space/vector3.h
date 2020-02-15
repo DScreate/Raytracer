@@ -6,6 +6,7 @@
 #define RAYTRACER_VECTOR3_H
 
 #include <cmath>
+#include "../../constants.h"
 
 /*tan
  * 3D Vector for general purpose use
@@ -50,6 +51,10 @@ public:
     Vector3<T> Orthonormal() const;
 
     Vector3<T> Reflect(const Vector3<T> &_normal) const;
+
+    Vector3<T> Refract(const Vector3<T> &_normal, const T &_etaL, const T &_etaT) const;
+
+    Vector3<T> Halfway(const Vector3<T> &_towardsView, Vector3<T> _point) const;
 };
 
 
@@ -119,6 +124,32 @@ template<class T>
 Vector3<T> Vector3<T>::Reflect(const Vector3<T> &_normal) const {
     Vector3<T> res = *this;
     return (res * -1) + (_normal * (res.Dot(_normal) * 2));
+}
+
+/*
+ * Assumes that normal vector _normal and the direction toward the incoming luminaire (this vector)
+ * have been normalized to unit length
+ */
+template<class T>
+Vector3<T> Vector3<T>::Refract(const Vector3<T> &_normal, const T &_etaL, const T &_etaT) const {
+    Vector3<T> L = *this;
+    Vector3<T> normal = _normal;
+
+    T eta = _etaL / _etaT;
+    T nDotL = normal.Dot(L);
+
+    T insideRoot = 1 - (pow(_etaL, 2) / pow(_etaT, 2) * (1 - pow(nDotL, 2)));
+
+    if (insideRoot < 0) {
+        return Reflect(_normal);
+    }
+
+    return normal * (eta * nDotL - sqrt(insideRoot)) - (L * eta);
+}
+
+template<class T>
+Vector3<T> Vector3<T>::Halfway(const Vector3<T> &_towardsView, Vector3<T> _point) const {
+
 }
 
 template<class T>

@@ -19,39 +19,53 @@ public:
 
     Luminaire<T>() : position(), lightColor(1, 1, 1) {};
 
-    Vector3<T> towardsLum(Vector3<T> _point);
+    Vector3<T> towardsLum(Vector3<T> _point) const;
 
-    Color irradiance(Vector3<T> _point, Vector3<T> _normal);
+    Vector3<T> halfway(Vector3<T> &_towardsCamera, Vector3<T> &_point) const;
 
-    bool isBetween(const Vector3<T> &_pointA, const Vector3<T> &_pointB, const Ray<T> &_shadowRay) const;
+    virtual Color irradiance(Vector3<T> _point, Vector3<T> _normal);
 
-    Color flux() {
-        return lightColor * intensity;
-    }
+    virtual bool isBetween(const Vector3<T> &_pointA, const Vector3<T> &_pointB, const Ray<T> &_shadowRay) const;
+
+    virtual Color flux();
 
 };
 
 template<class T>
-Vector3<T> Luminaire<T>::towardsLum(Vector3<T> _point) {
+Vector3<T> Luminaire<T>::towardsLum(Vector3<T> _point) const {
     return position - _point;
 }
 
 template<class T>
 Color Luminaire<T>::irradiance(Vector3<T> _point, Vector3<T> _normal) {
-    Color val = flux() * std::max(T(0), _normal.Dot(towardsLum(_point)));
+    Color val = flux() * std::max(T(0), _normal.Dot(towardsLum(_point).Orthonormal()));
 
     return val;
 }
 
 template<class T>
 bool Luminaire<T>::isBetween(const Vector3<T> &_pointA, const Vector3<T> &_pointB, const Ray<T> &_shadowRay) const {
-    Vector3<T> cross = (_pointB - _pointA).Cross(position - _pointA);
+    Vector3<T> diffBA = _pointB - _pointA;
+    Vector3<T> diffPA = position - _pointA;
+    Vector3<T> cross = diffBA.Cross(diffPA);
     if (abs(cross.Magnitude()) > EPSILON) {
         return false;
     }
 
-    return !((_pointB - _pointA).Magnitude() - (position - _pointA).Magnitude() < EPSILON);
+    return !(diffBA.Magnitude() - diffPA.Magnitude() < EPSILON);
 
+}
+
+template<class T>
+Color Luminaire<T>::flux() {
+    return lightColor * intensity;
+}
+
+template<class T>
+Vector3<T> Luminaire<T>::halfway(Vector3<T> &_towardsCamera, Vector3<T> &_point) const {
+    Vector3<T> res = towardsLum(_point) + _towardsCamera;
+
+    return (res / res.Magnitude());
 }
 
 
