@@ -34,7 +34,7 @@ int main() {
     testSphere1.radius = 5;
     testSphere1.center = Vector3<float>(0, 0, -10);
     testSphere1.material.push_back(&testMat1);
-    mainScene.targets.push_back(&testSphere1);
+    mainScene.targets.push_back(std::make_shared<Sphere<float>>(testSphere1));
 
 
     Reflector<float> pureRef = Reflector<float>();
@@ -60,7 +60,7 @@ int main() {
     testSphere2.radius = 2;
     testSphere2.center = Vector3<float>(-3, -5, 15);
     testSphere2.material.push_back(&testMat2);
-    mainScene.targets.push_back(&testSphere2);
+    mainScene.targets.push_back(std::make_shared<Sphere<float>>(testSphere2));
 
 
     DiffuseShader<float> testMat3 = DiffuseShader<float>();
@@ -69,7 +69,7 @@ int main() {
     testSphere3.radius = 5;
     testSphere3.center = Vector3<float>(15, 8, 15);
     testSphere3.material.push_back(&testMat3);
-    mainScene.targets.push_back(&testSphere3);
+    mainScene.targets.push_back(std::make_shared<Sphere<float>>(testSphere3));
 
 
     Sphere<float> bigSphere = Sphere<float>();
@@ -77,36 +77,36 @@ int main() {
     bigSphere.center = Vector3<float>(0, -105, -1);
     bigSphere.material.push_back(&copper);
     //bigSphere.material.push_back(&noColorDiffuse);
-    mainScene.targets.push_back(&bigSphere);
+    mainScene.targets.push_back(std::make_shared<Sphere<float>>(bigSphere));
 
     Sphere<float> bigSphere2 = Sphere<float>();
     bigSphere2.radius = 10;
     bigSphere2.center = Vector3<float>(-2, 20, -1);
     bigSphere2.material.push_back(&silver);
-    mainScene.targets.push_back(&bigSphere2);
+    mainScene.targets.push_back(std::make_shared<Sphere<float>>(bigSphere2));
 
     Sphere<float> testSphere4 = Sphere<float>();
     testSphere4.radius = 5;
     testSphere4.center = Vector3<float>(5, 0, 5);
     testSphere4.material.push_back(&silver);
-    mainScene.targets.push_back(&testSphere4);
+    mainScene.targets.push_back(std::make_shared<Sphere<float>>(testSphere4));
 
 
     Sphere<float> testSphere5 = Sphere<float>();
     testSphere5.radius = 8;
     testSphere5.center = Vector3<float>(-12, 7, -10);
     testSphere5.material.push_back(&gold);
-    mainScene.targets.push_back(&testSphere5);
+    mainScene.targets.push_back(std::make_shared<Sphere<float>>(testSphere5));
 
     Sphere<float> glassSphere = Sphere<float>();
     glassSphere.radius = 4;
-    glassSphere.center = Vector3<float>(-5, -1, 8);
+    glassSphere.center = Vector3<float>(-5, 1, 8);
     glassSphere.material.push_back(&glass);
-    mainScene.targets.push_back(&glassSphere);
+    mainScene.targets.push_back(std::make_shared<Sphere<float>>(glassSphere));
 
 
     Luminaire<float> testLumn = Luminaire<float>();
-    //testLumn.position = Vector3<float>(-25, 45, 35);
+    //testLumn.position = Vector3<float>(0, 0, 0);
     testLumn.position = Vector3<float>(-50, 250, 300);
 
     testLumn.intensity = 3.f;
@@ -129,7 +129,7 @@ int main() {
 
     Camera<float> mainCam = Camera<float>(camPosition, camLookAt, camViewUp);
     mainCam.fov = 47.0;
-    mainCam.antiAlias = true;
+    mainCam.antiAlias = false;
     mainCam.antiAliasFactor = 4;
     mainCam.dof = false;
     mainCam.dofSamples = 4;
@@ -137,7 +137,7 @@ int main() {
     std::cout << "Running calculations" << std::endl;
 
     // put result into image
-    Image<float> outputImage = mainCam.renderImage(mainScene, derivedWidth, derivedHeight);
+    Image<float> outputImage = mainCam.renderImage(&mainScene, derivedWidth, derivedHeight);
 
     //image.initDummyData();
     outputImage.output();

@@ -20,11 +20,11 @@ template<class T>
 class Scene {
 public:
 
-    vector<Target *> targets;
+    vector<std::shared_ptr<Target>> targets;
     vector<Luminaire<T> *> luminaires;
     Color backgroundRadiance;
     T ambientRefractiveIndex = T(1.);
-    int maxRayDistance = 1000;
+    int maxRayDistance = 100000;
 
     Scene() : backgroundRadiance(0, 0, 0) {};
 
@@ -77,7 +77,7 @@ Intersection<T> Scene<T>::firstIntersection(const Ray<T> &ray, const T &tMin) co
     Intersection<T> candidate = Intersection<T>();
     Intersection<T> intersection;
     candidate.tMin = maxRayDistance;
-    for (const auto &item : this->targets) {
+    for (auto const &item : this->targets) {
         intersection = item->firstIntersectionBetween(ray, tMin, tMax);
         if (intersection.hit && intersection.tMin < candidate.tMin) {
             candidate = intersection;

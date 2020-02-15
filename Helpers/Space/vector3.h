@@ -34,6 +34,8 @@ public:
 
     Vector3<T> &operator+=(const Vector3<T> &that);
 
+    Vector3<T> &operator+=(const T &that);
+
     Vector3<T> &operator-=(const Vector3<T> &that);
 
     Vector3<T> &operator*=(T scalar);
@@ -153,9 +155,23 @@ Vector3<T> Vector3<T>::Halfway(const Vector3<T> &_towardsView, Vector3<T> _point
 }
 
 template<class T>
+Vector3<T> &Vector3<T>::operator+=(const T &scalar) {
+    this->x += scalar;
+    this->y += scalar;
+    this->z += scalar;
+    return *this;
+}
+
+template<class T>
 Vector3<T> operator+(const Vector3<T> &Left, const Vector3<T> &Right) {
     Vector3<T> res = Left;
     return res += Right;
+}
+
+template<class T>
+Vector3<T> operator+(const Vector3<T> &Left, const T &scalar) {
+    Vector3<T> res = Left;
+    return res += scalar;
 }
 
 template<class T>

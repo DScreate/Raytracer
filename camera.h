@@ -44,7 +44,7 @@ public:
     /*
      * Converts a Scene and a Camera into an image
      */
-    Image<T> renderImage(const Scene<T> &scene, const int &width, const int &height);
+    Image<T> renderImage(Scene<T> *scene, const int &width, const int &height);
 
     //Color renderPixel(const Scene<T> &scene, const int &width, const int &height, const int &iu, const int &iv) const;
     Vector3<T> getCameraCoordinatePoint(const float &i, const float &j) const;
@@ -61,7 +61,7 @@ public:
 
     vector<Ray<T>> generateLensRays(const int &width, const int &height, const T &u, const T &v) const;
 
-    Color renderPixel(Scene<T> scene, const int &width, const int &height, const T &iu, const T &iv);
+    Color renderPixel(Scene<T> *scene, const int &width, const int &height, const T &iu, const T &iv);
 
     vector<Vector3<T>> lensPoints() const;
 
@@ -88,7 +88,7 @@ Ray<T> Camera<T>::generateRay(const int &width, const int &height, const T &u, c
 }
 
 template<class T>
-Image<T> Camera<T>::renderImage(const Scene<T> &scene, const int &width, const int &height) {
+Image<T> Camera<T>::renderImage(Scene<T> *scene, const int &width, const int &height) {
     image = Image<T>(width, height);
     initBasis();
     for (int iu = 0; iu < width; iu++) {
@@ -135,19 +135,19 @@ Vector3<T> Camera<T>::getCameraCoordinatePoint(const float &i, const float &j) c
 }
 
 template<class T>
-Color Camera<T>::renderPixel(Scene<T> scene, const int &width, const int &height, const T &iu, const T &iv) {
+Color Camera<T>::renderPixel(Scene<T> *scene, const int &width, const int &height, const T &iu, const T &iv) {
 
     if (dof) {
-        Color mix = scene.backgroundRadiance;
+        Color mix = scene->backgroundRadiance;
         vector<Ray<T>> rays = generateLensRays(width, height, iu + 0.5, iv + 0.5);
         for (Ray<T> ray : rays) {
-            mix += scene.traceRay(ray, 0);
+            mix += scene->traceRay(ray, 0);
         }
 
         return mix;
     } else {
         Ray<T> ray = generateRay(width, height, iu + 0.5, iv + 0.5);
-        return scene.traceRay(ray, 0);
+        return scene->traceRay(ray, 0);
     }
 }
 

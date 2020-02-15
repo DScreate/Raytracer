@@ -17,6 +17,8 @@
 template<class T>
 class Shader : public Material<T> {
 public:
+    T specularExponent = 1.;
+
     Color
     illuminate(const Intersection<T> &_intersection, const Ray<T> &_incidentRay, const Scene<T> &_scene) const override;
 
