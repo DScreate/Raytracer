@@ -18,116 +18,128 @@ int main() {
     const int derivedWidth = width * wMult;
     const int derivedHeight = height * hMult;
 
-    //Image<float> image(derivedWidth, derivedHeight);
+    //Image<double> image(derivedWidth, derivedHeight);
     std::cout << "Setting up Scene and Targets" << std::endl;
 
-    Scene<float> mainScene{};
-    mainScene.backgroundRadiance = Color(.45, .55, .75);
+    Scene<double> mainScene{};
+    //mainScene.backgroundRadiance = Color(.45, .55, .75);
+    mainScene.backgroundRadiance = Color(.045, .055, .075);
 
-    DiffuseShader<float> testMat1 = DiffuseShader<float>();
+    DiffuseShader<double> redMat = DiffuseShader<double>();
+    redMat.reflectivity = Color(1, 0, 0);
 
-    DiffuseShader<float> noColorDiffuse = DiffuseShader<float>();
+    DiffuseShader<double> greenMat = DiffuseShader<double>();
+    greenMat.reflectivity = Color(0, 1, 0);
+
+    DiffuseShader<double> noColorDiffuse = DiffuseShader<double>();
     noColorDiffuse.reflectivity = Color(0, 0, 0);
 
-    testMat1.reflectivity = Color(1, 0, 0);
-    Sphere<float> testSphere1 = Sphere<float>();
-    testSphere1.radius = 5;
-    testSphere1.center = Vector3<float>(0, 0, -10);
-    testSphere1.material.push_back(&testMat1);
-    mainScene.targets.push_back(std::make_shared<Sphere<float>>(testSphere1));
-
-
-    Reflector<float> pureRef = Reflector<float>();
+    Reflector<double> pureRef = Reflector<double>();
     pureRef.reflectivity = Color(1, 1, 1);
 
-    Reflector<float> copper = Reflector<float>();
+    Reflector<double> copper = Reflector<double>();
     copper.reflectivity = Color(0.72, 0.45, 0.20);
 
-    Reflector<float> silver = Reflector<float>();
+    Reflector<double> silver = Reflector<double>();
     silver.reflectivity = Color(0.753, 0.753, 0.753);
 
-    Reflector<float> gold = Reflector<float>();
-    gold.reflectivity = Color(212. / 255., 175. / 255., 55. / 255.);
+    Reflector<double> gold = Reflector<double>();
+    gold.reflectivity = Color(static_cast<const double &>(212. / 255.), static_cast<const double &>(175. / 255.),
+                              static_cast<const double &>(55. / 255.));
 
-    Dielectric<float> glass = Dielectric<float>();
+
+    Dielectric<double> glass = Dielectric<double>();
     glass.reflectivity = Color(.1, .1, .1);
-    //glass.refractiveIndex = 1.3f;
-    glass.refractiveIndex = 1.517f;
+    //glass.refractiveIndex = double(1);
+    glass.refractiveIndex = 1.517;
 
-    DiffuseShader<float> testMat2 = DiffuseShader<float>();
-    testMat2.reflectivity = Color(0, 1, 0);
-    Sphere<float> testSphere2 = Sphere<float>();
+    Sphere<double> redSphere1 = Sphere<double>();
+    redSphere1.radius = 5;
+    redSphere1.center = Vector3<double>(0, 0, -10);
+    redSphere1.material.push_back(&redMat);
+    mainScene.targets.push_back(std::make_unique<Sphere<double>>(redSphere1));
+
+
+    Sphere<double> testSphere2 = Sphere<double>();
     testSphere2.radius = 2;
-    testSphere2.center = Vector3<float>(-3, -5, 15);
-    testSphere2.material.push_back(&testMat2);
-    mainScene.targets.push_back(std::make_shared<Sphere<float>>(testSphere2));
+    testSphere2.center = Vector3<double>(-3, -3, 15);
+    testSphere2.material.push_back(&greenMat);
+    mainScene.targets.push_back(std::make_unique<Sphere<double>>(testSphere2));
 
 
-    DiffuseShader<float> testMat3 = DiffuseShader<float>();
+    DiffuseShader<double> testMat3 = DiffuseShader<double>();
     testMat3.reflectivity = Color(0, 0, 1);
-    Sphere<float> testSphere3 = Sphere<float>();
+    Sphere<double> testSphere3 = Sphere<double>();
     testSphere3.radius = 5;
-    testSphere3.center = Vector3<float>(15, 8, 15);
+    testSphere3.center = Vector3<double>(15, 8, 15);
     testSphere3.material.push_back(&testMat3);
-    mainScene.targets.push_back(std::make_shared<Sphere<float>>(testSphere3));
+    mainScene.targets.push_back(std::make_unique<Sphere<double>>(testSphere3));
 
 
-    Sphere<float> bigSphere = Sphere<float>();
+    Sphere<double> bigSphere = Sphere<double>();
     bigSphere.radius = 100;
-    bigSphere.center = Vector3<float>(0, -105, -1);
+    bigSphere.center = Vector3<double>(0, -105, -1);
     bigSphere.material.push_back(&copper);
     //bigSphere.material.push_back(&noColorDiffuse);
-    mainScene.targets.push_back(std::make_shared<Sphere<float>>(bigSphere));
+    mainScene.targets.push_back(std::make_unique<Sphere<double>>(bigSphere));
 
-    Sphere<float> bigSphere2 = Sphere<float>();
+    Sphere<double> bigSphere2 = Sphere<double>();
     bigSphere2.radius = 10;
-    bigSphere2.center = Vector3<float>(-2, 20, -1);
+    bigSphere2.center = Vector3<double>(-2, 20, -1);
     bigSphere2.material.push_back(&silver);
-    mainScene.targets.push_back(std::make_shared<Sphere<float>>(bigSphere2));
+    mainScene.targets.push_back(std::make_unique<Sphere<double>>(bigSphere2));
 
-    Sphere<float> testSphere4 = Sphere<float>();
+    Sphere<double> testSphere4 = Sphere<double>();
     testSphere4.radius = 5;
-    testSphere4.center = Vector3<float>(5, 0, 5);
+    testSphere4.center = Vector3<double>(5, 0, 5);
     testSphere4.material.push_back(&silver);
-    mainScene.targets.push_back(std::make_shared<Sphere<float>>(testSphere4));
+    mainScene.targets.push_back(std::make_unique<Sphere<double>>(testSphere4));
 
 
-    Sphere<float> testSphere5 = Sphere<float>();
+    Sphere<double> testSphere5 = Sphere<double>();
     testSphere5.radius = 8;
-    testSphere5.center = Vector3<float>(-12, 7, -10);
+    testSphere5.center = Vector3<double>(-12, 7, -10);
     testSphere5.material.push_back(&gold);
-    mainScene.targets.push_back(std::make_shared<Sphere<float>>(testSphere5));
+    mainScene.targets.push_back(std::make_unique<Sphere<double>>(testSphere5));
 
-    Sphere<float> glassSphere = Sphere<float>();
+
+    Sphere<double> glassSphere = Sphere<double>();
     glassSphere.radius = 4;
-    glassSphere.center = Vector3<float>(-5, 1, 8);
+    glassSphere.center = Vector3<double>(-5, 1, 8);
     glassSphere.material.push_back(&glass);
-    mainScene.targets.push_back(std::make_shared<Sphere<float>>(glassSphere));
+    mainScene.targets.push_back(std::make_unique<Sphere<double>>(glassSphere));
 
+    Sphere<double> glassSphereBig = Sphere<double>();
+    glassSphereBig.radius = 6;
+    glassSphereBig.center = Vector3<double>(6, 4, -14);
+    glassSphereBig.material.push_back(&glass);
+    mainScene.targets.push_back(std::make_unique<Sphere<double>>(glassSphereBig));
 
-    Luminaire<float> testLumn = Luminaire<float>();
-    //testLumn.position = Vector3<float>(0, 0, 0);
-    testLumn.position = Vector3<float>(-50, 250, 300);
+    Luminaire<double> testLumn = Luminaire<double>();
+    //testLumn.position = Vector3<double>(0, 0, 0);
+    testLumn.position = Vector3<double>(-50, 250, 300);
+    //testLumn.position = Vector3<double>(0, 20, -300);
+
 
     testLumn.intensity = 3.f;
-    mainScene.luminaires.push_back(&testLumn);
+    mainScene.luminaires.push_back(std::make_unique<Luminaire<double>>(testLumn));
 
-    Luminaire<float> testLumn1 = Luminaire<float>();
-    testLumn1.position = Vector3<float>(0, 0, 100);
+    Luminaire<double> testLumn1 = Luminaire<double>();
+    testLumn1.position = Vector3<double>(0, 0, 100);
     testLumn1.intensity = 5.f;
     //testLumn1.lightColor = Color(0.9, 0.0, 0.8);
     //mainScene.luminaires.push_back(&testLumn1);
 
-    //Vector3<float> camPosition = Vector3<float>(0, 0, 50);
-    //Vector3<float> camPosition = Vector3<float>(50, 100, 75);
-    //Vector3<float> camPosition = Vector3<float>(0, 0, 0);
-    Vector3<float> camPosition = Vector3<float>(-15, 15, 45);
-    //Vector3<float> camPosition = Vector3<float>(-15, 45, 35);
+    Vector3<double> camPosition = Vector3<double>(0, 0, 50);
+    //Vector3<double> camPosition = Vector3<double>(50, 100, 75);
+    //Vector3<double> camPosition = Vector3<double>(0, 0, 0);
+    //Vector3<double> camPosition = Vector3<double>(-15, 15, 45);
+    //Vector3<double> camPosition = Vector3<double>(-15, 45, 35);
 
-    Vector3<float> camLookAt = Vector3<float>(0, 0, 0);
-    Vector3<float> camViewUp = Vector3<float>(0, 1, 0);
+    Vector3<double> camLookAt = Vector3<double>(0, 0, 0);
+    Vector3<double> camViewUp = Vector3<double>(0, 1, 0);
 
-    Camera<float> mainCam = Camera<float>(camPosition, camLookAt, camViewUp);
+    Camera<double> mainCam = Camera<double>(camPosition, camLookAt, camViewUp);
     mainCam.fov = 47.0;
     mainCam.antiAlias = false;
     mainCam.antiAliasFactor = 4;
@@ -137,7 +149,7 @@ int main() {
     std::cout << "Running calculations" << std::endl;
 
     // put result into image
-    Image<float> outputImage = mainCam.renderImage(&mainScene, derivedWidth, derivedHeight);
+    Image<double> outputImage = mainCam.renderImage(&mainScene, derivedWidth, derivedHeight);
 
     //image.initDummyData();
     outputImage.output();

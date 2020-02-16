@@ -14,24 +14,27 @@ public:
 
     T reflectivityLoss = T(.80);
 
-    Color brdf(Vector3<T> _towardsLuminaire, Vector3<T> _normal, Vector3<T> _towardsCamera) const;
+    Color brdf(Vector3<T> &_towardsLuminaire, Vector3<T> &_normal, Vector3<T> &_towardsCamera) const override;
 
     Reflector<T>() : reflectivity(0, 0, 0) {};
 
-    Color indirectRadiance(Intersection<T> _intersection, Ray<T> _incidentRay, Scene<T> _scene) const override;
+    Color indirectRadiance(const Intersection<T> &_intersection, const Ray<T> &_incidentRay,
+                           const Scene<T> &_scene) const override;
 
 };
 
 template<class T>
-Color Reflector<T>::brdf(Vector3<T> _towardsLuminaire, Vector3<T> _normal, Vector3<T> _towardsCamera) const {
+Color Reflector<T>::brdf(Vector3<T> &_towardsLuminaire, Vector3<T> &_normal, Vector3<T> &_towardsCamera) const {
     return reflectivity * reflectivityLoss;
 }
 
 template<class T>
-Color Reflector<T>::indirectRadiance(Intersection<T> _intersection, Ray<T> _incidentRay, Scene<T> _scene) const {
+Color Reflector<T>::indirectRadiance(const Intersection<T> &_intersection, const Ray<T> &_incidentRay,
+                                     const Scene<T> &_scene) const {
     Vector3<T> towardsCamera = _incidentRay.direction.Orthonormal() * -1;
     Vector3<T> normal = _intersection.getNormal();
-    Ray<T> reflectedRay = Ray<T>(_intersection.point, towardsCamera.Reflect(normal), _incidentRay.refractiveIndex,
+    Ray<T> reflectedRay = Ray<T>(_intersection.point, towardsCamera.Reflect(normal), 1, 0, _scene.maxRayDistance,
+                                 _incidentRay.refractiveIndex,
                                  _incidentRay.depth + 1);
     return reflectivity * _scene.traceRay(reflectedRay, EPSILON);
 }

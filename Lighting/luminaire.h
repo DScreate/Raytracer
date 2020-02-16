@@ -19,13 +19,13 @@ public:
 
     Luminaire<T>() : position(), lightColor(1, 1, 1) {};
 
-    Vector3<T> towardsLum(Vector3<T> _point) const;
+    [[nodiscard]] Vector3<T> towardsLum(Vector3<T> _point) const;
 
     Vector3<T> halfway(Vector3<T> &_towardsCamera, Vector3<T> &_point) const;
 
     virtual Color irradiance(Vector3<T> _point, Vector3<T> _normal);
 
-    virtual bool isBetween(const Vector3<T> &_pointA, const Vector3<T> &_pointB, const Ray<T> &_shadowRay) const;
+    [[nodiscard]] bool isBetween(const Vector3<T> &_pointA, const Vector3<T> &_pointB, const Ray<T> &_shadowRay) const;
 
     virtual Color flux();
 

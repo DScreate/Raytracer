@@ -84,7 +84,7 @@ Ray<T> Camera<T>::generateRay(const int &width, const int &height, const T &u, c
     //Vector3<T> dPrime = oPrime * -1;
     Vector3<T> _d = x * (u - ((width - 1) / 2)) + y * (v - ((height - 1) / 2)) - (z * d);
     //Vector3<T> d = (x * (-dPrime.x)) - (y * dPrime.y) - (z * dPrime.z);
-    return Ray<T>(position, _d.Orthonormal(), 1);
+    return Ray<T>(position, _d.Orthonormal(), 1, 0, 1000, 1, 0);
 }
 
 template<class T>
@@ -162,7 +162,7 @@ vector<Ray<T>> Camera<T>::generateLensRays(const int &width, const int &height, 
     vector<Ray<T>> rays;
     for (auto lensPoint : lensPoints()) {
         Vector3<T> lensRayDirection = C - lensPoint;
-        auto cameraRay = Ray<T>(lensPoint, lensRayDirection.Orthonormal(), 1);
+        auto cameraRay = Ray<T>(lensPoint, lensRayDirection.Orthonormal(), 1, 0, 1000, 1, 0);
         rays.push_back(cameraRay);
     }
 

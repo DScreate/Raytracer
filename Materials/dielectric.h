@@ -12,7 +12,7 @@ class Dielectric : public Shader<T> {
 public:
     Color reflectivity;
 
-    Color brdf(Vector3<T> _towardsLuminaire, Vector3<T> _normal, Vector3<T> _towardsCamera) const;
+    Color brdf(Vector3<T> &_towardsLuminaire, Vector3<T> &_normal, Vector3<T> &_towardsCamera) const;
 
     T refractiveIndex = T(1);
 
@@ -20,25 +20,30 @@ public:
 
     T fresnel(const Vector3<T> &_direction, const Vector3<T> &_normal, const Vector3<T> &_halfway, const T &_eta) const;
 
-    Color indirectRadiance(Intersection<T> _intersection, Ray<T> _incidentRay, Scene<T> _scene) const override;
+    Color indirectRadiance(const Intersection<T> &_intersection, const Ray<T> &_incidentRay,
+                           const Scene<T> &_scene) const override;
 };
 
 template<class T>
-Color Dielectric<T>::indirectRadiance(Intersection<T> _intersection, Ray<T> _incidentRay, Scene<T> _scene) const {
+Color Dielectric<T>::indirectRadiance(const Intersection<T> &_intersection, const Ray<T> &_incidentRay,
+                                      const Scene<T> &_scene) const {
 
-    Vector3<T> towardsCamera = _incidentRay.direction.Orthonormal() * T(-1);
+    Vector3<T> towardsCamera = _incidentRay.direction.Orthonormal() * -1;
     Vector3<T> normal = _intersection.getNormal().Orthonormal();
-    Ray<T> reflectedRay = Ray<T>(_intersection.point, towardsCamera.Reflect(normal), _incidentRay.refractiveIndex,
+    Ray<T> reflectedRay = Ray<T>(_intersection.point, towardsCamera.Reflect(normal), 1, 0, _scene.maxRayDistance,
+                                 _incidentRay.refractiveIndex,
                                  _incidentRay.depth + 1);
     Color radiance = _scene.traceRay(reflectedRay, EPSILON);
     Vector3<T> transmittedDirection = towardsCamera.Refract(normal, _scene.ambientRefractiveIndex, refractiveIndex);
     if (transmittedDirection.Magnitude() > EPSILON) {
-        Ray<T> refractedRay = Ray<T>(_intersection.point, transmittedDirection, refractiveIndex,
-                                     _incidentRay.depth + 1);
+        Vector3<T> adjustment = normal * EPSILON;
+        Vector3<T> adjustedPoint = _intersection.point - adjustment;
+        Ray<T> refractedRay = Ray<T>(_intersection.point, transmittedDirection, 1, 0., _scene.maxRayDistance,
+                                     refractiveIndex, _incidentRay.depth + 1);
         Vector3<T> towardsLum = (_incidentRay.direction * -1);
         Vector3<T> halfway = (towardsLum + towardsCamera) / (towardsLum + towardsCamera).Magnitude();
         T f = fresnel(towardsCamera, normal, halfway, _scene.ambientRefractiveIndex / refractiveIndex);
-        if (abs(T(1) - f) <= EPSILON) {
+        if (f < (T(1) + EPSILON)) {
             radiance = radiance * f + _scene.traceRay(refractedRay, EPSILON) * (T(1) - f);
         }
     }
@@ -47,7 +52,7 @@ Color Dielectric<T>::indirectRadiance(Intersection<T> _intersection, Ray<T> _inc
 }
 
 template<class T>
-Color Dielectric<T>::brdf(Vector3<T> _towardsLuminaire, Vector3<T> _normal, Vector3<T> _towardsCamera) const {
+Color Dielectric<T>::brdf(Vector3<T> &_towardsLuminaire, Vector3<T> &_normal, Vector3<T> &_towardsCamera) const {
     return reflectivity;
 }
 

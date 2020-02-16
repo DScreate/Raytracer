@@ -13,9 +13,9 @@
 template<class T>
 class PointLuminaire : public Luminaire<T> {
 
-    PointLuminaire<T>() {};
+    PointLuminaire<T>() = default;
 
-    Color irradiance(Vector3<T> _point) override;
+    Color irradiance(Vector3<T> _point);
 };
 
 template<class T>

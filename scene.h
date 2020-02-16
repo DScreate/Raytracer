@@ -20,26 +20,24 @@ template<class T>
 class Scene {
 public:
 
-    vector<std::shared_ptr<Target>> targets;
-    vector<Luminaire<T> *> luminaires;
+    vector<std::unique_ptr<ATarget<T>>> targets;
+    vector<std::unique_ptr<Luminaire<T>>> luminaires;
     Color backgroundRadiance;
     T ambientRefractiveIndex = T(1.);
-    int maxRayDistance = 100000;
+    int maxRayDistance = 1000;
 
-    Scene() : backgroundRadiance(0, 0, 0) {};
-
-    Scene(const RGB<T> &_backgroundColor) : backgroundRadiance(_backgroundColor) {};
+    Scene() : backgroundRadiance(0, 0, 0) {};;
     //Scene(vector<Target<T>> _targets) : targets(_targets) {};
 
 
     //void addTarget(Target<T> &_target);
-    Color traceRay(const Ray<T> &ray, const T &tMin);
+    Color traceRay(const Ray<T> &ray, const T &tMin) const;
 
     Intersection<T> firstIntersection(const Ray<T> &ray, const T &tMin) const;
 };
 
 template<class T>
-Color Scene<T>::traceRay(const Ray<T> &ray, const T &tMin) {
+Color Scene<T>::traceRay(const Ray<T> &ray, const T &tMin) const {
 
     if (ray.depth > MAX_RAY_DEPTH) {
         return Color(0, 0, 0);

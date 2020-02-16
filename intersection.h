@@ -17,7 +17,7 @@ public:
     const Target *target;
     bool hit;
 
-    Intersection<T>() : tMin(T(0)), tMax(T(0)), hit(false) {}
+    Intersection<T>() : tMin(T(0)), tMax(T(0)), hit(false), target() {}
 
     Intersection<T>(const T &_tMin, const T &_tMax, const bool &_hit) : tMin(_tMin), tMax(_tMax), hit(_hit) {}
 

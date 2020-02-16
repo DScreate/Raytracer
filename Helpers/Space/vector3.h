@@ -137,10 +137,10 @@ Vector3<T> Vector3<T>::Refract(const Vector3<T> &_normal, const T &_etaL, const 
     Vector3<T> L = *this;
     Vector3<T> normal = _normal;
 
-    T eta = _etaL / _etaT;
+    double eta = _etaL / _etaT;
     T nDotL = normal.Dot(L);
 
-    T insideRoot = 1 - (pow(_etaL, 2) / pow(_etaT, 2) * (1 - pow(nDotL, 2)));
+    T insideRoot = double(1) - (pow(_etaL, 2) / pow(_etaT, 2) * (1 - pow(nDotL, 2)));
 
     if (insideRoot < 0) {
         return Reflect(_normal);
@@ -199,7 +199,7 @@ T Dot(const Vector3<T> &Left, const Vector3<T> &Right) {
 }
 
 template<class T>
-Vector3<T> Cross(const Vector3<T> &Left, const Vector3<T> &Right) {
+Vector3<T> &Cross(const Vector3<T> &Left, const Vector3<T> &Right) {
     Vector3<T> res = Left;
     return res.Cross(Right);
 }

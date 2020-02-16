@@ -78,7 +78,10 @@ Intersection<T> Sphere<T>::firstIntersectionBetween(const Ray<T> &ray, const T &
         return res;
     }
 
-    res.point = ray.origin + ray.direction * res.tMin;
+    // TODO: Double check this if this is how things should be done
+
+    Vector3<T> adjustment = ray.direction.Orthonormal() * EPSILON;
+    res.point = ray.origin - adjustment + ray.direction * res.tMin;
     res.target = this;
 
     res.hit = true;

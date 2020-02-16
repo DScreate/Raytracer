@@ -24,9 +24,10 @@ public:
 
     Color directRadiance(Intersection<T> _intersection, Ray<T> _incidentRay, Luminaire<T> _luminaire) const;
 
-    virtual Color indirectRadiance(Intersection<T> _intersection, Ray<T> _incidentRay, Scene<T> _scene) const;
+    virtual Color
+    indirectRadiance(const Intersection<T> &_intersection, const Ray<T> &_incidentRay, const Scene<T> &_scene) const;
 
-    virtual Color brdf(Vector3<T> _towardsLuminaire, Vector3<T> _normal, Vector3<T> _towardsCamera) const = 0;
+    virtual Color brdf(Vector3<T> &_towardsLuminaire, Vector3<T> &_normal, Vector3<T> &_towardsCamera) const = 0;
 };
 
 /*
@@ -53,11 +54,12 @@ Shader<T>::illuminate(const Intersection<T> &_intersection, const Ray<T> &_incid
     Vector3<T> point = _intersection.point;
     Vector3<T> normal = _intersection.getNormal();
     Vector3<T> towardsLuminaire;
-    for (Luminaire<T> *luminaire : _scene.luminaires) {
+    for (auto const &luminaire : _scene.luminaires) {
         towardsLuminaire = luminaire->towardsLum(point).Orthonormal();
         auto temp = normal.Dot(towardsLuminaire);
         if (normal.Dot(towardsLuminaire) > 0) { // above horizon
-            auto shadowRay = Ray<T>(point, towardsLuminaire, _incidentRay.refractionRate());
+            auto shadowRay = Ray<T>(point, towardsLuminaire, 1, 0, _scene.maxRayDistance, _incidentRay.refractiveIndex,
+                                    _incidentRay.depth + 1);
             Intersection<T> shadowIntersection = _scene.firstIntersection(shadowRay, EPSILON);
             if (!shadowIntersection.hit || luminaire->isBetween(shadowIntersection.point, point, shadowRay)) {
                 color += directRadiance(_intersection, _incidentRay, *luminaire);
@@ -68,7 +70,8 @@ Shader<T>::illuminate(const Intersection<T> &_intersection, const Ray<T> &_incid
 }
 
 template<class T>
-Color Shader<T>::indirectRadiance(Intersection<T> _intersection, Ray<T> _incidentRay, Scene<T> _scene) const {
+Color Shader<T>::indirectRadiance(const Intersection<T> &_intersection, const Ray<T> &_incidentRay,
+                                  const Scene<T> &_scene) const {
     return Color();
 }
 

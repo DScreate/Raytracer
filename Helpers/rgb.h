@@ -125,6 +125,6 @@ RGB<T> ColorMake(const T &x, const T &y, const T &z) {
 }
 
 
-typedef RGB<float> Color;
+typedef RGB<double> Color;
 
 #endif //RAYTRACER_RGB_H

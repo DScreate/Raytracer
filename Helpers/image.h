@@ -27,9 +27,10 @@ public:
 
     std::vector<Color> pixels;
 
-    Image(): width(256), height(256), pixels(256 * 256) {};
+    Image() : width(256), height(256), pixels(256 * 256) {};
 
-    Image(const int _width, const int _height): width(_width), height(_height), pixels(_width * _height) {}
+    Image(const int _width, const int _height) : width(_width), height(_height), pixels(
+            static_cast<unsigned long>(_width * _height)) {}
 
     //Image(): RGB<T>(RGB<T>() = {}) {};
 
@@ -85,15 +86,15 @@ void Image<T>::setPixel(int x, int y, const Color& rgb) {
 
 template<class T>
 void Image<T>::initDummyData() {
-    float xRatio = (float)width / 256;
-    float yRatio = (float)height / 256;
-    int _x = 0;
-    int _y = 0;
+    float xRatio = (float) width / 256;
+    float yRatio = (float) height / 256;
+    T _x = 0;
+    T _y = 0;
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
-            _x = x / xRatio;
-            _y = y / yRatio;
-            int _z = (x + y) / (xRatio + yRatio);
+            _x = static_cast<int>(T(x) / T(xRatio));
+            _y = T(y) / T(yRatio);
+            int _z = static_cast<int>(T(x + y) / T(xRatio + yRatio));
             this->setPixel(x, y, Color(_x / 255, _y / 255, _z / 255));
         }
     }
@@ -120,9 +121,9 @@ void Image<T>::initDummyFast() {
         int _y = 0;
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
-                _x = x / xRatio;
-                _y = y / yRatio;
-                int _z = (x + y) / (xRatio + yRatio);
+                _x = static_cast<int>(x / xRatio);
+                _y = static_cast<int>(y / yRatio);
+                int _z = static_cast<int>((x + y) / (xRatio + yRatio));
                 this->setPixel(x, y, Color(_x / 255, _y / 255, _z / 255));
                 Color rgb = getPixel(x, y);
                 imageFile << rgb.r << " " << rgb.g << " " << rgb.b << std::endl;
