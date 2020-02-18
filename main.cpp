@@ -8,13 +8,14 @@
 #include "Materials/surfaceNormalMaterial.h"
 #include "Materials/reflector.h"
 #include "Materials/dielectric.h"
+#include "Shapes/triangle.h"
 
 int main() {
     std::cout << "Starting up Raytracer" << std::endl;
     const int width = 256;
     const int height = 256;
-    const int wMult = 4;
-    const int hMult = 4;
+    const int wMult = 2;
+    const int hMult = 2;
     const int derivedWidth = width * wMult;
     const int derivedHeight = height * hMult;
 
@@ -22,8 +23,8 @@ int main() {
     std::cout << "Setting up Scene and Targets" << std::endl;
 
     Scene<double> mainScene{};
-    //mainScene.backgroundRadiance = Color(.45, .55, .75);
-    mainScene.backgroundRadiance = Color(.045, .055, .075);
+    mainScene.backgroundRadiance = Color(.45, .55, .75);
+    //mainScene.backgroundRadiance = Color(.045, .055, .075);
 
     DiffuseShader<double> redMat = DiffuseShader<double>();
     redMat.reflectivity = Color(1, 0, 0);
@@ -50,8 +51,9 @@ int main() {
 
     Dielectric<double> glass = Dielectric<double>();
     glass.reflectivity = Color(.1, .1, .1);
-    //glass.refractiveIndex = double(1);
+    //glass.refractiveIndex = 1.03;
     glass.refractiveIndex = 1.517;
+
 
     Sphere<double> redSphere1 = Sphere<double>();
     redSphere1.radius = 5;
@@ -111,13 +113,26 @@ int main() {
 
     Sphere<double> glassSphereBig = Sphere<double>();
     glassSphereBig.radius = 6;
-    glassSphereBig.center = Vector3<double>(6, 4, -14);
+    glassSphereBig.center = Vector3<double>(6, 4, -17);
     glassSphereBig.material.push_back(&glass);
     mainScene.targets.push_back(std::make_unique<Sphere<double>>(glassSphereBig));
+    /*
 
+    Sphere<double> megaSphere = Sphere<double>();
+    megaSphere.radius = 150;
+    megaSphere.center = Vector3<double>(-5, -15, -170);
+    megaSphere.material.push_back(&copper);
+    mainScene.targets.push_back(std::make_unique<Sphere<double>>(megaSphere));
+
+     /*
+
+    Triangle<double> redTriangle = Triangle<double>(Vector3<double>(1,0,0), Vector3<double>(0,1,0), Vector3<double>(-1,0,0));
+    redTriangle.material.push_back(&redMat);
+    mainScene.targets.push_back(std::make_unique<Triangle<double>>(redTriangle));
+*/
     Luminaire<double> testLumn = Luminaire<double>();
     //testLumn.position = Vector3<double>(0, 0, 0);
-    testLumn.position = Vector3<double>(-50, 250, 300);
+    testLumn.position = Vector3<double>(-50, 50, 150);
     //testLumn.position = Vector3<double>(0, 20, -300);
 
 

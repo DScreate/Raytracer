@@ -7,4 +7,4 @@ file(GLOB SOURCES
         *.cpp
         )
 
-add_executable(Raytracer ${SOURCE_FILES} ${SOURCES} Helpers/typedefs.h Materials/material.h Materials/shader.h Lighting/luminaire.h Materials/basicMaterial.h Materials/diffuserShader.h Lighting/directionalLuminaire.h Helpers/random.h Materials/reflector.h Materials/dielectric.h Lighting/pointLuminaire.h)
+add_executable(Raytracer ${SOURCE_FILES} ${SOURCES} Helpers/typedefs.h Materials/material.h Materials/shader.h Lighting/luminaire.h Materials/basicMaterial.h Materials/diffuserShader.h Lighting/directionalLuminaire.h Helpers/random.h Materials/reflector.h Materials/dielectric.h Lighting/pointLuminaire.h Shapes/triangle.h)
