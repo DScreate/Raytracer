@@ -201,7 +201,7 @@ T Dot(const Vector3<T> &Left, const Vector3<T> &Right) {
 template<class T>
 Vector3<T> &Cross(const Vector3<T> &Left, const Vector3<T> &Right) {
     Vector3<T> res = Left;
-    return res.Cross(Right);
+    return res.Cross(const_cast<Vector3<T> &>(Right));
 }
 
 template<class T>

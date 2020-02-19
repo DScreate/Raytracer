@@ -10,6 +10,8 @@
 template<class T>
 class Reflector : public Shader<T> {
 public:
+    T specularExponent = 0.05;
+
     Color reflectivity;
 
     T reflectivityLoss = T(.80);
@@ -20,6 +22,9 @@ public:
 
     Color indirectRadiance(const Intersection<T> &_intersection, const Ray<T> &_incidentRay,
                            const Scene<T> &_scene) const override;
+
+    Color
+    specular(const Intersection<T> &_intersection, const Ray<T> &_incidentRay, Luminaire<T> _luminaire) const override;
 
 };
 
@@ -61,5 +66,17 @@ Reflector<T>::illuminate(const Intersection<T> &_intersection, const Ray<T> &_in
     return color;
 }
 */
+
+template<class T>
+Color
+Reflector<T>::specular(const Intersection<T> &_intersection, const Ray<T> &_incidentRay,
+                       Luminaire<T> _luminaire) const {
+    Vector3<T> towardsCamera = _incidentRay.direction * -1;
+    Vector3<T> L = _luminaire.towardsLum(_intersection.point).Orthonormal();
+    Vector3<T> normal = _intersection.getNormal();
+    Vector3<T> R = normal * normal.Dot(L) * 2 - L;
+    return reflectivity * _luminaire.flux() * std::pow(std::max(0., R.Dot(towardsCamera)), specularExponent);
+
+}
 
 #endif //RAYTRACER_REFLECTOR_H

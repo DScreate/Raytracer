@@ -17,9 +17,9 @@
 template<class T>
 class Shader : public Material<T> {
 public:
-    T specularExponent = 250.;
-    T Ks = 0.2;
-    T Kd = 0.3;
+    T specularExponent = 5.;
+    T Ks = 0.3;
+    T Kd = 0.6;
 
     Color
     illuminate(const Intersection<T> &_intersection, const Ray<T> &_incidentRay, const Scene<T> &_scene) const override;
@@ -31,13 +31,10 @@ public:
 
     virtual Color brdf(Vector3<T> &_towardsLuminaire, Vector3<T> &_normal, Vector3<T> &_towardsCamera) const = 0;
 
-    Color specular(const Intersection<T> &_intersection, const Ray<T> &_incidentRay, Luminaire<T> _luminaire) const;
+    virtual Color
+    specular(const Intersection<T> &_intersection, const Ray<T> &_incidentRay, Luminaire<T> _luminaire) const;
 };
 
-/*
- * Light that shines directly
- */
-// TODO: Convert these to be const refs
 template<class T>
 Color Shader<T>::directRadiance(Intersection<T> _intersection, Ray<T> _incidentRay, Luminaire<T> _luminaire) const {
 

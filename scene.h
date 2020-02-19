@@ -68,7 +68,6 @@ void Scene<T>::addTarget(Target<T> &_target) {
 }
  */
 
-// TODO: Double check this on conforming to Dr. Lewis' slide? We may be continuing on with the Ray intersection when we don't need to
 template<class T>
 Intersection<T> Scene<T>::firstIntersection(const Ray<T> &ray, const T &tMin) const {
     int tMax = maxRayDistance;

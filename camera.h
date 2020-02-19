@@ -69,15 +69,6 @@ public:
 
 };
 
-/*
-// TODO: Convert this to Radiance?
-template<class T>
-Color Camera<T>::renderPixel(const Scene<T> &scene, const int &width, const int &height, const int &iu, const int &iv) const {
-    Ray<T> ray = generateRay(width, height, iu + 0.5, iv + 0.5);
-    return scene.traceRay(ray, 0);
-}
- */
-
 template<class T>
 Ray<T> Camera<T>::generateRay(const int &width, const int &height, const T &u, const T &v) const {
     //Vector3<T> oPrime = getCameraCoordinatePoint(u, v);
