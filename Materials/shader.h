@@ -1,7 +1,3 @@
-//
-// Created by tessa on 2/10/20.
-//
-
 #ifndef RAYTRACER_SHADER_H
 #define RAYTRACER_SHADER_H
 

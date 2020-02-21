@@ -1,7 +1,3 @@
-//
-// Created by tessa on 2/13/20.
-//
-
 #ifndef RAYTRACER_POINTLUMINAIRE_H
 #define RAYTRACER_POINTLUMINAIRE_H
 

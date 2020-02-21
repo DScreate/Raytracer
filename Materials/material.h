@@ -1,7 +1,3 @@
-//
-// Created by tessa on 2/10/20.
-//
-
 #ifndef RAYTRACER_MATERIAL_H
 #define RAYTRACER_MATERIAL_H
 

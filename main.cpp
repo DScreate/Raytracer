@@ -14,8 +14,8 @@ int main() {
     std::cout << "Starting up Raytracer" << std::endl;
     const int width = 256;
     const int height = 256;
-    const int wMult = 3;
-    const int hMult = 3;
+    const int wMult = 6;
+    const int hMult = 6;
     const int derivedWidth = width * wMult;
     const int derivedHeight = height * hMult;
 

@@ -1,7 +1,3 @@
-//
-// Created by Derek on 2/10/2020.
-//
-
 #ifndef RAYTRACER_DIFFUSERSHADER_H
 #define RAYTRACER_DIFFUSERSHADER_H
 

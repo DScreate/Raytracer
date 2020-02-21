@@ -1,6 +1,3 @@
-//
-// Created by tessa on 1/23/20.
-//
 
 #ifndef RAYTRACER_IMAGE_H
 #define RAYTRACER_IMAGE_H

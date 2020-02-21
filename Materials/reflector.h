@@ -1,7 +1,3 @@
-//
-// Created by Derek on 2/12/2020.
-//
-
 #ifndef RAYTRACER_REFLECTOR_H
 #define RAYTRACER_REFLECTOR_H
 

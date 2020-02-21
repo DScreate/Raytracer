@@ -1,7 +1,3 @@
-//
-// Created by Derek on 1/23/2020.
-//
-
 #ifndef RAYTRACER_SPHERE_H
 #define RAYTRACER_SPHERE_H
 

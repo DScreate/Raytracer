@@ -1,7 +1,3 @@
-//
-// Created by tessa on 2/17/20.
-//
-
 #ifndef RAYTRACER_TRIANGLE_H
 #define RAYTRACER_TRIANGLE_H
 

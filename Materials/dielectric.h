@@ -1,7 +1,3 @@
-//
-// Created by Derek on 2/13/2020.
-//
-
 #ifndef RAYTRACER_DIELECTRIC_H
 #define RAYTRACER_DIELECTRIC_H
 

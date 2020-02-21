@@ -1,6 +1,3 @@
-//
-// Created by tessa on 2/11/20.
-//
 
 #ifndef RAYTRACER_RANDOM_H
 #define RAYTRACER_RANDOM_H

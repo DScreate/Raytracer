@@ -1,7 +1,3 @@
-//
-// Created by tessa on 2/10/20.
-//
-
 #include "material.h"
 #include "../Helpers/rgb.h"
 #include "../ray.h"
