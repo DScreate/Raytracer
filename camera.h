@@ -13,6 +13,11 @@
 #include "Helpers/random.h"
 
 #define PI 3.14159265
+
+enum SampleMode {
+    uniform, randomized, stratified, jittered
+};
+
 template<class T>
 class Camera {
 private:
@@ -27,7 +32,7 @@ public:
     Vector3<T> lookAt;
     Vector3<T> viewUp;
     int antiAliasFactor = 1;
-    bool antiAlias = false;
+    SampleMode antiAliasSampling = uniform;
     int dofSamples = 1;
     bool dof = false;
     T focalLength = 1.0f;
@@ -35,7 +40,7 @@ public:
     float fov = 47.0f;
 
     Camera() : position(Vector3<T>()), lookAt(Vector3<T>(0.0, 0.0, -1.0)),
-               viewUp(Vector3<T>(0.0, 1.0, 0.0)), fov(60.0f), antiAlias(false), antiAliasFactor(1) {}
+               viewUp(Vector3<T>(0.0, 1.0, 0.0)), fov(60.0f), antiAliasFactor(1) {}
 
     Camera(const Vector3<T> &_position, const Vector3<T> &_lookAt, const Vector3<T> &_viewUP)
             :
@@ -87,13 +92,42 @@ Image<T> Camera<T>::renderImage(Scene<T> *scene, const int &width, const int &he
             int column = iu;
             int row = height - 1 - iv;
             Color color = Color(0, 0, 0);
-            if (antiAlias) {
-                for (int i = 0; i < antiAliasFactor; i++) {
-                    color += renderPixel(scene, width, height, iu + makeRandom<T>(), iv + makeRandom<T>()) /
-                             antiAliasFactor;
+            unsigned long long int AASquared = antiAliasFactor * antiAliasFactor;
+            switch (antiAliasSampling) {
+                case randomized: {
+                    for (int i = 0; i < AASquared; i++) {
+                        color += renderPixel(scene, width, height, iu + makeRandom<T>(), iv + makeRandom<T>()) /
+                                 (AASquared);
+                    }
+                    break;
                 }
-            } else {
-                color = renderPixel(scene, width, height, iu, iv);
+
+                case stratified: {
+                    for (int p = 0; p < antiAliasFactor; p++) {
+                        for (int q = 0; q < antiAliasFactor; q++) {
+                            color += renderPixel(scene, width, height, iu + p / antiAliasFactor,
+                                                 iv + q / antiAliasFactor) /
+                                     (AASquared);
+                        }
+                    }
+
+                    break;
+                }
+
+                case jittered: {
+                    for (int p = 0; p < antiAliasFactor; p++) {
+                        for (int q = 0; q < antiAliasFactor; q++) {
+                            color += renderPixel(scene, width, height, iu + (p + makeRandom<T>()) / antiAliasFactor,
+                                                 iv + (q + makeRandom<T>()) / antiAliasFactor) /
+                                     (AASquared);
+                        }
+                    }
+                    break;
+                }
+
+                case uniform: {
+                    color = renderPixel(scene, width, height, iu, iv);
+                }
             }
             image.setPixel(column, row, color);
         }
