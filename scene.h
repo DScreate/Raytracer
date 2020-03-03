@@ -16,6 +16,10 @@
 
 using std::vector;
 
+enum ShadowMode {
+    soft, hard
+};
+
 template<class T>
 class Scene {
 public:
@@ -25,6 +29,8 @@ public:
     Color backgroundRadiance;
     T ambientRefractiveIndex = T(1.);
     int maxRayDistance = 1000;
+    ShadowMode shadowMode = hard;
+    int shadowSampleFactor = 1;
 
     Scene() : backgroundRadiance(0, 0, 0) {};;
     //Scene(vector<Target<T>> _targets) : targets(_targets) {};

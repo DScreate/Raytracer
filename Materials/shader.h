@@ -52,17 +52,40 @@ Shader<T>::illuminate(const Intersection<T> &_intersection, const Ray<T> &_incid
     Vector3<T> normal = _intersection.getNormal();
     Vector3<T> towardsLuminaire;
     for (auto const &luminaire : _scene.luminaires) {
-        towardsLuminaire = luminaire->towardsLum(point).Orthonormal();
-        auto temp = normal.Dot(towardsLuminaire);
-        if (normal.Dot(towardsLuminaire) > 0) { // above horizon
-            auto shadowRay = Ray<T>(point, towardsLuminaire, 1, 0, _scene.maxRayDistance, _incidentRay.refractiveIndex,
-                                    _incidentRay.depth + 1);
-            Intersection<T> shadowIntersection = _scene.firstIntersection(shadowRay, EPSILON);
-            if (!shadowIntersection.hit || luminaire->isBetween(shadowIntersection.point, point, shadowRay)) {
-                color += directRadiance(_intersection, _incidentRay, *luminaire) * Kd +
-                         specular(_intersection, _incidentRay, *luminaire) * Ks;
+        switch (_scene.shadowMode) {
+            case (hard): {
+                towardsLuminaire = luminaire->towardsLum(point).Orthonormal();
+                auto temp = normal.Dot(towardsLuminaire);
+                if (normal.Dot(towardsLuminaire) > 0) { // above horizon
+                    auto shadowRay = Ray<T>(point, towardsLuminaire, 1, 0, _scene.maxRayDistance,
+                                            _incidentRay.refractiveIndex,
+                                            _incidentRay.depth + 1);
+                    Intersection<T> shadowIntersection = _scene.firstIntersection(shadowRay, EPSILON);
+                    if (!shadowIntersection.hit || luminaire->isBetween(shadowIntersection.point, point, shadowRay)) {
+                        color += directRadiance(_intersection, _incidentRay, *luminaire) * Kd +
+                                 specular(_intersection, _incidentRay, *luminaire) * Ks;
+                    }
+                }
+                break;
+            }
+
+            case (soft): {
+                towardsLuminaire = luminaire->towardsLum(point).Orthonormal();
+                auto temp = normal.Dot(towardsLuminaire);
+                if (normal.Dot(towardsLuminaire) > 0) { // above horizon
+                    auto shadowRay = Ray<T>(point, towardsLuminaire, 1, 0, _scene.maxRayDistance,
+                                            _incidentRay.refractiveIndex,
+                                            _incidentRay.depth + 1);
+                    Intersection<T> shadowIntersection = _scene.firstIntersection(shadowRay, EPSILON);
+                    if (!shadowIntersection.hit || luminaire->isBetween(shadowIntersection.point, point, shadowRay)) {
+                        color += directRadiance(_intersection, _incidentRay, *luminaire) * Kd +
+                                 specular(_intersection, _incidentRay, *luminaire) * Ks;
+                    }
+                }
+                break;
             }
         }
+
     }
     return color;
 }
