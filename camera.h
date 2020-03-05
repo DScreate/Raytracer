@@ -6,6 +6,7 @@
 #define RAYTRACER_CAMERA_H
 
 #include <cmath>
+#include <iostream>
 
 #include "Helpers/image.h"
 #include "scene.h"
@@ -34,6 +35,7 @@ public:
     int antiAliasFactor = 1;
     SampleMode antiAliasSampling = uniform;
     int dofSamples = 1;
+    int dofFactor = 4;
     bool dof = false;
     T focalLength = 1.0f;
     T lensSize = 2.0f;
@@ -73,15 +75,6 @@ public:
     Vector3<T> opposingFocalPoint(const Vector3<T> &_position) const;
 
 };
-
-template<class T>
-Ray<T> Camera<T>::generateRay(const int &width, const int &height, const T &u, const T &v) const {
-    //Vector3<T> oPrime = getCameraCoordinatePoint(u, v);
-    //Vector3<T> dPrime = oPrime * -1;
-    Vector3<T> _d = x * (u - ((width - 1) / 2)) + y * (v - ((height - 1) / 2)) - (z * d);
-    //Vector3<T> d = (x * (-dPrime.x)) - (y * dPrime.y) - (z * dPrime.z);
-    return Ray<T>(position, _d.Orthonormal(), 1, 0, 1000, 1, 0);
-}
 
 template<class T>
 Image<T> Camera<T>::renderImage(Scene<T> *scene, const int &width, const int &height) {
@@ -166,7 +159,7 @@ Color Camera<T>::renderPixel(Scene<T> *scene, const int &width, const int &heigh
         Color mix = scene->backgroundRadiance;
         vector<Ray<T>> rays = generateLensRays(width, height, iu + 0.5, iv + 0.5);
         for (Ray<T> ray : rays) {
-            mix += scene->traceRay(ray, 0);
+            mix += scene->traceRay(ray, 0) / T(rays.size());
         }
 
         return mix;
@@ -174,6 +167,15 @@ Color Camera<T>::renderPixel(Scene<T> *scene, const int &width, const int &heigh
         Ray<T> ray = generateRay(width, height, iu + 0.5, iv + 0.5);
         return scene->traceRay(ray, 0);
     }
+}
+
+template<class T>
+Ray<T> Camera<T>::generateRay(const int &width, const int &height, const T &u, const T &v) const {
+    //Vector3<T> oPrime = getCameraCoordinatePoint(u, v);
+    //Vector3<T> dPrime = oPrime * -1;
+    Vector3<T> _d = x * (u - ((width - 1) / 2)) + y * (v - ((height - 1) / 2)) - (z * d);
+    //Vector3<T> d = (x * (-dPrime.x)) - (y * dPrime.y) - (z * dPrime.z);
+    return Ray<T>(position, _d.Orthonormal(), 1, 0, 1000, 1, 0);
 }
 
 template<class T>
@@ -188,7 +190,8 @@ vector<Ray<T>> Camera<T>::generateLensRays(const int &width, const int &height, 
     for (auto lensPoint : lensPoints()) {
         Vector3<T> lensRayDirection = C - lensPoint;
         auto cameraRay = Ray<T>(lensPoint, lensRayDirection.Orthonormal(), 1, 0, 1000, 1, 0);
-        rays.push_back(cameraRay);
+        //rays.push_back(cameraRay);
+        rays.push_back(generateRay(width, height, u + 0.5, v + 0.5));
     }
 
     return rays;
@@ -199,8 +202,15 @@ vector<Ray<T>> Camera<T>::generateLensRays(const int &width, const int &height, 
 template<class T>
 vector<Vector3<T>> Camera<T>::lensPoints() const {
     vector<Vector3<T>> points;
-    for (int i = 0; i < dofSamples; i++) {
-        points.push_back(Vector3<T>(makeRandom<T>() * lensSize, makeRandom<T>() * lensSize, focalLength));
+
+    for (int p = 0; p < dofFactor; p++) {
+        for (int q = 0; q < dofFactor; q++) {
+            for (int i = 0; i < dofSamples; i++) {
+                //std::cout << "Now in lens grid: " << p << ", " << q << " Sample: " << i << std::endl;
+                Vector3<T> candidate = Vector3<T>((p + makeRandom<T>()), (q + makeRandom<T>()), focalLength);
+                points.push_back(candidate);
+            }
+        }
     }
 
     return points;
@@ -215,7 +225,7 @@ Vector3<T> Camera<T>::opposingFocalPoint(const Vector3<T> &_position) const {
     // C = |C|C^
     // |C dot z| = - F * |o dot z| / (F - |o dot z|)
     auto P = -(focalLength * _position.z) / (focalLength - _position.z);
-    return Vector3<T>(_position.x + makeRandom<T>(), _position.y + makeRandom<T>(), _position.z + makeRandom<T>());
+    return Vector3<T>(_position.x, _position.y, _position.z + focalLength);
 }
 
 #endif //RAYTRACER_CAMERA_H

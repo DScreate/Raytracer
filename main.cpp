@@ -14,8 +14,8 @@ int main() {
     std::cout << "Starting up Raytracer" << std::endl;
     const int width = 256;
     const int height = 256;
-    const int wMult = 1;
-    const int hMult = 1;
+    const int wMult = 4;
+    const int hMult = 4;
     const int derivedWidth = width * wMult;
     const int derivedHeight = height * hMult;
 
@@ -23,6 +23,7 @@ int main() {
 
     Scene<double> mainScene{};
     mainScene.backgroundRadiance = Color(.45, .55, .75);
+    mainScene.shadowMode = hard;
     //mainScene.backgroundRadiance = Color(.045, .055, .075);
 
     DiffuseShader<double> redMat = DiffuseShader<double>();
@@ -168,7 +169,7 @@ int main() {
     pinkLumn.lightColor = Color(0.8, 0.1, 0.65);
     mainScene.luminaires.push_back(std::make_unique<Luminaire<double>>(pinkLumn));
 
-    Vector3<double> camPosition = Vector3<double>(0, 20, 50);
+    Vector3<double> camPosition = Vector3<double>(0, 60, 50);
     //Vector3<double> camPosition = Vector3<double>(25, 50, 37);
     //Vector3<double> camPosition = Vector3<double>(0, 0, 0);
     //Vector3<double> camPosition = Vector3<double>(-15, 15, 45);
@@ -179,10 +180,12 @@ int main() {
 
     Camera<double> mainCam = Camera<double>(camPosition, camLookAt, camViewUp);
     mainCam.fov = 47.0;
-    mainCam.antiAliasSampling = jittered;
+    mainCam.antiAliasSampling = uniform;
     mainCam.antiAliasFactor = 4;
-    mainCam.dof = false;
-    mainCam.dofSamples = 4;
+    mainCam.dof = true;
+    mainCam.dofSamples = 1;
+    mainCam.dofFactor = 4;
+    mainCam.focalLength = 1;
 
     std::cout << "Running calculations" << std::endl;
 
