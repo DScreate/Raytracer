@@ -40,6 +40,9 @@ public:
     T focalLength = 1.0f;
     T lensSize = 2.0f;
     float fov = 47.0f;
+    bool motionBlur = false;
+
+    int timeSliceSamples = 1;
 
     Camera() : position(Vector3<T>()), lookAt(Vector3<T>(0.0, 0.0, -1.0)),
                viewUp(Vector3<T>(0.0, 1.0, 0.0)), fov(60.0f), antiAliasFactor(1) {}
@@ -80,49 +83,60 @@ template<class T>
 Image<T> Camera<T>::renderImage(Scene<T> *scene, const int &width, const int &height) {
     image = Image<T>(width, height);
     initBasis();
-    for (int iu = 0; iu < width; iu++) {
-        for (int iv = 0; iv < height; iv++) {
-            int column = iu;
-            int row = height - 1 - iv;
-            Color color = Color(0, 0, 0);
-            unsigned long long int AASquared = antiAliasFactor * antiAliasFactor;
-            switch (antiAliasSampling) {
-                case randomized: {
-                    for (int i = 0; i < AASquared; i++) {
-                        color += renderPixel(scene, width, height, iu + makeRandom<T>(), iv + makeRandom<T>()) /
-                                 (AASquared);
-                    }
-                    break;
-                }
+    T timeSpan = 1.;
+    if (motionBlur) {
+        timeSpan = scene->timeSpan;
+    }
 
-                case stratified: {
-                    for (int p = 0; p < antiAliasFactor; p++) {
-                        for (int q = 0; q < antiAliasFactor; q++) {
-                            color += renderPixel(scene, width, height, iu + p / antiAliasFactor,
-                                                 iv + q / antiAliasFactor) /
+    for (int i = 0; i < timeSpan; i += 1 / T(timeSliceSamples)) {
+        for (auto const &t : scene->targets) {
+            t->move(1 / T(timeSliceSamples));
+        }
+
+        for (int iu = 0; iu < width; iu++) {
+            for (int iv = 0; iv < height; iv++) {
+                int column = iu;
+                int row = height - 1 - iv;
+                Color color = Color(0, 0, 0);
+                unsigned long long int AASquared = antiAliasFactor * antiAliasFactor;
+                switch (antiAliasSampling) {
+                    case randomized: {
+                        for (int i = 0; i < AASquared; i++) {
+                            color += renderPixel(scene, width, height, iu + makeRandom<T>(), iv + makeRandom<T>()) /
                                      (AASquared);
                         }
+                        break;
                     }
 
-                    break;
-                }
-
-                case jittered: {
-                    for (int p = 0; p < antiAliasFactor; p++) {
-                        for (int q = 0; q < antiAliasFactor; q++) {
-                            color += renderPixel(scene, width, height, iu + (p + makeRandom<T>()) / antiAliasFactor,
-                                                 iv + (q + makeRandom<T>()) / antiAliasFactor) /
-                                     (AASquared);
+                    case stratified: {
+                        for (int p = 0; p < antiAliasFactor; p++) {
+                            for (int q = 0; q < antiAliasFactor; q++) {
+                                color += renderPixel(scene, width, height, iu + p / antiAliasFactor,
+                                                     iv + q / antiAliasFactor) /
+                                         (AASquared);
+                            }
                         }
-                    }
-                    break;
-                }
 
-                case uniform: {
-                    color = renderPixel(scene, width, height, iu, iv);
+                        break;
+                    }
+
+                    case jittered: {
+                        for (int p = 0; p < antiAliasFactor; p++) {
+                            for (int q = 0; q < antiAliasFactor; q++) {
+                                color += renderPixel(scene, width, height, iu + (p + makeRandom<T>()) / antiAliasFactor,
+                                                     iv + (q + makeRandom<T>()) / antiAliasFactor) /
+                                         (AASquared);
+                            }
+                        }
+                        break;
+                    }
+
+                    case uniform: {
+                        color = renderPixel(scene, width, height, iu, iv);
+                    }
                 }
+                image.setPixel(column, row, color / (timeSpan * timeSliceSamples));
             }
-            image.setPixel(column, row, color);
         }
     }
 
@@ -155,18 +169,21 @@ Vector3<T> Camera<T>::getCameraCoordinatePoint(const float &i, const float &j) c
 template<class T>
 Color Camera<T>::renderPixel(Scene<T> *scene, const int &width, const int &height, const T &iu, const T &iv) {
 
+    Color mix = Color(0, 0, 0);
+    vector<Ray<T>> rays;
+    Ray<T> ray;
+
     if (dof) {
-        Color mix = scene->backgroundRadiance;
-        vector<Ray<T>> rays = generateLensRays(width, height, iu + 0.5, iv + 0.5);
+        rays = generateLensRays(width, height, iu + 0.5, iv + 0.5);
         for (Ray<T> ray : rays) {
             mix += scene->traceRay(ray, 0) / T(rays.size());
         }
-
-        return mix;
     } else {
-        Ray<T> ray = generateRay(width, height, iu + 0.5, iv + 0.5);
-        return scene->traceRay(ray, 0);
+        ray = generateRay(width, height, iu + 0.5, iv + 0.5);
+        mix = scene->traceRay(ray, 0);
     }
+
+    return mix;
 }
 
 template<class T>

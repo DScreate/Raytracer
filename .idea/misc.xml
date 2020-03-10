@@ -8,6 +8,7 @@
       <file path="$PROJECT_DIR$/Lighting" />
       <file path="$PROJECT_DIR$/Materials" />
       <file path="$PROJECT_DIR$/Shapes" />
+      <file path="$PROJECT_DIR$/perlin_lewis" />
     </sourceRoots>
   </component>
   <component name="JavaScriptSettings">

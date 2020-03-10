@@ -37,7 +37,9 @@ public:
 
     void setPixel(int x, int y, const Color &rgb);
 
-    void output();
+    Image<T> getImage(std::string fileName);
+
+    void output(std::string fileName = "output_image.ppm");
 
     void initDummyFast();
 };
@@ -47,13 +49,46 @@ T clipPixel(const T &n, const T &lower, const T &upper) {
     return std::max(lower, std::min(n, upper));
 }
 
+// TODO: Investigate why this is clipping the far left edge weirdly
 template<class T>
-void Image<T>::output() {
+Image<T> Image<T>::getImage(std::string fileName) {
+    std::ifstream imageFile;
+    imageFile.open(fileName);
+    std::string magicNum;
+    std::string gimpLine;;
+    Image<T> resImage = Image<T>();
+    T i, j;
+    int r, g, b;
+    if (imageFile.is_open()) {
+        imageFile.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        imageFile.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+
+        imageFile >> i >> j;
+        resImage.width = i;
+        resImage.height = j;
+        for (int y = 0; y < resImage.height; y++) {
+            for (int x = 0; x < resImage.width; x++) {
+                imageFile >> r;
+                imageFile >> g;
+                imageFile >> b;
+                Color col = Color(g / 255., b / 255., r / 255.);
+                resImage.setPixel(x, y, col);
+            }
+        }
+    }
+
+    resImage.output("terrain output.ppm");
+    return resImage;
+}
+
+template<class T>
+void Image<T>::output(std::string fileName) {
     std::ofstream imageFile;
-    imageFile.open("output_image.ppm", std::ios::trunc);
+    imageFile.open(fileName, std::ios::trunc);
 
     if (imageFile.is_open()) {
-        std::cout << "File is open, now trying to print image" << std::endl;
+        std::cout << "File is open, now trying to print image: " << fileName << std::endl;
         // header of ppm file
         imageFile << "P3" << std::endl;
         imageFile << width << " " << height << std::endl;

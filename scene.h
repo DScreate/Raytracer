@@ -31,6 +31,7 @@ public:
     int maxRayDistance = 1000;
     ShadowMode shadowMode = hard;
     int shadowSampleFactor = 1;
+    T timeSpan = 5.0f;
 
     Scene() : backgroundRadiance(0, 0, 0) {};;
     //Scene(vector<Target<T>> _targets) : targets(_targets) {};

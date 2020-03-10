@@ -7,16 +7,13 @@ template<class T>
 class Triangle : public Target {
 private:
     T dToOrigin;
-public:
-    T getDToOrigin() const;
-
-    void setDToOrigin(T dToOrigin);
-
-private:
     Vector3<T> vertex0;
     Vector3<T> vertex1;
     Vector3<T> vertex2;
 public:
+    T getDToOrigin() const;
+
+    void setDToOrigin(T dToOrigin);
 
     const Vector3<T> &getVertex0() const;
 
@@ -29,10 +26,6 @@ public:
     const Vector3<T> &getVertex2() const;
 
     void setVertex2(const Vector3<T> &_vertex2);
-
-
-public:
-
 
     Triangle() : vertex0(), vertex1(), vertex2() {
         init();
@@ -50,6 +43,8 @@ public:
     Vector3<T> getNormal() const;
 
     Vector3<T> getNormal(const Vector3<T> &point) const override;
+
+    void move(T timeSpan);
 };
 
 template<class T>
@@ -149,6 +144,14 @@ T Triangle<T>::getDToOrigin() const {
 template<class T>
 void Triangle<T>::setDToOrigin(T _dToOrigin) {
     Triangle::dToOrigin = _dToOrigin;
+}
+
+template<class T>
+void Triangle<T>::move(T timeSpan) {
+    Vector3<T> movement = velocity * timeSpan;
+    setVertex0(getVertex0() + movement);
+    setVertex1(getVertex1() + movement);
+    setVertex2(getVertex2() + movement);
 }
 
 #endif //RAYTRACER_TRIANGLE_H

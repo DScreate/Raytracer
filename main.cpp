@@ -9,6 +9,10 @@
 #include "Materials/reflector.h"
 #include "Materials/dielectric.h"
 #include "Shapes/triangle.h"
+#include "Materials/perlinMaterial.h"
+#include "Shapes/perlinSphere.h"
+#include "Shapes/planetoid.h"
+#include "Materials/perlinPlanetMaterial.h"
 
 int main() {
     std::cout << "Starting up Raytracer" << std::endl;
@@ -24,6 +28,8 @@ int main() {
     Scene<double> mainScene{};
     mainScene.backgroundRadiance = Color(.45, .55, .75);
     mainScene.shadowMode = hard;
+    mainScene.shadowSampleFactor = 4;
+    mainScene.timeSpan = 3;
     //mainScene.backgroundRadiance = Color(.045, .055, .075);
 
     DiffuseShader<double> redMat = DiffuseShader<double>();
@@ -43,6 +49,12 @@ int main() {
     blueMat.specularExponent = 2;
     blueMat.Ks = 0.15;
     blueMat.Kd = 0.7;
+
+    PerlinMaterial<double> perlinMat = PerlinMaterial<double>();
+    perlinMat.reflectivity = Color(0, 1, 0);
+    perlinMat.specularExponent = 0.;
+    perlinMat.Ks = 0.05;
+    perlinMat.Kd = 0.7;
 
     DiffuseShader<double> noColorDiffuse = DiffuseShader<double>();
     noColorDiffuse.reflectivity = Color(0, 0, 0);
@@ -100,11 +112,16 @@ int main() {
     mainScene.targets.push_back(std::make_unique<Sphere<double>>(testSphere2));
 
 
-    Sphere<double> testSphere3 = Sphere<double>();
-    testSphere3.radius = 5;
-    testSphere3.center = Vector3<double>(-10, 5, 15);
-    testSphere3.material.push_back(&blueMat);
-    mainScene.targets.push_back(std::make_unique<Sphere<double>>(testSphere3));
+    Planetoid<double> testSphere3 = Planetoid<double>();
+    PerlinPlanetMaterial<double> ts3planetMat = PerlinPlanetMaterial<double>(&testSphere3);
+    ts3planetMat.reflectivity = Color(0, 1, 0);
+    ts3planetMat.Kd = .8;
+    ts3planetMat.Ks = 0.0;
+    testSphere3.radius = 12;
+    testSphere3.center = Vector3<double>(-0, 25, 15);
+    testSphere3.material.push_back(&ts3planetMat);
+    //testSphere3.velocity = Vector3<double>(10, 0, 0);
+    mainScene.targets.push_back(std::make_unique<Planetoid<double>>(testSphere3));
 
     Sphere<double> bigSphere2 = Sphere<double>();
     bigSphere2.radius = 10;
@@ -134,8 +151,9 @@ int main() {
 
     Sphere<double> glassSphereBig = Sphere<double>();
     glassSphereBig.radius = 4;
-    glassSphereBig.center = Vector3<double>(-1, 4, 20);
+    glassSphereBig.center = Vector3<double>(-1, 5, 20);
     glassSphereBig.material.push_back(&glass);
+    //glassSphereBig.velocity = Vector3<double>(0, 0.00003, 0.00002);
     mainScene.targets.push_back(std::make_unique<Sphere<double>>(glassSphereBig));
 
 
@@ -163,29 +181,39 @@ int main() {
     mainScene.luminaires.push_back(std::make_unique<Luminaire<double>>(testLumn));
 
 
+    Luminaire<double> backLumn = Luminaire<double>();
+    backLumn.position = Vector3<double>(0, 200, -500);
+    //testLumn.position = Vector3<double>(-50, 50, 20);
+    //testLumn.position = Vector3<double>(0, 20, -300);
+    backLumn.intensity = 1.8;
+    //mainScene.luminaires.push_back(std::make_unique<Luminaire<double>>(backLumn));
+
+
     Luminaire<double> pinkLumn = Luminaire<double>();
     pinkLumn.position = Vector3<double>(70, 25, 150);
     pinkLumn.intensity = 2.8f;
     pinkLumn.lightColor = Color(0.8, 0.1, 0.65);
-    mainScene.luminaires.push_back(std::make_unique<Luminaire<double>>(pinkLumn));
+    //mainScene.luminaires.push_back(std::make_unique<Luminaire<double>>(pinkLumn));
 
-    Vector3<double> camPosition = Vector3<double>(0, 60, 50);
+    Vector3<double> camPosition = Vector3<double>(0, 30, 70);
     //Vector3<double> camPosition = Vector3<double>(25, 50, 37);
     //Vector3<double> camPosition = Vector3<double>(0, 0, 0);
     //Vector3<double> camPosition = Vector3<double>(-15, 15, 45);
     //Vector3<double> camPosition = Vector3<double>(-15, 45, 35);
 
-    Vector3<double> camLookAt = Vector3<double>(0, 0, 0);
+    Vector3<double> camLookAt = Vector3<double>(0, 10, 0);
     Vector3<double> camViewUp = Vector3<double>(0, 1, 0);
 
     Camera<double> mainCam = Camera<double>(camPosition, camLookAt, camViewUp);
     mainCam.fov = 47.0;
     mainCam.antiAliasSampling = uniform;
     mainCam.antiAliasFactor = 4;
-    mainCam.dof = true;
+    mainCam.dof = false;
     mainCam.dofSamples = 1;
     mainCam.dofFactor = 4;
     mainCam.focalLength = 1;
+    mainCam.motionBlur = false;
+    mainCam.timeSliceSamples = 1;
 
     std::cout << "Running calculations" << std::endl;
 
