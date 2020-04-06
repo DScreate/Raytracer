@@ -82,9 +82,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/tessa/CLionProjects/Raytracer/Helpers/RGBA.h">
-			<Option target="Raytracer"/>
-		</Unit>
 		<Unit filename="/home/tessa/CLionProjects/Raytracer/Helpers/random.h">
 			<Option target="Raytracer"/>
 		</Unit>
@@ -112,19 +109,31 @@
 		<Unit filename="/home/tessa/CLionProjects/Raytracer/Materials/material.h">
 			<Option target="Raytracer"/>
 		</Unit>
+		<Unit filename="/home/tessa/CLionProjects/Raytracer/Materials/perlinMaterial.h">
+			<Option target="Raytracer"/>
+		</Unit>
+		<Unit filename="/home/tessa/CLionProjects/Raytracer/Materials/perlinPlanetMaterial.h">
+			<Option target="Raytracer"/>
+		</Unit>
 		<Unit filename="/home/tessa/CLionProjects/Raytracer/Materials/reflector.h">
 			<Option target="Raytracer"/>
 		</Unit>
 		<Unit filename="/home/tessa/CLionProjects/Raytracer/Materials/shader.h">
 			<Option target="Raytracer"/>
 		</Unit>
+		<Unit filename="/home/tessa/CLionProjects/Raytracer/Shapes/perlinSphere.h">
+			<Option target="Raytracer"/>
+		</Unit>
+		<Unit filename="/home/tessa/CLionProjects/Raytracer/Shapes/planetoid.h">
+			<Option target="Raytracer"/>
+		</Unit>
+		<Unit filename="/home/tessa/CLionProjects/Raytracer/Shapes/triangle.h">
+			<Option target="Raytracer"/>
+		</Unit>
 		<Unit filename="/home/tessa/CLionProjects/Raytracer/camera.h">
 			<Option target="Raytracer"/>
 		</Unit>
 		<Unit filename="/home/tessa/CLionProjects/Raytracer/constants.h">
-			<Option target="Raytracer"/>
-		</Unit>
-		<Unit filename="/home/tessa/CLionProjects/Raytracer/hit.cpp">
 			<Option target="Raytracer"/>
 		</Unit>
 		<Unit filename="/home/tessa/CLionProjects/Raytracer/intersection.h">

@@ -42,6 +42,8 @@ public:
     void output(std::string fileName = "output_image.ppm");
 
     void initDummyFast();
+
+    Color newGetPixel(int x, int y) const;
 };
 
 template<typename T>
@@ -72,7 +74,7 @@ Image<T> Image<T>::getImage(std::string fileName) {
                 imageFile >> r;
                 imageFile >> g;
                 imageFile >> b;
-                Color col = Color(g / 255., b / 255., r / 255.);
+                Color col = Color(r / 255., g / 255., b / 255.);
                 resImage.setPixel(x, y, col);
             }
         }
@@ -100,7 +102,6 @@ void Image<T>::output(std::string fileName) {
                           << " " << clipPixel(int(rgb.b * 255.99), 0, 255) << std::endl;
             }
         }
-
         std::cout << "Printing complete, now closing file" << std::endl;
         imageFile.close();
     }
@@ -112,7 +113,12 @@ Color Image<T>::getPixel(const int x, const int y) const {
 }
 
 template<class T>
-void Image<T>::setPixel(int x, int y, const Color& rgb) {
+Color Image<T>::newGetPixel(const int x, const int y) const {
+    return this->pixels[x + (y * height)];
+}
+
+template<class T>
+void Image<T>::setPixel(int x, int y, const Color &rgb) {
     this->pixels[x + (y * width)] = rgb;
 }
 
