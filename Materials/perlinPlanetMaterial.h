@@ -62,9 +62,9 @@ Color PerlinPlanetMaterial<T>::directRadiance(Intersection<T> _intersection, Ray
     // -1 = 0
     // 0 = imageWidth / 2
 
-    T x = (noiseValue + 1) / 2;
-    double otherValues[3] = {_intersection.point.x, _intersection.point.y, _intersection.point.z};
-    double otherNoise = noise(otherValues, 3);
+    T x = noiseValue;
+    //double otherValues[3] = {_intersection.point.x, _intersection.point.y, _intersection.point.z};
+    //double otherNoise = noise(otherValues, 3);
     //x *= abs(otherNoise);
     T y = abs(latitude) / 90.;
 

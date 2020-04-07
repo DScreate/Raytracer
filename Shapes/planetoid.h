@@ -103,9 +103,11 @@ T Planetoid<T>::getLatitude(const Vector3<T> &pointOnSurface) const {
     //return (pointOnSurface.y) * 180.0 / M_PI;
     Vector3<T> dir = getNormal(pointOnSurface);
     Vector3<T> horz = Vector3<T>(dir.x, 0, dir.z);
+    //T res = asin(pointOnSurface.Orthonormal().y) * 180 / M_PI;
 
-    T res = acos(horz.Orthonormal().Dot(dir.Orthonormal()) /
+    T res = asin(horz.Orthonormal().Dot(dir.Orthonormal()) /
                  (horz.Orthonormal().Magnitude() * dir.Orthonormal().Magnitude())) * 180 / M_PI;
+
     //std::cout << res << std::endl;
     return res;
 

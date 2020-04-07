@@ -98,6 +98,18 @@ int main() {
     water.Kd = 0.85;
 
 
+    Planetoid<double> testSphere3 = Planetoid<double>();
+    PerlinPlanetMaterial<double> ts3planetMat = PerlinPlanetMaterial<double>(&testSphere3);
+    ts3planetMat.reflectivity = Color(0, 1, 0);
+    ts3planetMat.Kd = .8;
+    ts3planetMat.Ks = 0.0;
+    testSphere3.radius = 15;
+    testSphere3.center = Vector3<double>(-0, 15, 15);
+    testSphere3.material.push_back(&ts3planetMat);
+    //testSphere3.velocity = Vector3<double>(10, 0, 0);
+    mainScene.targets.push_back(std::make_unique<Planetoid<double>>(testSphere3));
+
+/*
     Sphere<double> redSphere1 = Sphere<double>();
     redSphere1.radius = 2;
     redSphere1.center = Vector3<double>(7, 2, 18);
@@ -110,18 +122,6 @@ int main() {
     testSphere2.center = Vector3<double>(3, 2, 17);
     testSphere2.material.push_back(&copper);
     mainScene.targets.push_back(std::make_unique<Sphere<double>>(testSphere2));
-
-
-    Planetoid<double> testSphere3 = Planetoid<double>();
-    PerlinPlanetMaterial<double> ts3planetMat = PerlinPlanetMaterial<double>(&testSphere3);
-    ts3planetMat.reflectivity = Color(0, 1, 0);
-    ts3planetMat.Kd = .8;
-    ts3planetMat.Ks = 0.0;
-    testSphere3.radius = 12;
-    testSphere3.center = Vector3<double>(-0, 25, 15);
-    testSphere3.material.push_back(&ts3planetMat);
-    //testSphere3.velocity = Vector3<double>(10, 0, 0);
-    mainScene.targets.push_back(std::make_unique<Planetoid<double>>(testSphere3));
 
     Sphere<double> bigSphere2 = Sphere<double>();
     bigSphere2.radius = 10;
@@ -171,7 +171,7 @@ int main() {
             Vector3<double>(30, 0, -30));
     greenTriangle.material.push_back(&greenMat);
     mainScene.targets.push_back(std::make_unique<Triangle<double>>(greenTriangle));
-
+*/
 
     Luminaire<double> testLumn = Luminaire<double>();
     testLumn.position = Vector3<double>(-200, 200, 300);
