@@ -45,7 +45,7 @@ Color PerlinPlanetMaterial<T>::indirectRadiance(Intersection<T> &_intersection, 
 
 template<class T>
 void PerlinPlanetMaterial<T>::initSamplingImage() {
-    samplingImage = samplingImage.getImage("grid.ppm");
+    samplingImage = samplingImage.getImage("terrain sample.ppm");
 }
 
 template<class T>
@@ -71,7 +71,7 @@ Color PerlinPlanetMaterial<T>::directRadiance(Intersection<T> _intersection, Ray
     int imageX = int(samplingImage.width * x);
     int imageY = int(samplingImage.height * y);
 
-    return samplingImage.newGetPixel(imageX, imageY);
+    return samplingImage.getPixel(imageX, imageY);
 }
 
 #endif //RAYTRACER_PERLINPLANETMATERIAL_H

@@ -58,7 +58,7 @@ Image<T> Image<T>::getImage(std::string fileName) {
     imageFile.open(fileName);
     std::string magicNum;
     std::string gimpLine;;
-    Image<T> resImage = Image<T>();
+    Image<T> resImage;
     T i, j;
     int r, g, b;
     if (imageFile.is_open()) {
@@ -67,8 +67,8 @@ Image<T> Image<T>::getImage(std::string fileName) {
 
 
         imageFile >> i >> j;
-        resImage.width = i;
-        resImage.height = j;
+        resImage = Image(i, j);
+        imageFile >> magicNum;
         for (int y = 0; y < resImage.height; y++) {
             for (int x = 0; x < resImage.width; x++) {
                 imageFile >> r;
@@ -112,10 +112,12 @@ Color Image<T>::getPixel(const int x, const int y) const {
     return this->pixels[x + (y * width)];
 }
 
+/*
 template<class T>
 Color Image<T>::newGetPixel(const int x, const int y) const {
-    return this->pixels[x + (y * height)];
+    return this->pixels[x + (y * width)];
 }
+*/
 
 template<class T>
 void Image<T>::setPixel(int x, int y, const Color &rgb) {
